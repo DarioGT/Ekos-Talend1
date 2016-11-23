@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:talendfile="platform:/resource/org.talend.model/model/TalendFile.xsd">
+  <talendfile:ContextType xmi:id="_qS8m0KIoEeaE1Ir5tjYmaw" confirmationNeeded="false" name="Default">
+    <contextParameter xmi:id="_qS8m0aIoEeaE1Ir5tjYmaw" comment="" name="DataFolder" prompt="DataFolder?" promptNeeded="false" type="id_String" value=""/>
+  </talendfile:ContextType>
+  <talendfile:ContextType xmi:id="_qS8m0qIoEeaE1Ir5tjYmaw" confirmationNeeded="false" name="Linux">
+    <contextParameter xmi:id="_qS8m06IoEeaE1Ir5tjYmaw" comment="" name="DataFolder" prompt="DataFolder?" promptNeeded="false" type="id_String" value="/home/dario/Talend/EKOS_WS/EKOS_PUBMED/data/RQRD/"/>
+  </talendfile:ContextType>
+</xmi:XMI>

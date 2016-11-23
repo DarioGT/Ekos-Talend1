@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:TalendMetadata="http://www.talend.org/metadata/connection/2010" xmlns:orgomg.cwm.resource.relational="http:///orgomg/cwm/resource/relational.ecore">
+  <TalendMetadata:DatabaseConnection xmi:id="_4Kb1sKIVEeaE1Ir5tjYmaw" name="dbdg" id="_hXKSMKIVEeaE1Ir5tjYmaw" label="dbdg" dataPackage="_L3duQKJIEeaRXM74-qnUcw" contextName="Linux" DatabaseType="SQLite" DriverJarPath="" DriverClass="org.sqlite.JDBC" URL="jdbc:sqlite://home/dario/Talend/EKOS_WS/EKOS_PUBMED/data/RQRD/dgdb.sqlite" Port="" Username="" Password="" ServerName="" DatasourceName="" FileFieldName="/home/dario/Talend/EKOS_WS/EKOS_PUBMED/data/RQRD/dgdb.sqlite" SID="" SqlSynthax="SQL Syntax" DbmsId="sqlite_id" ProductId="SQLITE" DBRootPath="" AdditionalParams="" StandardSQL="true" SQLMode="false" UiSchema="">
+    <taggedValue xmi:id="_4KfgEKIVEeaE1Ir5tjYmaw" tag="Is Conn Need Reload" value="true"/>
+    <taggedValue xmi:id="_9YG0cKIVEeaE1Ir5tjYmaw" tag="Status" value=""/>
+    <taggedValue xmi:id="_9YG0caIVEeaE1Ir5tjYmaw" tag="Version" value="0.1"/>
+    <taggedValue xmi:id="_9YG0cqIVEeaE1Ir5tjYmaw" tag="Purpose" value=""/>
+    <taggedValue xmi:id="_9YG0c6IVEeaE1Ir5tjYmaw" tag="Description" value=""/>
+    <taggedValue xmi:id="_9YG0dKIVEeaE1Ir5tjYmaw" tag="Author" value=""/>
+    <taggedValue xmi:id="_9YG0daIVEeaE1Ir5tjYmaw" tag="otherParameter"/>
+    <taggedValue xmi:id="_9YeA0KIVEeaE1Ir5tjYmaw" tag="DB ProductName" value="SQLite"/>
+    <taggedValue xmi:id="_9YeA0aIVEeaE1Ir5tjYmaw" tag="DB ProductVersion" value="3.6.3"/>
+    <taggedValue xmi:id="_9YeA0qIVEeaE1Ir5tjYmaw" tag="DB IdentifierQuoteString" value=" "/>
+    <parameters xmi:id="_4KfgEaIVEeaE1Ir5tjYmaw" key="CONN_PARA_KEY_USERNAME" value=""/>
+  </TalendMetadata:DatabaseConnection>
+  <orgomg.cwm.resource.relational:Schema xmi:id="_L3duQKJIEeaRXM74-qnUcw" name=" " dataManager="_4Kb1sKIVEeaE1Ir5tjYmaw"/>
+</xmi:XMI>

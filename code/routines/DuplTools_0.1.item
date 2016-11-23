@@ -1,0 +1,170 @@
+package routines;
+
+/*
+ * user specification: the function's comment should contain keys as follows: 1. write about the function's comment.but
+ * it must be before the "{talendTypes}" key.
+ * 
+ * 2. {talendTypes} 's value must be talend Type, it is required . its value should be one of: String, char | Character,
+ * long | Long, int | Integer, boolean | Boolean, byte | Byte, Date, double | Double, float | Float, Object, short |
+ * Short
+ * 
+ * 3. {Category} define a category for the Function. it is required. its value is user-defined .
+ * 
+ * 4. {param} 's format is: {param} <type>[(<default value or closed list values>)] <name>[ : <comment>]
+ * 
+ * <type> 's value should be one of: string, int, list, double, object, boolean, long, char, date. <name>'s value is the
+ * Function's parameter name. the {param} is optional. so if you the Function without the parameters. the {param} don't
+ * added. you can have many parameters for the Function.
+ * 
+ * 5. {example} gives a example for the Function. it is optional.
+ */
+public class DuplTools {
+
+    /**
+     * 
+     * dMetaphone: Double methaphone ( soundex based )   
+     * 
+     * {talendTypes} String
+     * 
+     * {Category} User Defined
+     * 
+     * {sText} string  input: codes for evaluating
+     * 
+     * {example} DupTools.dMetaphone( 'Goméz-T' )  # gomeztdario
+     */
+
+    public static String dMetaphone(String sText) {
+
+		org.apache.commons.codec.language.DoubleMetaphone dMetaphone = new org.apache.commons.codec.language.DoubleMetaphone();
+
+		return dMetaphone.doubleMetaphone("" + sText);
+    }
+    
+
+    /**
+     * 
+     * cleanAff2 	: Clean Affiliation    
+     * 
+     * {talendTypes} String
+     * 
+     * {Category} User Defined
+     * 
+     * {code1} string  input: codes for evaluating
+     * 
+     * {example} DupTools.cleanAff2( 'Goméz-T, !@2' )  # gomezt
+     */
+
+    public static String cleanAff2( String code1) {
+
+        if ( code1 == null ) { code1 = ""; }
+        
+        // keep only first affiliation, usually separated by a semicolon ";"
+        if (code1.indexOf(";") > 0) {
+        	code1 = code1.substring(0, code1.indexOf(";"));
+        }
+
+        code1 = TalendString.removeAccents( code1.toLowerCase()); 
+
+        // email 
+        code1 = code1.replaceAll("[-a-z0-9._]+@[-a-z0-9._]+", "");
+
+    	// non significative chrs 
+        code1 = code1.replaceAll("[^a-z0-9]", " ");
+        
+        // postal code 
+        code1 = code1.replaceAll("[a-z][0-9][a-z] [0-9][a-z][0-9]", "");
+        code1 = code1.replaceAll("([a-z]{2}) [0-9]{5}","$1");
+
+        // Varias  
+        code1 = code1.replaceAll("research assistant","");
+        code1 = code1.replaceAll("research consultant","");
+        code1 = code1.replaceAll("electronic address","");
+        code1 = code1.replaceAll(" de la "," ");
+        
+        code1 = code1.replaceAll("\\bassistant\\b","");
+        code1 = code1.replaceAll("\\bconsultant\\b","");
+        code1 = code1.replaceAll("\\bphd\\b","");
+        code1 = code1.replaceAll("\\bcandidate\\b","");
+
+        code1 = code1.replaceAll("\\bprofessor\\b","");
+        code1 = code1.replaceAll("\\bassociate\\b","");
+        code1 = code1.replaceAll("\\bprincipal\\b","");
+        code1 = code1.replaceAll("\\bassistant\\b","");
+        code1 = code1.replaceAll("\\bpresident\\b","");
+        code1 = code1.replaceAll("\\bvice\\b","");
+        code1 = code1.replaceAll("\\bsenior\\b","");
+        code1 = code1.replaceAll("\\band\\b","");
+        code1 = code1.replaceAll("\\bat\\b","");
+        code1 = code1.replaceAll("\\bthe\\b","");
+        code1 = code1.replaceAll("\\bcity\\b","");
+        code1 = code1.replaceAll("\\bcanardiere\\b","");
+
+        code1 = code1.replaceAll("\\bchemin\\b","");
+        code1 = code1.replaceAll("\\bavenue\\b","");
+        code1 = code1.replaceAll("\\brue\\b","");
+        code1 = code1.replaceAll("\\bsicotte\\b","");
+
+        
+        code1 = code1.replaceAll("acenter","center");
+        code1 = code1.replaceAll("adepar","dept");
+        code1 = code1.replaceAll("adivis","dept");
+        code1 = code1.replaceAll("adept","dept");
+        code1 = code1.replaceAll("afacu","facu");
+
+        code1 = code1.replaceAll("departaments","dept");
+        code1 = code1.replaceAll("departament","dept");
+        
+        // Spaces 
+        code1 = code1.replaceAll("\\s+"," ");
+        
+        // Tokens 
+        code1 = code1.replaceAll("montreal q.*","montreal qc");
+        code1 = code1.replaceAll("montreal c.*","montreal qc");
+        code1 = code1.replaceAll("montreal montreal","montreal");
+
+        code1 = code1.replaceAll("quebec q.*","quebec qc");
+        code1 = code1.replaceAll("quebec c.*","quebec qc");
+        code1 = code1.replaceAll("quebec q.*","quebec qc");
+        code1 = code1.replaceAll("quebecq.*","quebec qc");
+        
+        code1 = code1.replaceAll("united states","usa");
+        code1 = code1.replaceAll("of america","");
+
+        code1 = code1.replaceAll("sherbrooke q.*","sherbrooke qc");
+        code1 = code1.replaceAll("quebec trois rivieres.*","quebec trois rivieres qc");
+        code1 = code1.replaceAll("saint hyacinthe.*","saint hyacinthe qc");
+        
+        
+        code1 = code1.replaceAll("qc qc","qc");
+
+        code1 = code1.replaceAll("boston ma.*","boston ma usa");
+        code1 = code1.replaceAll("of north carolina.*","of north carolina nc usa");
+
+        code1 = code1.replaceAll("porto po.*","porto portugal");
+
+       
+        // First 
+//        code1 = code1.replaceAll("^[0-9]+","");
+//        code1 = code1.replaceAll("^[a-z] ","");
+
+        // Numbers and only one alpha      
+        code1 = code1.replaceAll("[0-9]+","");
+        code1 = code1.replaceAll("\\b[a-z]\\b","");
+
+        
+        // Spaces 
+        code1 = code1.replaceAll("\\s+"," ");
+        code1 = code1.trim();
+
+
+        // remove ending point from affiliation
+        if (code1.lastIndexOf(".") == code1.length()-1) {
+        	code1 = code1.substring(0, code1.length()-1);
+        }
+
+		return code1;
+    }
+    
+    
+
+}

@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<eSearchResult>
+	<Count>2</Count>
+	<RetMax>2</RetMax>
+	<RetStart>0</RetStart>
+	<IdList>
+		<Id>21481530</Id>
+		<Id>21334495</Id>
+	</IdList>
+	<TranslationSet>
+		<Translation>
+			<From>Abbott Frances[Author]</From>
+			<To>Abbott, Frances[Full Author Name]</To>
+		</Translation>
+	</TranslationSet>
+	<TranslationStack>
+		<TermSet>
+			<Term>Abbott, Frances[Full Author Name]</Term>
+			<Field>Full Author Name</Field>
+			<Count>4</Count>
+			<Explode>N</Explode>
+		</TermSet>
+		<TermSet>
+			<Term>2011[PDAT]</Term>
+			<Field>PDAT</Field>
+			<Count>0</Count>
+			<Explode>N</Explode>
+		</TermSet>
+		<TermSet>
+			<Term>2020[PDAT]</Term>
+			<Field>PDAT</Field>
+			<Count>0</Count>
+			<Explode>N</Explode>
+		</TermSet>
+		<OP>RANGE</OP>
+		<OP>AND</OP>
+	</TranslationStack>
+	<QueryTranslation>Abbott, Frances[Full Author Name] AND 2011[PDAT] : 2020[PDAT]</QueryTranslation>
+</eSearchResult>
+
+<?xml version="1.0" encoding="UTF-8"?>
+<eSearchResult>
+	<Count>44</Count>
+	<RetMax>44</RetMax>
+	<RetStart>0</RetStart>
+	<IdList>
+		<Id>27001705</Id>
+		<Id>26953353</Id>
+		<Id>26895987</Id>
+		<Id>26718249</Id>
+		<Id>26522190</Id>
+		<Id>26471509</Id>
+		<Id>26254802</Id>
+		<Id>26248483</Id>
+		<Id>26228907</Id>
+		<Id>26119793</Id>
+		<Id>26058676</Id>
+		<Id>26021893</Id>
+		<Id>26012563</Id>
+		<Id>25911480</Id>
+		<Id>25880218</Id>
+		<Id>25813180</Id>
+		<Id>25670755</Id>
+		<Id>25391490</Id>
+		<Id>25129624</Id>
+		<Id>25005552</Id>
+		<Id>24985390</Id>
+		<Id>24899546</Id>
+		<Id>24885925</Id>
+		<Id>24806353</Id>
+		<Id>24733354</Id>
+		<Id>24595132</Id>
+		<Id>24381383</Id>
+		<Id>25906461</Id>
+		<Id>23929922</Id>
+		<Id>23852096</Id>
+		<Id>23572398</Id>
+		<Id>23541509</Id>
+		<Id>23514019</Id>
+		<Id>23288613</Id>
+		<Id>23066879</Id>
+		<Id>22922434</Id>
+		<Id>22579222</Id>
+		<Id>22425258</Id>
+		<Id>22234542</Id>
+		<Id>22168530</Id>
+		<Id>22081216</Id>
+		<Id>22016049</Id>
+		<Id>21920806</Id>
+		<Id>20722691</Id>
+	</IdList>
+	<TranslationSet>
+		<Translation>
+			<From>Ahmed Sara[Author]</From>
+			<To>Ahmed, Sara[Full Author Name]</To>
+		</Translation>
+	</TranslationSet>
+	<TranslationStack>
+		<TermSet>
+			<Term>Ahmed, Sara[Full Author Name]</Term>
+			<Field>Full Author Name</Field>
+			<Count>69</Count>
+			<Explode>N</Explode>
+		</TermSet>
+		<TermSet>
+			<Term>2011[PDAT]</Term>
+			<Field>PDAT</Field>
+			<Count>0</Count>
+			<Explode>N</Explode>
+		</TermSet>
+		<TermSet>
+			<Term>2020[PDAT]</Term>
+			<Field>PDAT</Field>
+			<Count>0</Count>
+			<Explode>N</Explode>
+		</TermSet>
+		<OP>RANGE</OP>
+		<OP>AND</OP>
+	</TranslationStack>
+	<QueryTranslation>Ahmed, Sara[Full Author Name] AND 2011[PDAT] : 2020[PDAT]</QueryTranslation>
+</eSearchResult>
+<?xml version="1.0" encoding="UTF-8"?>
+<eSearchResult>
+	<Count>13</Count>
+	<RetMax>13</RetMax>
+	<RetStart>0</RetStart>
+	<IdList>
+		<Id>27495819</Id>
+		<Id>26025795</Id>
+		<Id>25943998</Id>
+		<Id>25761981</Id>
+		<Id>25747335</Id>
+		<Id>24882028</Id>
+		<Id>24639895</Id>
+		<Id>24480910</Id>
+		<Id>24315278</Id>
+		<Id>24165072</Id>
+		<Id>23671986</Id>
+		<Id>22135334</Id>
+		<Id>21550048</Id>
+	</IdList>
+	<TranslationSet>
+		<Translation>
+			<From>Arbour Caroline[Author]</From>
+			<To>Arbour, Caroline[Full Author Name]</To>
+		</Translation>
+	</TranslationSet>
+	<TranslationStack>
+		<TermSet>
+			<Term>Arbour, Caroline[Full Author Name]</Term>
+			<Field>Full Author Name</Field>
+			<Count>15</Count>
+			<Explode>N</Explode>
+		</TermSet>
+		<TermSet>
+			<Term>2011[PDAT]</Term>
+			<Field>PDAT</Field>
+			<Count>0</Count>
+			<Explode>N</Explode>
+		</TermSet>
+		<TermSet>
+			<Term>2020[PDAT]</Term>
+			<Field>PDAT</Field>
+			<Count>0</Count>
+			<Explode>N</Explode>
+		</TermSet>
+		<OP>RANGE</OP>
+		<OP>AND</OP>
+	</TranslationStack>
+	<QueryTranslation>Arbour, Caroline[Full Author Name] AND 2011[PDAT] : 2020[PDAT]</QueryTranslation>
+</eSearchResult>
+<?xml version="1.0" encoding="UTF-8"?>
+<eSearchResult>
+	<Count>29</Count>
+	<RetMax>29</RetMax>
+	<RetStart>0</RetStart>
+	<IdList>
+		<Id>27399932</Id>
+		<Id>27121911</Id>
+		<Id>26487808</Id>
+		<Id>25954170</Id>
+		<Id>25912177</Id>
+		<Id>25316095</Id>
+		<Id>25179537</Id>
+		<Id>24793177</Id>
+		<Id>24337737</Id>
+		<Id>24239443</Id>
+		<Id>23757350</Id>
+		<Id>23442892</Id>
+		<Id>23435481</Id>
+		<Id>23349098</Id>
+		<Id>23095380</Id>
+		<Id>22682732</Id>
+		<Id>22669969</Id>
+		<Id>22496044</Id>
+		<Id>22484203</Id>
+		<Id>22301725</Id>
+		<Id>22154123</Id>
+		<Id>21898716</Id>
+		<Id>21559460</Id>
+		<Id>21494633</Id>
+		<Id>21347613</Id>
+		<Id>21289543</Id>
+		<Id>21184587</Id>
+		<Id>21152964</Id>
+		<Id>20410238</Id>
+	</IdList>
+	<TranslationSet>
+		<Translation>
+			<From>Battaglia Marco[Author]</From>
+			<To>Battaglia, Marco[Full Author Name]</To>
+		</Translation>
+	</TranslationSet>
+	<TranslationStack>
+		<TermSet>
+			<Term>Battaglia, Marco[Full Author Name]</Term>
+			<Field>Full Author Name</Field>
+			<Count>54</Count>
+			<Explode>N</Explode>
+		</TermSet>
+		<TermSet>
+			<Term>2011[PDAT]</Term>
+			<Field>PDAT</Field>
+			<Count>0</Count>
+			<Explode>N</Explode>
+		</TermSet>
+		<TermSet>
+			<Term>2020[PDAT]</Term>
+			<Field>PDAT</Field>
+			<Count>0</Count>
+			<Explode>N</Explode>
+		</TermSet>
+		<OP>RANGE</OP>
+		<OP>AND</OP>
+	</TranslationStack>
+	<QueryTranslation>Battaglia, Marco[Full Author Name] AND 2011[PDAT] : 2020[PDAT]</QueryTranslation>
+</eSearchResult>

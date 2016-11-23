@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:TalendMetadata="http://www.talend.org/metadata/connection/2010" xmlns:orgomg.cwm.resource.record="http:///orgomg/cwm/resource/record.ecore">
+  <TalendMetadata:FileExcelConnection xmi:id="_p_wSoFLXEea5s9uNz8ha8Q" name="CountAuthors" label="CountAuthors" dataPackage="_WwjbsRvVEeatse1YQ3haIA" Server="Localhost 127.0.0.1" FilePath="C:/Users/Pierre-Emmanuel/Desktop/Talend_Sources/KPI_Authors.xlsx" Encoding="UTF-8" UseHeader="true" HeaderValue="1" FirstLineCaption="true" SheetName="CountAuthors" firstColumn="1" thousandSeparator="','" decimalSeparator="'.'" sheetList="CountAuthors:w&#xA;" generationMode="USER_MODE">
+    <sheetColumns>A</sheetColumns>
+    <sheetColumns>B</sheetColumns>
+  </TalendMetadata:FileExcelConnection>
+  <orgomg.cwm.resource.record:RecordFile xmi:id="_WwjbsRvVEeatse1YQ3haIA" name="default" dataManager="_p_wSoFLXEea5s9uNz8ha8Q">
+    <ownedElement xsi:type="TalendMetadata:MetadataTable" xmi:id="_WwjbshvVEeatse1YQ3haIA" id="_Kx21EBvVEeatse1YQ3haIA" label="metadata">
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_sXVYkFLYEea5s9uNz8ha8Q" label="PMID" length="8" talendType="id_Integer" pattern="&quot;dd-MM-yyyy&quot;"/>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_sXVYkVLYEea5s9uNz8ha8Q" label="AuthorsCount" length="2" talendType="id_Integer" pattern="&quot;dd-MM-yyyy&quot;"/>
+    </ownedElement>
+  </orgomg.cwm.resource.record:RecordFile>
+</xmi:XMI>

@@ -1,0 +1,4 @@
+<?xml version="1.1" encoding="UTF-8"?>
+<expression:EMFExpression xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:expression="http:///expression.ecore" id="tMap_1=>" expression="DuplTools.cleanAff2(row1.Affiliation)">
+  <variables name="row1.Affiliation" value="null" talendType="id_String" nullable="true"/>
+</expression:EMFExpression>

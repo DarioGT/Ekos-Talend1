@@ -1,0 +1,237 @@
+package routines;
+
+
+
+/*
+ * user specification: the function's comment should contain keys as follows: 1. write about the function's comment.but
+ * it must be before the "{talendTypes}" key.
+ * 
+ * 2. {talendTypes} 's value must be talend Type, it is required . its value should be one of: String, char | Character,
+ * long | Long, int | Integer, boolean | Boolean, byte | Byte, Date, double | Double, float | Float, Object, short |
+ * Short
+ * 
+ * 3. {Category} define a category for the Function. it is required. its value is user-defined .
+ * 
+ * 4. {param} 's format is: {param} <type>[(<default value or closed list values>)] <name>[ : <comment>]
+ * 
+ * <type> 's value should be one of: string, int, list, double, object, boolean, long, char, date. <name>'s value is the
+ * Function's parameter name. the {param} is optional. so if you the Function without the parameters. the {param} don't
+ * added. you can have many parameters for the Function.
+ * 
+ * 5. {example} gives a example for the Function. it is optional.
+ */
+public class PubMedNormal {
+
+    /**
+     * 
+     * normYear: return normal (first)  year ( year, year_ecoll ) 
+     * 
+     * {talendTypes} Integer
+     * 
+     * {Category} User Defined
+     * 
+     * {Year} 		 Integer  input: Year
+     * 
+     * {Year_EColl_} Integer input: Year_EColl_
+     * 
+     * {example} nomalYear( 2010, 2015 ) # 2010
+     */
+    public static Integer normYear(Integer year, Integer year_ecoll) {
+
+		Integer tmpYear = 2200;
+		if ( year != null && year < tmpYear ) {
+			tmpYear = year;
+		}
+		if( year_ecoll  != null && year_ecoll < tmpYear) {
+			tmpYear = year_ecoll ;
+		}
+		return tmpYear;
+
+    }
+
+    /**
+     * 
+     * normCode: return normal code ( lcase without accents and spaces)   
+     * 
+     * {talendTypes} String
+     * 
+     * {Category} User Defined
+     * 
+     * {[CodePart](3)} string  input: codes for hashing  
+     * 
+     * {example} nomalCode( 'Goméz-T','Dario', '')  # gomeztdario
+     */
+    public static String normCode(String code1, String code2,String code3 ) {
+
+    	if ( code1 == null ) { code1 = ""; }
+    	if ( code2 == null ) { code2 = ""; }
+    	if ( code3 == null ) { code3 = ""; }
+
+    	String longCode = code1 + code2 + code3; 
+
+    	longCode = TalendString.removeAccents( longCode.toLowerCase().replaceAll("[^a-z0-9]", "")); 
+
+    	return longCode; 
+
+    }
+
+
+    /**
+     * 
+     * fullAff: return normal code ( lcase without accents and spaces)   
+     * 
+     * {talendTypes} String
+     * 
+     * {Category} User Defined
+     * 
+     * {[CodePart](3)} string  input: codes for hashing  
+     * 
+     * {example} nomalCode( 'Goméz-T','Dario', '')  # gomeztdario
+     */
+    public static String fullAff(String code1 ) {
+
+        if ( code1 == null ) { code1 = ""; }
+
+        code1 = TalendString.removeAccents( code1 ); 
+
+        return code1; 
+
+    }
+
+    /**
+     * 
+     * normAff: return normal code ( lcase without accents and spaces)   
+     * 
+     * {talendTypes} String
+     * 
+     * {Category} User Defined
+     * 
+     * {[CodePart](3)} string  input: codes for hashing  
+     * 
+     * {example} nomalCode( 'Goméz-T','Dario', '')  # gomeztdario
+     */
+    public static String normAff(String code1 ) {
+
+        if ( code1 == null ) { code1 = ""; }
+
+        code1 = PubMedNormal.cleanAff(code1);
+        
+        if ( code1.length() > 15) {
+        	Integer hash1 = code1.hashCode();
+        	code1 = code1.substring(0, 15) + hash1.toString();
+        }
+
+        return code1; 
+
+    }
+
+    /**
+     * 
+     * normAff: return cleaned up affiliation  
+     * 
+     * {talendTypes} String
+     * 
+     * {Category} User Defined
+     * 
+     * {[CodePart](3)} string  input: codes for hashing  
+     * 
+     * {example} 
+     */
+    public static String cleanAff(String code1 ) {
+
+        if ( code1 == null ) { code1 = ""; }
+        
+        // keep only first affiliation, usually separated by a semicolon ";"
+        if (code1.indexOf(";") > 0) {
+        	code1 = code1.substring(0, code1.indexOf(";"));
+        }
+        
+        // remove accents
+        code1 = TalendString.removeAccents(code1);
+
+        // put into lower case
+        code1 = code1.toLowerCase();
+        
+        // remove email addresses from affiliation
+        code1 = PubMedNormal.removeWord(code1, "electronic address");
+        code1 = PubMedNormal.removeWord(code1, "@");        
+        code1 = code1.trim();
+        
+        // remove ending point from affiliation
+        if (code1.lastIndexOf(".") == code1.length()-1) {
+        	code1 = code1.substring(0, code1.length()-1);
+        }
+        
+        return code1; 
+
+    }
+    
+    
+    /**
+     * 
+     * fullName: remove word from string  
+     * 
+     * {talendTypes} String
+     * 
+     * {Category} User Defined
+     * 
+     * {[CodePart](3)} string  input: codes for hashing  
+     * 
+     * {example} nomalCode( 'Goméz-T','Dario', '')  # gomeztdario
+     */
+    public static String removeWord(String longString, String word) {
+    	
+    	if ( longString == null ) { longString = ""; }
+    	if ( word == null ) { word = ""; };
+    	
+    	if (longString.indexOf(word) != -1) {
+    		 
+    		String subString1 = longString.substring(0, longString.indexOf(word));
+    		Integer indWordStart = subString1.lastIndexOf(" ");
+    		if (indWordStart > 0) {
+    			subString1 = subString1.substring(0, indWordStart);
+    		}
+    		
+    		String subString2 = longString.substring(longString.indexOf(word) + word.length(), longString.length());
+    		Integer indWordEnd = subString2.lastIndexOf(" ", subString2.indexOf(word));
+    		if ( indWordEnd > 0 ) {
+    			if (indWordEnd < subString2.length()) {
+    				subString2 = subString2.substring(indWordEnd, subString2.length());
+    			}	
+    		} else {
+    			subString2 = "";		
+    		}
+    		longString = subString1 + subString2;
+		  }
+    	return longString;
+    }
+    
+    
+    
+    /**
+     * 
+     * fullName: return full name ( LastName, FirstName, Initials ) 
+     * 
+     * {talendTypes} String
+     * 
+     * {Category} User Defined
+     * 
+     * {[CodePart](3)} string  input: codes for hashing  
+     * 
+     * {example} nomalCode( 'Goméz-T','Dario', '')  # gomeztdario
+     */
+    public static String fullName(String code1, String code2,String code3  ) {
+
+        if ( code1 == null ) { code1 = ""; }
+        if ( code2 == null ) { code2 = ""; }
+        if ( code3 == null ) { code3 = ""; } else { code3 = code3 + '.'; }
+
+        String longCode = code1 + ", " + code2 + code3; 
+
+        longCode = TalendString.removeAccents( longCode ); 
+
+        return longCode; 
+
+    }
+
+}

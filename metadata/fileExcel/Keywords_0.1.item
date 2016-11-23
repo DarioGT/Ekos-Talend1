@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:TalendMetadata="http://www.talend.org/metadata/connection/2010" xmlns:orgomg.cwm.resource.record="http:///orgomg/cwm/resource/record.ecore">
+  <TalendMetadata:FileExcelConnection xmi:id="_gr9agR26EeasBsBuIyXjOQ" name="Keywords" dataPackage="_gr9agh26EeasBsBuIyXjOQ" Server="Localhost 127.0.0.1" FilePath="C:/Users/Pierre-Emmanuel/Desktop/Talend_Sources/testKPIoutKeywords.xlsx" Encoding="UTF-8" UseHeader="true" HeaderValue="1" FirstLineCaption="true" SheetName="Keywords" firstColumn="1" thousandSeparator="','" decimalSeparator="'.'" selectAllSheets="true" sheetList="Keywords:w&#xA;">
+    <sheetColumns>A</sheetColumns>
+    <sheetColumns>B</sheetColumns>
+    <sheetColumns>C</sheetColumns>
+    <sheetColumns>D</sheetColumns>
+    <sheetColumns>E</sheetColumns>
+    <sheetColumns>F</sheetColumns>
+  </TalendMetadata:FileExcelConnection>
+  <orgomg.cwm.resource.record:RecordFile xmi:id="_gr9agh26EeasBsBuIyXjOQ" name="default" dataManager="_gr9agR26EeasBsBuIyXjOQ">
+    <ownedElement xsi:type="TalendMetadata:MetadataTable" xmi:id="_gr9agx26EeasBsBuIyXjOQ" id="_Yb3MkB26EeasBsBuIyXjOQ" label="metadata">
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_Lnz8cCIGEeaaYe8fTTJ-zw" label="PMID" length="8" talendType="id_Integer" pattern="&quot;dd-MM-yyyy&quot;"/>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_Lnz8cSIGEeaaYe8fTTJ-zw" label="DOI" length="30" talendType="id_String" pattern="&quot;dd-MM-yyyy&quot;"/>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_Lnz8ciIGEeaaYe8fTTJ-zw" label="Journal" length="38" talendType="id_String" pattern="&quot;dd-MM-yyyy&quot;"/>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_Lnz8cyIGEeaaYe8fTTJ-zw" label="Year" length="4" talendType="id_Integer" pattern="&quot;dd-MM-yyyy&quot;"/>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_Lnz8dCIGEeaaYe8fTTJ-zw" label="Year_EColl_" talendType="id_String" pattern="&quot;dd-MM-yyyy&quot;"/>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_Lnz8dSIGEeaaYe8fTTJ-zw" label="Keywords" length="33" talendType="id_String" pattern="&quot;dd-MM-yyyy&quot;"/>
+    </ownedElement>
+  </orgomg.cwm.resource.record:RecordFile>
+</xmi:XMI>
