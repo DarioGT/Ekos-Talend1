@@ -13,8 +13,8 @@
     <contextParameter comment="" name="DBpath" prompt="DBpath?" promptNeeded="false" type="id_String" value="&quot;/home/dario/Talend/EKOS_WS/EKOS_PUBMED/data/RQRD/dgdb.sqlite&quot;"/>
   </context>
   <parameters>
-    <elementParameter field="TEXT" name="SCREEN_OFFSET_X" value="896" show="false"/>
-    <elementParameter field="TEXT" name="SCREEN_OFFSET_Y" value="86" show="false"/>
+    <elementParameter field="TEXT" name="SCREEN_OFFSET_X" value="672" show="false"/>
+    <elementParameter field="TEXT" name="SCREEN_OFFSET_Y" value="0" show="false"/>
     <elementParameter field="TEXT" name="REPOSITORY_CONNECTION_ID" value="" show="false"/>
     <elementParameter field="TEXT" name="OOZIE_PROPERTY_TYPENAME" value="" show="false"/>
     <elementParameter field="TEXT" name="OOZIE_HADOOP_DISTRIBUTION" value="" show="false"/>
@@ -116,8 +116,9 @@
     <routinesParameter id="_1DjPkOZgEeWbzdHwicFicw" name="TalendString"/>
     <routinesParameter id="_eSPA0KKSEeaxmpJve2PIXA" name="PubMedNormal"/>
   </parameters>
-  <node componentName="tFileInputExcel" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="-512" posY="1120">
+  <node componentName="tFileInputExcel" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="-448" posY="1056">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tFileInputExcel_2" show="false"/>
+    <elementParameter field="CHECK" name="ACTIVATE" value="false"/>
     <elementParameter field="CHECK" name="VERSION_2007" value="true"/>
     <elementParameter field="FILE" name="FILENAME" value="context.DataFolder + &quot;output/KPI_Authors.xlsx&quot;"/>
     <elementParameter field="CHECK" name="ALL_SHEETS" value="false"/>
@@ -285,8 +286,9 @@
       <column key="false" length="255" name="errorMessage" nullable="true" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
     </metadata>
   </node>
-  <node componentName="tJoin" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="-384" posY="1120">
+  <node componentName="tJoin" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="-320" posY="1056">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tJoin_5" show="false"/>
+    <elementParameter field="CHECK" name="ACTIVATE" value="false"/>
     <elementParameter field="CHECK" name="USE_LOOKUP_COLS" value="true"/>
     <elementParameter field="TABLE" name="LOOKUP_COLS">
       <elementValue elementRef="OUTPUT_COLUMN" value="AuthorsCount"/>
@@ -339,8 +341,9 @@
       <column comment="" key="false" length="-1" name="RawAffiliation" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
     </metadata>
   </node>
-  <node componentName="tFileInputExcel" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="-384" posY="1216">
+  <node componentName="tFileInputExcel" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="-320" posY="1152">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tFileInputExcel_10" show="false"/>
+    <elementParameter field="CHECK" name="ACTIVATE" value="false"/>
     <elementParameter field="CHECK" name="VERSION_2007" value="true"/>
     <elementParameter field="FILE" name="FILENAME" value="context.DataFolder + &quot;output/KPI_AuthorsCount.xlsx&quot;"/>
     <elementParameter field="CHECK" name="ALL_SHEETS" value="false"/>
@@ -398,8 +401,9 @@
       <column defaultValue="" key="false" length="255" name="errorMessage" nullable="true" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
     </metadata>
   </node>
-  <node componentName="tJoin" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="-256" posY="1120">
+  <node componentName="tJoin" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="-192" posY="1056">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tJoin_1" show="false"/>
+    <elementParameter field="CHECK" name="ACTIVATE" value="false"/>
     <elementParameter field="CHECK" name="USE_LOOKUP_COLS" value="true"/>
     <elementParameter field="TABLE" name="LOOKUP_COLS">
       <elementValue elementRef="OUTPUT_COLUMN" value="Query"/>
@@ -454,8 +458,9 @@
       <column comment="" key="false" length="-1" name="Query" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
     </metadata>
   </node>
-  <node componentName="tFileInputExcel" componentVersion="0.102" offsetLabelX="-5" offsetLabelY="0" posX="-256" posY="1216">
+  <node componentName="tFileInputExcel" componentVersion="0.102" offsetLabelX="-5" offsetLabelY="0" posX="-192" posY="1152">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tFileInputExcel_3" show="false"/>
+    <elementParameter field="CHECK" name="ACTIVATE" value="false"/>
     <elementParameter field="CHECK" name="VERSION_2007" value="true"/>
     <elementParameter field="FILE" name="FILENAME" value="context.DataFolder + &quot;output/KPI_Queries.xlsx&quot;"/>
     <elementParameter field="CHECK" name="ALL_SHEETS" value="false"/>
@@ -520,8 +525,9 @@
       <column key="false" length="255" name="errorMessage" nullable="true" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
     </metadata>
   </node>
-  <node componentName="tMap" componentVersion="2.1" offsetLabelX="0" offsetLabelY="0" posX="-128" posY="1120">
+  <node componentName="tMap" componentVersion="2.1" offsetLabelX="0" offsetLabelY="0" posX="-64" posY="1056">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tMap_7" show="false"/>
+    <elementParameter field="CHECK" name="ACTIVATE" value="false"/>
     <elementParameter field="EXTERNAL" name="MAP" value=""/>
     <elementParameter field="CLOSED_LIST" name="LINK_STYLE" value="AUTO"/>
     <elementParameter field="DIRECTORY" name="TEMPORARY_DATA_DIRECTORY" value=""/>
@@ -608,8 +614,9 @@
       </inputTables>
     </nodeData>
   </node>
-  <node componentName="tJoin" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="0" posY="1120">
+  <node componentName="tJoin" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="64" posY="1056">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tJoin_6" show="false"/>
+    <elementParameter field="CHECK" name="ACTIVATE" value="false"/>
     <elementParameter field="CHECK" name="USE_LOOKUP_COLS" value="true"/>
     <elementParameter field="TABLE" name="LOOKUP_COLS">
       <elementValue elementRef="OUTPUT_COLUMN" value="AuthorForcedAffiliation"/>
@@ -670,8 +677,9 @@
       <column comment="" key="false" length="-1" name="AuthorForcedAffiliation" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
     </metadata>
   </node>
-  <node componentName="tJavaRow" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="128" posY="1120">
+  <node componentName="tJavaRow" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="192" posY="1056">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tJavaRow_5" show="false"/>
+    <elementParameter field="CHECK" name="ACTIVATE" value="false"/>
     <elementParameter field="MEMO_JAVA" name="CODE" value="// no modifications&#xA;output_row.PMID = input_row.PMID;&#xA;output_row.DOI = input_row.DOI;&#xA;output_row.Journal = input_row.Journal;&#xA;output_row.Year = input_row.Year;&#xA;output_row.AuthorsCount = input_row.AuthorsCount;&#xA;output_row.LastName = input_row.LastName;&#xA;output_row.ForeName = input_row.ForeName;&#xA;output_row.Initials = input_row.Initials;&#xA;output_row.AuthorFullName = input_row.AuthorFullName;&#xA;&#xA;output_row.University = input_row.University;&#xA;output_row.Department = input_row.Department;&#xA;output_row.ResearchCenter = input_row.ResearchCenter;&#x9;&#xA;output_row.Hospital&#x9; = input_row.Hospital;&#xA;//output_row.Organization = input_row.Organization;&#x9;&#xA;output_row.Address&#x9; = input_row.Address;&#xA;output_row.Province&#x9; = input_row.Province;&#xA;output_row.Country = input_row.Country;&#xA;output_row.RawAffiliation = input_row.RawAffiliation;&#xA;&#xA;output_row.Query&#x9; = input_row.Query;&#xA;output_row.KeyPI = input_row.KeyPI;&#xA;output_row.KeyPI_affiliation = input_row.KeyPI_affiliation;&#xA;output_row.AuthorForcedAffiliation = input_row.AuthorForcedAffiliation;&#xA;&#xA;if ( StringHandling.LEN(input_row.AuthorForcedAffiliation) > 1 )  {&#xA;&#x9;output_row.Organization = input_row.AuthorForcedAffiliation;&#xA;} else {&#xA;&#x9;output_row.Organization = input_row.Organization;&#xA;}&#xA;&#xA;&#xA;&#x9;&#xA;"/>
     <elementParameter field="MEMO_IMPORT" name="IMPORT" value="//import java.util.List;"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
@@ -700,8 +708,9 @@
       <column comment="" key="false" length="-1" name="AuthorForcedAffiliation" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
     </metadata>
   </node>
-  <node componentName="tFileOutputExcel" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="256" posY="1120">
+  <node componentName="tFileOutputExcel" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="320" posY="1056">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tFileOutputExcel_5" show="false"/>
+    <elementParameter field="CHECK" name="ACTIVATE" value="false"/>
     <elementParameter field="CHECK" name="VERSION_2007" value="true"/>
     <elementParameter field="CHECK" name="USESTREAM" value="false"/>
     <elementParameter field="TEXT" name="STREAMNAME" value="outputStream" show="false"/>
@@ -800,8 +809,9 @@
       <column comment="" key="false" length="-1" name="AuthorForcedAffiliation" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
     </metadata>
   </node>
-  <node componentName="tMap" componentVersion="2.1" offsetLabelX="0" offsetLabelY="0" posX="0" posY="1216">
+  <node componentName="tMap" componentVersion="2.1" offsetLabelX="0" offsetLabelY="0" posX="64" posY="1152">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tMap_8" show="false"/>
+    <elementParameter field="CHECK" name="ACTIVATE" value="false"/>
     <elementParameter field="EXTERNAL" name="MAP" value=""/>
     <elementParameter field="CLOSED_LIST" name="LINK_STYLE" value="AUTO"/>
     <elementParameter field="DIRECTORY" name="TEMPORARY_DATA_DIRECTORY" value=""/>
@@ -816,7 +826,7 @@
       <column comment="" key="false" length="500" name="Affiliation" nullable="false" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
     </metadata>
     <nodeData xsi:type="MapperData">
-      <uiProperties/>
+      <uiProperties shellMaximized="true"/>
       <varTables sizeState="INTERMEDIATE" name="Var">
         <mapperTableEntries name="AuthorsClean" expression="TalendString.removeAccents(row39.Author ) " type="id_String"/>
       </varTables>
@@ -830,65 +840,9 @@
       </inputTables>
     </nodeData>
   </node>
-  <node componentName="tFileInputExcel" componentVersion="0.102" offsetLabelX="1" offsetLabelY="0" posX="-64" posY="1344">
-    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tFileInputExcel_11" show="false"/>
-    <elementParameter field="CHECK" name="VERSION_2007" value="true"/>
-    <elementParameter field="FILE" name="FILENAME" value="context.DataFolder +context.InputExcelFile"/>
-    <elementParameter field="CHECK" name="ALL_SHEETS" value="false"/>
-    <elementParameter field="TABLE" name="SHEETLIST">
-      <elementValue elementRef="SHEETNAME" value="&quot;KeyAuthors&quot;"/>
-      <elementValue elementRef="USE_REGEX" value=""/>
-    </elementParameter>
-    <elementParameter field="TEXT" name="HEADER" value="1"/>
-    <elementParameter field="TEXT" name="FOOTER" value="0"/>
-    <elementParameter field="TEXT" name="LIMIT" value=""/>
-    <elementParameter field="CHECK" name="AFFECT_EACH_SHEET" value="false"/>
-    <elementParameter field="TEXT" name="FIRST_COLUMN" value="1"/>
-    <elementParameter field="TEXT" name="LAST_COLUMN" value=""/>
-    <elementParameter field="CHECK" name="DIE_ON_ERROR" value="false"/>
-    <elementParameter field="TECHNICAL" name="SCHEMA_REJECT:SCHEMA_TYPE" value="REPOSITORY" show="false"/>
-    <elementParameter field="TECHNICAL" name="SCHEMA_REJECT:REPOSITORY_SCHEMA_TYPE" value="_qbwZ4AT-Eeamu_ixvu2j-Q - metadata" show="false"/>
-    <elementParameter field="CHECK" name="ADVANCED_SEPARATOR" value="false"/>
-    <elementParameter field="TEXT" name="THOUSANDS_SEPARATOR" value="&quot;,&quot;" show="false"/>
-    <elementParameter field="TEXT" name="DECIMAL_SEPARATOR" value="&quot;.&quot;" show="false"/>
-    <elementParameter field="CHECK" name="TRIMALL" value="true"/>
-    <elementParameter field="TABLE" name="TRIMSELECT" show="false">
-      <elementValue elementRef="SCHEMA_COLUMN" value="Author"/>
-      <elementValue elementRef="TRIM" value="false"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="Affiliation"/>
-      <elementValue elementRef="TRIM" value="false"/>
-    </elementParameter>
-    <elementParameter field="CHECK" name="CONVERTDATETOSTRING" value="false"/>
-    <elementParameter field="TABLE" name="DATESELECT" show="false">
-      <elementValue elementRef="SCHEMA_COLUMN" value="Author"/>
-      <elementValue elementRef="CONVERTDATE" value="false"/>
-      <elementValue elementRef="PATTERN" value="&quot;MM-dd-yyyy&quot;"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="Affiliation"/>
-      <elementValue elementRef="CONVERTDATE" value="false"/>
-      <elementValue elementRef="PATTERN" value="&quot;MM-dd-yyyy&quot;"/>
-    </elementParameter>
-    <elementParameter field="ENCODING_TYPE" name="ENCODING" value="&quot;UTF-8&quot;"/>
-    <elementParameter field="TECHNICAL" name="ENCODING:ENCODING_TYPE" value="UTF-8"/>
-    <elementParameter field="CHECK" name="READ_REAL_VALUE" value="false" show="false"/>
-    <elementParameter field="CHECK" name="STOPREAD_ON_EMPTYROW" value="true"/>
-    <elementParameter field="CHECK" name="NOVALIDATE_ON_CELL" value="false" show="false"/>
-    <elementParameter field="CHECK" name="SUPPRESS_WARN" value="false" show="false"/>
-    <elementParameter field="CLOSED_LIST" name="GENERATION_MODE" value="USER_MODE"/>
-    <elementParameter field="TEXT" name="LABEL" value="KeyAuthors"/>
-    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
-    <metadata connector="FLOW" label="metadata" name="tFileInputExcel_11">
-      <column comment="" key="true" length="30" name="Author" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="500" name="Affiliation" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
-    </metadata>
-    <metadata connector="REJECT" label="metadata" name="REJECT">
-      <column comment="" key="true" length="30" name="Author" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="500" name="Affiliation" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
-      <column key="false" length="255" name="errorCode" nullable="true" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
-      <column key="false" length="255" name="errorMessage" nullable="true" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
-    </metadata>
-  </node>
-  <node componentName="tFileInputExcel" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="-480" posY="1504">
+  <node componentName="tFileInputExcel" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="-448" posY="1376">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tFileInputExcel_5" show="false"/>
+    <elementParameter field="CHECK" name="ACTIVATE" value="false"/>
     <elementParameter field="CHECK" name="VERSION_2007" value="true"/>
     <elementParameter field="FILE" name="FILENAME" value="context.DataFolder + &quot;output/KPI_PMID_KW.xlsx&quot;"/>
     <elementParameter field="CHECK" name="ALL_SHEETS" value="false"/>
@@ -979,8 +933,9 @@
       <column defaultValue="" key="false" length="255" name="errorMessage" nullable="true" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
     </metadata>
   </node>
-  <node componentName="tJoin" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="-384" posY="1504">
+  <node componentName="tJoin" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="-352" posY="1376">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tJoin_2" show="false"/>
+    <elementParameter field="CHECK" name="ACTIVATE" value="false"/>
     <elementParameter field="CHECK" name="USE_LOOKUP_COLS" value="true"/>
     <elementParameter field="TABLE" name="LOOKUP_COLS">
       <elementValue elementRef="OUTPUT_COLUMN" value="PI_Seed"/>
@@ -1013,8 +968,9 @@
       <column comment="" key="false" length="20" name="PI_Seed" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
     </metadata>
   </node>
-  <node componentName="tFileInputExcel" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="-384" posY="1600">
+  <node componentName="tFileInputExcel" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="-352" posY="1472">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tFileInputExcel_4" show="false"/>
+    <elementParameter field="CHECK" name="ACTIVATE" value="false"/>
     <elementParameter field="CHECK" name="VERSION_2007" value="true"/>
     <elementParameter field="FILE" name="FILENAME" value="context.DataFolder + &quot;output/KPI_Queries.xlsx&quot;"/>
     <elementParameter field="CHECK" name="ALL_SHEETS" value="false"/>
@@ -1079,8 +1035,9 @@
       <column defaultValue="" key="false" length="255" name="errorMessage" nullable="true" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
     </metadata>
   </node>
-  <node componentName="tFileOutputExcel" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="-288" posY="1504">
+  <node componentName="tFileOutputExcel" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="-256" posY="1376">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tFileOutputExcel_4" show="false"/>
+    <elementParameter field="CHECK" name="ACTIVATE" value="false"/>
     <elementParameter field="CHECK" name="VERSION_2007" value="true"/>
     <elementParameter field="CHECK" name="USESTREAM" value="false"/>
     <elementParameter field="TEXT" name="STREAMNAME" value="outputStream" show="false"/>
@@ -1137,7 +1094,7 @@
       <column comment="" key="false" length="20" name="PI_Seed" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
     </metadata>
   </node>
-  <node componentName="tFileInputExcel" componentVersion="0.102" offsetLabelX="-50" offsetLabelY="-64" posX="-416" posY="128">
+  <node componentName="tFileInputExcel" componentVersion="0.102" offsetLabelX="-50" offsetLabelY="-64" posX="-448" posY="160">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tFileInputExcel_1" show="false"/>
     <elementParameter field="CHECK" name="VERSION_2007" value="true"/>
     <elementParameter field="FILE" name="FILENAME" value="context.DataFolder + context.InputExcelFile"/>
@@ -1512,7 +1469,7 @@
       <column defaultValue="" key="false" length="255" name="errorMessage" nullable="true" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
     </metadata>
   </node>
-  <node componentName="tMap" componentVersion="2.1" offsetLabelX="0" offsetLabelY="0" posX="-320" posY="128">
+  <node componentName="tMap" componentVersion="2.1" offsetLabelX="0" offsetLabelY="0" posX="-352" posY="160">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tMap_1" show="false"/>
     <elementParameter field="EXTERNAL" name="MAP" value=""/>
     <elementParameter field="CLOSED_LIST" name="LINK_STYLE" value="AUTO"/>
@@ -1592,7 +1549,7 @@
       </inputTables>
     </nodeData>
   </node>
-  <node componentName="tJavaRow" componentVersion="0.101" offsetLabelX="-2" offsetLabelY="0" posX="-224" posY="128" sizeX="64" sizeY="32">
+  <node componentName="tJavaRow" componentVersion="0.101" offsetLabelX="-2" offsetLabelY="0" posX="-256" posY="160" sizeX="64" sizeY="32">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tJavaRow_1" show="false"/>
     <elementParameter field="MEMO_JAVA" name="CODE" value="// code&#xA;&#xA;if ( StringHandling.INDEX(input_row.LastName, &quot; &quot;) > -1 ) {&#xA;&#x9;output_row.LastName = StringHandling.TRIM(StringHandling.CHANGE(input_row.LastName, &quot; &quot;, &quot;_&quot;));&#xA;} else {&#xA;&#x9;output_row.LastName = StringHandling.TRIM(input_row.LastName);&#xA;};&#xA;&#xA;if ( StringHandling.INDEX(input_row.FirstName, &quot;.&quot;) > -1 ) {&#xA;&#x9;output_row.FirstName = StringHandling.TRIM(StringHandling.CHANGE(input_row.FirstName, &quot;.&quot;, &quot;&quot;));&#xA;} else {&#xA;&#x9;output_row.FirstName = StringHandling.TRIM(input_row.FirstName);&#xA;};&#xA;&#x9;&#xA;&#xA;String initials = &quot;&quot;;&#xA;String secondSurname = &quot;&quot;;&#xA;int indSpace;&#xA;indSpace  = StringHandling.INDEX(input_row.FirstName, &quot; &quot;);&#xA;int indHyphen;&#xA;indHyphen = StringHandling.INDEX(output_row.FirstName, &quot;-&quot;);&#xA;&#xA;initials = StringHandling.LEFT(input_row.FirstName, 1);&#xA;&#xA;if(indSpace > -1) {&#xA;&#x9;secondSurname = StringHandling.RIGHT(input_row.FirstName, StringHandling.LEN(input_row.FirstName) -(indSpace+1) );&#xA;&#x9;initials = initials.concat(StringHandling.LEFT(secondSurname, 1));&#xA;};&#xA;&#xA;if (indHyphen > -1 ){&#xA;&#x9;secondSurname = StringHandling.RIGHT(input_row.FirstName, StringHandling.LEN(input_row.FirstName) -(indHyphen+1) );&#xA;&#x9;initials = initials.concat(StringHandling.LEFT(secondSurname, 1));&#xA;};&#xA;&#xA;output_row.Initials = initials;&#xA;&#xA;// &quot;http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=pmc&amp;term=&quot; + row3.LastName + &quot;+&quot; +  row3.Initials + &quot;[Author]&quot;"/>
     <elementParameter field="MEMO_IMPORT" name="IMPORT" value="//import java.util.List;"/>
@@ -1604,7 +1561,7 @@
       <column comment="" key="false" length="-1" name="Initials" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
     </metadata>
   </node>
-  <node componentName="tRESTClient" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="-96" posY="128">
+  <node componentName="tRESTClient" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="-128" posY="160">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tRESTClient_2" show="false"/>
     <elementParameter field="TEXT" name="URL" value="&quot;https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=pubmed&amp;term=&quot; + row1.LastName + &quot;+&quot; +  row1.FirstName + &quot;[Author]&amp;mindate=2011&amp;maxdate=2020&amp;datetype=pdat&amp;retmax=500&quot;"/>
     <elementParameter field="TEXT" name="PATH" value="&quot;&quot;"/>
@@ -1664,7 +1621,7 @@
       <column defaultValue="" key="false" length="1024" name="errorMessage" nullable="true" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
     </metadata>
   </node>
-  <node componentName="tMap" componentVersion="2.1" offsetLabelX="0" offsetLabelY="0" posX="0" posY="128">
+  <node componentName="tMap" componentVersion="2.1" offsetLabelX="0" offsetLabelY="0" posX="-32" posY="160">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tMap_4" show="false"/>
     <elementParameter field="EXTERNAL" name="MAP" value=""/>
     <elementParameter field="CLOSED_LIST" name="LINK_STYLE" value="AUTO"/>
@@ -1699,7 +1656,7 @@
       </inputTables>
     </nodeData>
   </node>
-  <node componentName="tExtractXMLField" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="96" posY="128">
+  <node componentName="tExtractXMLField" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="64" posY="160">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tExtractXMLField_1" show="false"/>
     <elementParameter field="PREV_COLUMN_LIST" name="XMLFIELD" value="PMID"/>
     <elementParameter field="CHECK" name="USE_ITEMS" value="false" show="false"/>
@@ -1734,7 +1691,7 @@
       <column defaultValue="" key="false" length="255" name="errorMessage" nullable="true" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
     </metadata>
   </node>
-  <node componentName="tRESTClient" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="192" posY="128">
+  <node componentName="tRESTClient" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="160" posY="160">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tRESTClient_1" show="false"/>
     <elementParameter field="TEXT" name="URL" value="&quot;https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=pubmed&amp;id=&quot; + row4.PMID +&quot;&amp;rettype=abstract&quot;"/>
     <elementParameter field="TEXT" name="PATH" value="&quot;&quot;"/>
@@ -1793,7 +1750,7 @@
       <column key="false" length="1024" name="errorMessage" nullable="true" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
     </metadata>
   </node>
-  <node componentName="tMap" componentVersion="2.1" offsetLabelX="0" offsetLabelY="0" posX="288" posY="128">
+  <node componentName="tMap" componentVersion="2.1" offsetLabelX="0" offsetLabelY="0" posX="256" posY="160">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tMap_2" show="false"/>
     <elementParameter field="EXTERNAL" name="MAP" value=""/>
     <elementParameter field="CLOSED_LIST" name="LINK_STYLE" value="AUTO"/>
@@ -1838,7 +1795,7 @@
       </inputTables>
     </nodeData>
   </node>
-  <node componentName="tExtractXMLField" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="448" posY="320">
+  <node componentName="tExtractXMLField" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="416" posY="352">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tExtractXMLField_4" show="false"/>
     <elementParameter field="PREV_COLUMN_LIST" name="XMLFIELD" value="body"/>
     <elementParameter field="CHECK" name="USE_ITEMS" value="false" show="false"/>
@@ -1873,7 +1830,7 @@
       <column defaultValue="" key="false" length="255" name="errorMessage" nullable="true" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
     </metadata>
   </node>
-  <node componentName="tExtractXMLField" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="448" posY="384">
+  <node componentName="tExtractXMLField" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="416" posY="416">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tExtractXMLField_5" show="false"/>
     <elementParameter field="PREV_COLUMN_LIST" name="XMLFIELD" value="body"/>
     <elementParameter field="CHECK" name="USE_ITEMS" value="false" show="false"/>
@@ -1908,7 +1865,7 @@
       <column defaultValue="" key="false" length="255" name="errorMessage" nullable="true" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
     </metadata>
   </node>
-  <node componentName="tExtractXMLField" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="448" posY="448">
+  <node componentName="tExtractXMLField" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="416" posY="480">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tExtractXMLField_6" show="false"/>
     <elementParameter field="PREV_COLUMN_LIST" name="XMLFIELD" value="body"/>
     <elementParameter field="CHECK" name="USE_ITEMS" value="false" show="false"/>
@@ -1963,7 +1920,7 @@
       <column defaultValue="" key="false" length="255" name="errorMessage" nullable="true" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
     </metadata>
   </node>
-  <node componentName="tSQLiteOutput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="800" posY="320">
+  <node componentName="tSQLiteOutput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="768" posY="352">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tSQLiteOutput_2" show="false"/>
     <elementParameter field="TECHNICAL" name="PROPERTY:PROPERTY_TYPE" value="REPOSITORY" show="false"/>
     <elementParameter field="TECHNICAL" name="PROPERTY:REPOSITORY_PROPERTY_TYPE" value="_hXKSMKIVEeaE1Ir5tjYmaw" show="false"/>
@@ -2010,7 +1967,7 @@
       <column defaultValue="" key="false" length="255" name="errorMessage" nullable="true" precision="0" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
     </metadata>
   </node>
-  <node componentName="tSQLiteOutput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="800" posY="384">
+  <node componentName="tSQLiteOutput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="768" posY="416">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tSQLiteOutput_3" show="false"/>
     <elementParameter field="CHECK" name="USE_EXISTING_CONNECTION" value="true"/>
     <elementParameter field="COMPONENT_LIST" name="CONNECTION" value="tSQLiteConnection_1"/>
@@ -2055,7 +2012,7 @@
       <column defaultValue="" key="false" length="255" name="errorMessage" nullable="true" precision="0" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
     </metadata>
   </node>
-  <node componentName="tSQLiteOutput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="800" posY="448">
+  <node componentName="tSQLiteOutput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="768" posY="480">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tSQLiteOutput_4" show="false"/>
     <elementParameter field="CHECK" name="USE_EXISTING_CONNECTION" value="true"/>
     <elementParameter field="COMPONENT_LIST" name="CONNECTION" value="tSQLiteConnection_1"/>
@@ -2128,7 +2085,7 @@
       <column defaultValue="" key="false" length="255" name="errorMessage" nullable="true" precision="0" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
     </metadata>
   </node>
-  <node componentName="tExtractXMLField" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="448" posY="128">
+  <node componentName="tExtractXMLField" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="416" posY="160">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tExtractXMLField_2" show="false"/>
     <elementParameter field="PREV_COLUMN_LIST" name="XMLFIELD" value="body"/>
     <elementParameter field="CHECK" name="USE_ITEMS" value="false" show="false"/>
@@ -2193,7 +2150,7 @@
       <column defaultValue="" key="false" length="255" name="errorMessage" nullable="true" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
     </metadata>
   </node>
-  <node componentName="tMap" componentVersion="2.1" offsetLabelX="0" offsetLabelY="0" posX="544" posY="128">
+  <node componentName="tMap" componentVersion="2.1" offsetLabelX="0" offsetLabelY="0" posX="512" posY="160">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tMap_3" show="false"/>
     <elementParameter field="EXTERNAL" name="MAP" value=""/>
     <elementParameter field="CLOSED_LIST" name="LINK_STYLE" value="AUTO"/>
@@ -2228,7 +2185,7 @@
       <column comment="" key="false" length="-1" name="Affiliation" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="-1" usefulColumn="true"/>
     </metadata>
     <nodeData xsi:type="MapperData">
-      <uiProperties/>
+      <uiProperties shellMaximized="true"/>
       <varTables sizeState="INTERMEDIATE" name="Var">
         <mapperTableEntries name="AuthorCode" expression="PubMedNormal.normCode(row23.LastName,row23.ForeName,row23.Initials) " type="id_String"/>
         <mapperTableEntries name="AffCode" expression="PubMedNormal.normAff(row23.Affiliations) " type="id_String"/>
@@ -2269,7 +2226,7 @@
       </inputTables>
     </nodeData>
   </node>
-  <node componentName="tUniqRow" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="704" posY="0">
+  <node componentName="tUniqRow" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="672" posY="32">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tUniqRow_3" show="false"/>
     <elementParameter field="TABLE" name="UNIQUE_KEY">
       <elementValue elementRef="SCHEMA_COLUMN" value="PMID"/>
@@ -2298,7 +2255,7 @@
       <column comment="" key="false" length="-1" name="AuthorCode" nullable="false" pattern="" precision="-1" sourceType="" type="id_String" originalLength="-1" usefulColumn="true"/>
     </metadata>
   </node>
-  <node componentName="tSQLiteOutput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="928" posY="0">
+  <node componentName="tSQLiteOutput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="896" posY="32">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tSQLiteOutput_5" show="false"/>
     <elementParameter field="TECHNICAL" name="PROPERTY:PROPERTY_TYPE" value="REPOSITORY" show="false"/>
     <elementParameter field="TECHNICAL" name="PROPERTY:REPOSITORY_PROPERTY_TYPE" value="_hXKSMKIVEeaE1Ir5tjYmaw" show="false"/>
@@ -2345,7 +2302,7 @@
       <column defaultValue="" key="false" length="255" name="errorMessage" nullable="true" precision="0" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
     </metadata>
   </node>
-  <node componentName="tSQLiteOutput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="928" posY="64">
+  <node componentName="tSQLiteOutput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="896" posY="96">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tSQLiteOutput_6" show="false"/>
     <elementParameter field="TECHNICAL" name="PROPERTY:PROPERTY_TYPE" value="REPOSITORY" show="false"/>
     <elementParameter field="TECHNICAL" name="PROPERTY:REPOSITORY_PROPERTY_TYPE" value="_hXKSMKIVEeaE1Ir5tjYmaw" show="false"/>
@@ -2413,7 +2370,7 @@
       <column defaultValue="" key="false" length="255" name="errorMessage" nullable="true" precision="0" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
     </metadata>
   </node>
-  <node componentName="tUniqRow" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="704" posY="256">
+  <node componentName="tUniqRow" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="672" posY="288">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tUniqRow_4" show="false"/>
     <elementParameter field="TABLE" name="UNIQUE_KEY">
       <elementValue elementRef="SCHEMA_COLUMN" value="AuthorCode"/>
@@ -2442,7 +2399,7 @@
       <column comment="" key="false" length="-1" name="AffCode" nullable="false" pattern="" precision="-1" sourceType="" type="id_String" originalLength="-1" usefulColumn="true"/>
     </metadata>
   </node>
-  <node componentName="tSQLiteOutput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="928" posY="128">
+  <node componentName="tSQLiteOutput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="896" posY="160">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tSQLiteOutput_7" show="false"/>
     <elementParameter field="TECHNICAL" name="PROPERTY:PROPERTY_TYPE" value="REPOSITORY" show="false"/>
     <elementParameter field="TECHNICAL" name="PROPERTY:REPOSITORY_PROPERTY_TYPE" value="_hXKSMKIVEeaE1Ir5tjYmaw" show="false"/>
@@ -2489,7 +2446,7 @@
       <column defaultValue="" key="false" length="255" name="errorMessage" nullable="true" precision="0" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
     </metadata>
   </node>
-  <node componentName="tSQLiteOutput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="928" posY="192">
+  <node componentName="tSQLiteOutput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="896" posY="224">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tSQLiteOutput_8" show="false"/>
     <elementParameter field="TECHNICAL" name="PROPERTY:PROPERTY_TYPE" value="REPOSITORY" show="false"/>
     <elementParameter field="TECHNICAL" name="PROPERTY:REPOSITORY_PROPERTY_TYPE" value="_hXKSMKIVEeaE1Ir5tjYmaw" show="false"/>
@@ -2536,7 +2493,7 @@
       <column defaultValue="" key="false" length="255" name="errorMessage" nullable="true" precision="0" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
     </metadata>
   </node>
-  <node componentName="tSQLiteOutput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="928" posY="256">
+  <node componentName="tSQLiteOutput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="896" posY="288">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tSQLiteOutput_9" show="false"/>
     <elementParameter field="TECHNICAL" name="PROPERTY:PROPERTY_TYPE" value="REPOSITORY" show="false"/>
     <elementParameter field="TECHNICAL" name="PROPERTY:REPOSITORY_PROPERTY_TYPE" value="_hXKSMKIVEeaE1Ir5tjYmaw" show="false"/>
@@ -2583,8 +2540,9 @@
       <column defaultValue="" key="false" length="255" name="errorMessage" nullable="true" precision="0" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
     </metadata>
   </node>
-  <node componentName="tFileInputExcel" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="-512" posY="576">
+  <node componentName="tFileInputExcel" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="-384" posY="608">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tFileInputExcel_6" show="false"/>
+    <elementParameter field="CHECK" name="ACTIVATE" value="false"/>
     <elementParameter field="CHECK" name="VERSION_2007" value="true"/>
     <elementParameter field="FILE" name="FILENAME" value="context.DataFolder + &quot;output/KPI_Keywords.xlsx&quot;"/>
     <elementParameter field="CHECK" name="ALL_SHEETS" value="false"/>
@@ -2675,8 +2633,9 @@
       <column defaultValue="" key="false" length="255" name="errorMessage" nullable="true" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
     </metadata>
   </node>
-  <node componentName="tUnite" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="-256" posY="768">
+  <node componentName="tUnite" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="-128" posY="800">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tUnite_1" show="false"/>
+    <elementParameter field="CHECK" name="ACTIVATE" value="false"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
     <metadata connector="FLOW" label="metadata" name="tUnite_1">
       <column comment="" key="false" length="8" name="PMID" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_Integer" usefulColumn="true"/>
@@ -2688,8 +2647,9 @@
       <column comment="" key="false" length="33" name="Keywords" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
     </metadata>
   </node>
-  <node componentName="tUnite" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="-128" posY="832">
+  <node componentName="tUnite" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="0" posY="864">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tUnite_2" show="false"/>
+    <elementParameter field="CHECK" name="ACTIVATE" value="false"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
     <metadata connector="FLOW" label="metadata" name="tUnite_2">
       <column comment="" key="false" length="8" name="PMID" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_Integer" usefulColumn="true"/>
@@ -2701,8 +2661,9 @@
       <column comment="" key="false" length="33" name="Keywords" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
     </metadata>
   </node>
-  <node componentName="tJavaRow" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="-32" posY="832">
+  <node componentName="tJavaRow" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="96" posY="864">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tJavaRow_3" show="false"/>
+    <elementParameter field="CHECK" name="ACTIVATE" value="false"/>
     <elementParameter field="MEMO_JAVA" name="CODE" value="output_row.PMID &#x9;&#x9;= input_row.PMID ;&#xA;output_row.DOI &#x9;&#x9;&#x9;= input_row.DOI ;&#xA;output_row.Journal &#x9;&#x9;= input_row.Journal ;&#xA;output_row.Year &#x9;&#x9;= input_row.Year ;&#xA;output_row.Year_EColl &#x9;= input_row.Year_EColl_ ;&#xA;output_row.ArticleTitle = input_row.ArticleTitle ;&#xA;&#xA;String tempStr = StringHandling.DOWNCASE(input_row.Keywords);&#xA;tempStr = TalendString.removeAccents(tempStr);&#xA;tempStr = tempStr.replaceAll(&quot;,&quot; , &quot;&quot;);&#xA;tempStr = tempStr.replaceAll(&quot;:&quot; , &quot;&quot;);&#xA;tempStr = tempStr.replaceAll(&quot;\\.&quot; , &quot;&quot;);&#xA;tempStr = tempStr.replaceAll(&quot;\\(&quot; , &quot;&quot;);&#xA;tempStr = tempStr.replaceAll(&quot;\\)&quot; , &quot;&quot;);&#xA;tempStr = tempStr.replaceAll(&quot;\&quot;&quot; , &quot;&quot;);&#xA;tempStr = tempStr.replaceAll(&quot;\'&quot; , &quot;&quot;);&#xA;tempStr = tempStr.replaceAll(&quot;&amp;&quot; , &quot;&quot;);&#xA;output_row.Keywords = tempStr;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;"/>
     <elementParameter field="MEMO_IMPORT" name="IMPORT" value="//import java.util.List;"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
@@ -2716,8 +2677,9 @@
       <column comment="" key="false" length="33" name="Keywords" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
     </metadata>
   </node>
-  <node componentName="tMap" componentVersion="2.1" offsetLabelX="0" offsetLabelY="0" posX="64" posY="832">
+  <node componentName="tMap" componentVersion="2.1" offsetLabelX="0" offsetLabelY="0" posX="192" posY="864">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tMap_5" show="false"/>
+    <elementParameter field="CHECK" name="ACTIVATE" value="false"/>
     <elementParameter field="EXTERNAL" name="MAP" value=""/>
     <elementParameter field="CLOSED_LIST" name="LINK_STYLE" value="AUTO"/>
     <elementParameter field="DIRECTORY" name="TEMPORARY_DATA_DIRECTORY" value=""/>
@@ -2740,7 +2702,7 @@
       <column comment="" key="false" length="33" name="Keywords" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
     </metadata>
     <nodeData xsi:type="MapperData">
-      <uiProperties/>
+      <uiProperties shellMaximized="true"/>
       <varTables sizeState="INTERMEDIATE" name="Var" minimized="true"/>
       <outputTables sizeState="INTERMEDIATE" name="PMIDkeywords">
         <mapperTableEntries name="PMID" expression="row27.PMID " type="id_Integer" nullable="true"/>
@@ -2765,8 +2727,9 @@
       </inputTables>
     </nodeData>
   </node>
-  <node componentName="tUniqRow" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="160" posY="768">
+  <node componentName="tUniqRow" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="288" posY="800">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tUniqRow_1" show="false"/>
+    <elementParameter field="CHECK" name="ACTIVATE" value="false"/>
     <elementParameter field="TABLE" name="UNIQUE_KEY">
       <elementValue elementRef="SCHEMA_COLUMN" value="PMID"/>
       <elementValue elementRef="KEY_ATTRIBUTE" value="true"/>
@@ -2824,8 +2787,9 @@
       <column comment="" key="false" length="33" name="Keywords" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
     </metadata>
   </node>
-  <node componentName="tSortRow" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="256" posY="768">
+  <node componentName="tSortRow" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="384" posY="800">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tSortRow_1" show="false"/>
+    <elementParameter field="CHECK" name="ACTIVATE" value="false"/>
     <elementParameter field="TABLE" name="CRITERIA">
       <elementValue elementRef="COLNAME" value="PMID"/>
       <elementValue elementRef="SORT" value="num"/>
@@ -2849,8 +2813,9 @@
       <column comment="" key="false" length="33" name="Keywords" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
     </metadata>
   </node>
-  <node componentName="tUniqRow" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="160" posY="896">
+  <node componentName="tUniqRow" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="288" posY="928">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tUniqRow_2" show="false"/>
+    <elementParameter field="CHECK" name="ACTIVATE" value="false"/>
     <elementParameter field="TABLE" name="UNIQUE_KEY">
       <elementValue elementRef="SCHEMA_COLUMN" value="Keywords"/>
       <elementValue elementRef="KEY_ATTRIBUTE" value="true"/>
@@ -2872,8 +2837,9 @@
       <column comment="" key="false" length="33" name="Keywords" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
     </metadata>
   </node>
-  <node componentName="tSortRow" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="256" posY="896">
+  <node componentName="tSortRow" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="384" posY="928">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tSortRow_2" show="false"/>
+    <elementParameter field="CHECK" name="ACTIVATE" value="false"/>
     <elementParameter field="TABLE" name="CRITERIA">
       <elementValue elementRef="COLNAME" value="Keywords"/>
       <elementValue elementRef="SORT" value="alpha"/>
@@ -2888,8 +2854,9 @@
       <column comment="" key="false" length="33" name="Keywords" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
     </metadata>
   </node>
-  <node componentName="tJoin" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="352" posY="896">
+  <node componentName="tJoin" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="480" posY="928">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tJoin_3" show="false"/>
+    <elementParameter field="CHECK" name="ACTIVATE" value="false"/>
     <elementParameter field="CHECK" name="USE_LOOKUP_COLS" value="false"/>
     <elementParameter field="TABLE" name="LOOKUP_COLS" show="false">
       <elementValue elementRef="OUTPUT_COLUMN" value="Keywords"/>
@@ -2908,8 +2875,9 @@
       <column comment="" key="false" length="44" name="Keywords" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
     </metadata>
   </node>
-  <node componentName="tFileInputExcel" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="352" posY="992">
+  <node componentName="tFileInputExcel" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="480" posY="1024">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tFileInputExcel_12" show="false"/>
+    <elementParameter field="CHECK" name="ACTIVATE" value="false"/>
     <elementParameter field="CHECK" name="VERSION_2007" value="true"/>
     <elementParameter field="FILE" name="FILENAME" value="context.DataFolder + &quot;../&quot; + &quot;Utilities.xlsx&quot;"/>
     <elementParameter field="CHECK" name="ALL_SHEETS" value="false"/>
@@ -2960,8 +2928,9 @@
       <column defaultValue="" key="false" length="255" name="errorMessage" nullable="true" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
     </metadata>
   </node>
-  <node componentName="tFileOutputExcel" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="544" posY="896">
+  <node componentName="tFileOutputExcel" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="672" posY="928">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tFileOutputExcel_12" show="false"/>
+    <elementParameter field="CHECK" name="ACTIVATE" value="false"/>
     <elementParameter field="CHECK" name="VERSION_2007" value="true"/>
     <elementParameter field="CHECK" name="USESTREAM" value="false"/>
     <elementParameter field="TEXT" name="STREAMNAME" value="outputStream" show="false"/>
@@ -2997,8 +2966,9 @@
       <column comment="" key="false" length="44" name="Keywords" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
     </metadata>
   </node>
-  <node componentName="tJoin" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="352" posY="768">
+  <node componentName="tJoin" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="480" posY="800">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tJoin_4" show="false"/>
+    <elementParameter field="CHECK" name="ACTIVATE" value="false"/>
     <elementParameter field="CHECK" name="USE_LOOKUP_COLS" value="false"/>
     <elementParameter field="TABLE" name="LOOKUP_COLS" show="false"/>
     <elementParameter field="TABLE" name="JOIN_KEY">
@@ -3026,8 +2996,9 @@
       <column comment="" key="false" length="33" name="Keywords" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
     </metadata>
   </node>
-  <node componentName="tFileInputExcel" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="288" posY="672" sizeX="64" sizeY="32">
+  <node componentName="tFileInputExcel" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="416" posY="704" sizeX="64" sizeY="32">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tFileInputExcel_9" show="false"/>
+    <elementParameter field="CHECK" name="ACTIVATE" value="false"/>
     <elementParameter field="CHECK" name="VERSION_2007" value="true"/>
     <elementParameter field="FILE" name="FILENAME" value="context.DataFolder + &quot;../&quot; + &quot;Utilities.xlsx&quot;"/>
     <elementParameter field="CHECK" name="ALL_SHEETS" value="false"/>
@@ -3078,8 +3049,9 @@
       <column defaultValue="" key="false" length="255" name="errorMessage" nullable="true" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
     </metadata>
   </node>
-  <node componentName="tFileOutputExcel" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="544" posY="768">
+  <node componentName="tFileOutputExcel" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="672" posY="800">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tFileOutputExcel_8" show="false"/>
+    <elementParameter field="CHECK" name="ACTIVATE" value="false"/>
     <elementParameter field="CHECK" name="VERSION_2007" value="true"/>
     <elementParameter field="CHECK" name="USESTREAM" value="false"/>
     <elementParameter field="TEXT" name="STREAMNAME" value="outputStream" show="false"/>
@@ -3133,190 +3105,6 @@
       <column comment="" key="false" length="33" name="Keywords" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
     </metadata>
   </node>
-  <node componentName="tFileInputExcel" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="-352" posY="832">
-    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tFileInputExcel_7" show="false"/>
-    <elementParameter field="CHECK" name="VERSION_2007" value="true"/>
-    <elementParameter field="FILE" name="FILENAME" value="context.DataFolder + &quot;output/KPI_Mesh.xlsx&quot;"/>
-    <elementParameter field="CHECK" name="ALL_SHEETS" value="false"/>
-    <elementParameter field="TABLE" name="SHEETLIST">
-      <elementValue elementRef="SHEETNAME" value="&quot;MeshHeadings&quot;"/>
-      <elementValue elementRef="USE_REGEX" value="false"/>
-    </elementParameter>
-    <elementParameter field="TEXT" name="HEADER" value="1"/>
-    <elementParameter field="TEXT" name="FOOTER" value="0"/>
-    <elementParameter field="TEXT" name="LIMIT" value=""/>
-    <elementParameter field="CHECK" name="AFFECT_EACH_SHEET" value="false"/>
-    <elementParameter field="TEXT" name="FIRST_COLUMN" value="1"/>
-    <elementParameter field="TEXT" name="LAST_COLUMN" value=""/>
-    <elementParameter field="CHECK" name="DIE_ON_ERROR" value="false"/>
-    <elementParameter field="TECHNICAL" name="SCHEMA_REJECT:SCHEMA_TYPE" value="REPOSITORY" show="false"/>
-    <elementParameter field="TECHNICAL" name="SCHEMA_REJECT:REPOSITORY_SCHEMA_TYPE" value="_gr9agB26EeasBsBuIyXjOQ - metadata" show="false"/>
-    <elementParameter field="CHECK" name="ADVANCED_SEPARATOR" value="false"/>
-    <elementParameter field="TEXT" name="THOUSANDS_SEPARATOR" value="&quot;,&quot;" show="false"/>
-    <elementParameter field="TEXT" name="DECIMAL_SEPARATOR" value="&quot;.&quot;" show="false"/>
-    <elementParameter field="CHECK" name="TRIMALL" value="false"/>
-    <elementParameter field="TABLE" name="TRIMSELECT">
-      <elementValue elementRef="SCHEMA_COLUMN" value="PMID"/>
-      <elementValue elementRef="TRIM" value="false"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="DOI"/>
-      <elementValue elementRef="TRIM" value="false"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="Journal"/>
-      <elementValue elementRef="TRIM" value="false"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="Year"/>
-      <elementValue elementRef="TRIM" value="false"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="Year_EColl_"/>
-      <elementValue elementRef="TRIM" value="false"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="ArticleTitle"/>
-      <elementValue elementRef="TRIM" value="false"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="Keywords"/>
-      <elementValue elementRef="TRIM" value="false"/>
-    </elementParameter>
-    <elementParameter field="CHECK" name="CONVERTDATETOSTRING" value="false"/>
-    <elementParameter field="TABLE" name="DATESELECT" show="false">
-      <elementValue elementRef="SCHEMA_COLUMN" value="PMID"/>
-      <elementValue elementRef="CONVERTDATE" value="false"/>
-      <elementValue elementRef="PATTERN" value="&quot;MM-dd-yyyy&quot;"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="DOI"/>
-      <elementValue elementRef="CONVERTDATE" value="false"/>
-      <elementValue elementRef="PATTERN" value="&quot;MM-dd-yyyy&quot;"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="Journal"/>
-      <elementValue elementRef="CONVERTDATE" value="false"/>
-      <elementValue elementRef="PATTERN" value="&quot;MM-dd-yyyy&quot;"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="Year"/>
-      <elementValue elementRef="CONVERTDATE" value="false"/>
-      <elementValue elementRef="PATTERN" value="&quot;MM-dd-yyyy&quot;"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="Year_EColl_"/>
-      <elementValue elementRef="CONVERTDATE" value="false"/>
-      <elementValue elementRef="PATTERN" value="&quot;MM-dd-yyyy&quot;"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="ArticleTitle"/>
-      <elementValue elementRef="CONVERTDATE" value="false"/>
-      <elementValue elementRef="PATTERN" value="&quot;MM-dd-yyyy&quot;"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="Keywords"/>
-      <elementValue elementRef="CONVERTDATE" value="false"/>
-      <elementValue elementRef="PATTERN" value="&quot;MM-dd-yyyy&quot;"/>
-    </elementParameter>
-    <elementParameter field="ENCODING_TYPE" name="ENCODING" value="&quot;UTF-8&quot;"/>
-    <elementParameter field="TECHNICAL" name="ENCODING:ENCODING_TYPE" value="UTF-8"/>
-    <elementParameter field="CHECK" name="READ_REAL_VALUE" value="false" show="false"/>
-    <elementParameter field="CHECK" name="STOPREAD_ON_EMPTYROW" value="false"/>
-    <elementParameter field="CHECK" name="NOVALIDATE_ON_CELL" value="false" show="false"/>
-    <elementParameter field="CHECK" name="SUPPRESS_WARN" value="false" show="false"/>
-    <elementParameter field="CLOSED_LIST" name="GENERATION_MODE" value="USER_MODE"/>
-    <elementParameter field="TEXT" name="LABEL" value="excelMesh"/>
-    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
-    <metadata connector="FLOW" label="metadata" name="tFileInputExcel_7">
-      <column comment="" key="false" length="8" name="PMID" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_Integer" usefulColumn="true"/>
-      <column comment="" key="false" length="30" name="DOI" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="38" name="Journal" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="4" name="Year" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_Integer" usefulColumn="true"/>
-      <column comment="" key="false" length="0" name="Year_EColl_" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="127" name="ArticleTitle" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="50" usefulColumn="true"/>
-      <column comment="" key="false" length="33" name="Keywords" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
-    </metadata>
-    <metadata connector="REJECT" label="metadata" name="REJECT">
-      <column comment="" key="false" length="8" name="PMID" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_Integer" usefulColumn="true"/>
-      <column comment="" key="false" length="30" name="DOI" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="38" name="Journal" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="4" name="Year" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_Integer" usefulColumn="true"/>
-      <column comment="" key="false" length="0" name="Year_EColl_" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="127" name="ArticleTitle" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="50" usefulColumn="true"/>
-      <column comment="" key="false" length="33" name="Keywords" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
-      <column defaultValue="" key="false" length="255" name="errorCode" nullable="true" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
-      <column defaultValue="" key="false" length="255" name="errorMessage" nullable="true" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
-    </metadata>
-  </node>
-  <node componentName="tFileInputExcel" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="-224" posY="896">
-    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tFileInputExcel_8" show="false"/>
-    <elementParameter field="CHECK" name="VERSION_2007" value="true"/>
-    <elementParameter field="FILE" name="FILENAME" value="context.DataFolder + &quot;output/KPI_TitleKW.xlsx&quot;"/>
-    <elementParameter field="CHECK" name="ALL_SHEETS" value="false"/>
-    <elementParameter field="TABLE" name="SHEETLIST">
-      <elementValue elementRef="SHEETNAME" value="&quot;TitleKWs&quot;"/>
-      <elementValue elementRef="USE_REGEX" value="false"/>
-    </elementParameter>
-    <elementParameter field="TEXT" name="HEADER" value="1"/>
-    <elementParameter field="TEXT" name="FOOTER" value="0"/>
-    <elementParameter field="TEXT" name="LIMIT" value=""/>
-    <elementParameter field="CHECK" name="AFFECT_EACH_SHEET" value="false"/>
-    <elementParameter field="TEXT" name="FIRST_COLUMN" value="1"/>
-    <elementParameter field="TEXT" name="LAST_COLUMN" value=""/>
-    <elementParameter field="CHECK" name="DIE_ON_ERROR" value="false"/>
-    <elementParameter field="TECHNICAL" name="SCHEMA_REJECT:SCHEMA_TYPE" value="REPOSITORY" show="false"/>
-    <elementParameter field="TECHNICAL" name="SCHEMA_REJECT:REPOSITORY_SCHEMA_TYPE" value="_gr9agB26EeasBsBuIyXjOQ - metadata" show="false"/>
-    <elementParameter field="CHECK" name="ADVANCED_SEPARATOR" value="false"/>
-    <elementParameter field="TEXT" name="THOUSANDS_SEPARATOR" value="&quot;,&quot;" show="false"/>
-    <elementParameter field="TEXT" name="DECIMAL_SEPARATOR" value="&quot;.&quot;" show="false"/>
-    <elementParameter field="CHECK" name="TRIMALL" value="false"/>
-    <elementParameter field="TABLE" name="TRIMSELECT">
-      <elementValue elementRef="SCHEMA_COLUMN" value="PMID"/>
-      <elementValue elementRef="TRIM" value="false"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="DOI"/>
-      <elementValue elementRef="TRIM" value="false"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="Journal"/>
-      <elementValue elementRef="TRIM" value="false"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="Year"/>
-      <elementValue elementRef="TRIM" value="false"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="Year_EColl_"/>
-      <elementValue elementRef="TRIM" value="false"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="ArticleTitle"/>
-      <elementValue elementRef="TRIM" value="false"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="Keywords"/>
-      <elementValue elementRef="TRIM" value="false"/>
-    </elementParameter>
-    <elementParameter field="CHECK" name="CONVERTDATETOSTRING" value="false"/>
-    <elementParameter field="TABLE" name="DATESELECT" show="false">
-      <elementValue elementRef="SCHEMA_COLUMN" value="PMID"/>
-      <elementValue elementRef="CONVERTDATE" value="false"/>
-      <elementValue elementRef="PATTERN" value="&quot;MM-dd-yyyy&quot;"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="DOI"/>
-      <elementValue elementRef="CONVERTDATE" value="false"/>
-      <elementValue elementRef="PATTERN" value="&quot;MM-dd-yyyy&quot;"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="Journal"/>
-      <elementValue elementRef="CONVERTDATE" value="false"/>
-      <elementValue elementRef="PATTERN" value="&quot;MM-dd-yyyy&quot;"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="Year"/>
-      <elementValue elementRef="CONVERTDATE" value="false"/>
-      <elementValue elementRef="PATTERN" value="&quot;MM-dd-yyyy&quot;"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="Year_EColl_"/>
-      <elementValue elementRef="CONVERTDATE" value="false"/>
-      <elementValue elementRef="PATTERN" value="&quot;MM-dd-yyyy&quot;"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="ArticleTitle"/>
-      <elementValue elementRef="CONVERTDATE" value="false"/>
-      <elementValue elementRef="PATTERN" value="&quot;MM-dd-yyyy&quot;"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="Keywords"/>
-      <elementValue elementRef="CONVERTDATE" value="false"/>
-      <elementValue elementRef="PATTERN" value="&quot;MM-dd-yyyy&quot;"/>
-    </elementParameter>
-    <elementParameter field="ENCODING_TYPE" name="ENCODING" value="&quot;UTF-8&quot;"/>
-    <elementParameter field="TECHNICAL" name="ENCODING:ENCODING_TYPE" value="UTF-8"/>
-    <elementParameter field="CHECK" name="READ_REAL_VALUE" value="false" show="false"/>
-    <elementParameter field="CHECK" name="STOPREAD_ON_EMPTYROW" value="false"/>
-    <elementParameter field="CHECK" name="NOVALIDATE_ON_CELL" value="false" show="false"/>
-    <elementParameter field="CHECK" name="SUPPRESS_WARN" value="false" show="false"/>
-    <elementParameter field="CLOSED_LIST" name="GENERATION_MODE" value="USER_MODE"/>
-    <elementParameter field="TEXT" name="LABEL" value="excelTitleKW"/>
-    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
-    <metadata connector="FLOW" label="metadata" name="tFileInputExcel_8">
-      <column comment="" key="false" length="8" name="PMID" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_Integer" usefulColumn="true"/>
-      <column comment="" key="false" length="30" name="DOI" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="38" name="Journal" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="4" name="Year" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_Integer" usefulColumn="true"/>
-      <column comment="" key="false" length="0" name="Year_EColl_" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="127" name="ArticleTitle" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="50" usefulColumn="true"/>
-      <column comment="" key="false" length="33" name="Keywords" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
-    </metadata>
-    <metadata connector="REJECT" label="metadata" name="REJECT">
-      <column comment="" key="false" length="8" name="PMID" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_Integer" usefulColumn="true"/>
-      <column comment="" key="false" length="30" name="DOI" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="38" name="Journal" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="4" name="Year" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_Integer" usefulColumn="true"/>
-      <column comment="" key="false" length="0" name="Year_EColl_" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="127" name="ArticleTitle" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="50" usefulColumn="true"/>
-      <column comment="" key="false" length="33" name="Keywords" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
-      <column defaultValue="" key="false" length="255" name="errorCode" nullable="true" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
-      <column defaultValue="" key="false" length="255" name="errorMessage" nullable="true" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
-    </metadata>
-  </node>
   <node componentName="tSQLiteConnection" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="-608" posY="64">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tSQLiteConnection_1" show="false"/>
     <elementParameter field="FILE" name="DBNAME" value="context.DBpath"/>
@@ -3339,8 +3127,9 @@
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
     <metadata connector="FLOW" name="tSQLiteRollback_1"/>
   </node>
-  <node componentName="tJavaRow" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="672" posY="544">
+  <node componentName="tJavaRow" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="160" posY="608">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tJavaRow_2" show="false"/>
+    <elementParameter field="CHECK" name="ACTIVATE" value="false"/>
     <elementParameter field="MEMO_JAVA" name="CODE" value="// no modifications&#xA;output_row.PMID = input_row.PMID;&#xA;output_row.Year = input_row.Year;&#xA;output_row.LastName = input_row.LastName;&#xA;output_row.ForeName = input_row.ForeName;&#xA;output_row.Initials = input_row.Initials;&#xA;&#xA;// output_row.Year_EColl_ = input_row.Year_EColl_;&#xA;// output_row.IdType = input_row.IdType;&#xA;&#xA;// concatenate FULLNAME&#xA;if (StringHandling.LEN(input_row.LastName)>0 &amp;&amp; StringHandling.LEN(input_row.ForeName)>0) {&#xA;&#x9;output_row.FullName = TalendString.removeAccents(input_row.LastName) + &quot;, &quot; + TalendString.removeAccents(input_row.ForeName);&#xA;}&#xA;&#xA;&#xA;// cleanup Non Standard AFFILIATION ===========================================&#xA;&#xA;String rawAff =  &quot;&quot;;&#xA;&#xA;if (input_row.Affiliations.indexOf(&quot;From&quot;) > -1 ) {&#xA;&#x9;String strToken = &quot;&quot;;&#xA;&#x9;String tmpStr = StringHandling.RIGHT(input_row.Affiliations, StringHandling.LEN(input_row.Affiliations) - 4);&#xA;&#x9;int lenStr = StringHandling.LEN(tmpStr);&#xA;&#x9;int posSemiColon = 0;&#xA;&#x9;&#xA;&#x9;// get complete INITIALS&#xA;&#x9;String strInitials = &quot;&quot;;&#xA;&#x9;strInitials = strInitials + StringHandling.LEFT(input_row.ForeName, 1) + &quot;.&quot;;&#xA;&#x9;if ( StringHandling.LEN(input_row.Initials) == 2 ) {&#xA;&#x9;&#x9;strInitials = strInitials + StringHandling.RIGHT(input_row.Initials, 1) + &quot;.&quot;;&#xA;&#x9;}&#xA;&#x9;strInitials = strInitials + StringHandling.LEFT(input_row.LastName, 1) + &quot;.&quot;;&#xA;&#x9;&#xA;&#x9;while (StringHandling.LEN(tmpStr) > 0) {&#xA;&#x9;&#x9;lenStr = StringHandling.LEN(tmpStr);&#xA;&#x9;&#x9;posSemiColon = tmpStr.indexOf(&quot;;&quot;);&#xA;&#x9;&#x9;if (posSemiColon &lt; 0) {&#xA;&#x9;&#x9;&#x9;strToken = tmpStr;&#xA;&#x9;&#x9;&#x9;tmpStr = &quot;&quot;;&#xA;&#x9;&#x9;} else {&#xA;&#x9;&#x9;&#x9;strToken = StringHandling.LEFT(tmpStr, posSemiColon);&#xA;&#x9;&#x9;&#x9;tmpStr = StringHandling.RIGHT(tmpStr, lenStr-(posSemiColon+1));&#xA;&#x9;&#x9;}// if (posSemiColon &lt; 0)&#xA;&#x9;&#x9;&#xA;&#x9;&#x9;// check if INITIALS are in the STRTOKEN&#xA;&#x9;&#x9;if (strToken.indexOf(strInitials) > -1 ) {&#xA;&#x9;&#x9;&#x9;rawAff = StringHandling.TRIM( StringHandling.LEFT( strToken, strToken.indexOf(&quot;(&quot;) ) );&#xA;&#x9;&#x9;&#x9;tmpStr = &quot;&quot;; // get only first affiliation&#xA;&#x9;&#x9;}&#xA;&#x9;&#x9;&#xA;&#x9;&#x9;&#xA;&#x9;}// while (lenStr > 0)&#xA;&#x9; &#xA;} else {&#xA;&#x9;rawAff = input_row.Affiliations;&#xA;} // if (rawAff.indexOf(&quot;From&quot;) == 1 )&#xA;&#xA;&#xA;&#xA;// add USA if last string token have only 2 chars and seem a US state&#xA;if (StringHandling.LEN(rawAff) - rawAff.lastIndexOf(&quot;,&quot;) &lt;= 4 ) {&#xA;&#x9;rawAff = rawAff + &quot;, USA&quot;;&#xA;}&#xA;&#xA;&#xA;output_row.rawAffiliation = rawAff;&#xA;&#xA;&#xA;&#xA;// process YEAR ===========================================&#xA;&#xA;&#xA;int tmpYear = 10000;&#xA;if (input_row.Year != null) {&#xA;&#x9;tmpYear = input_row.Year;&#xA;}&#xA;if (input_row.Year_EColl_ != null) {&#xA;&#x9;if(input_row.Year_EColl_ &lt; tmpYear) {&#xA;&#x9;&#x9;tmpYear = input_row.Year_EColl_ ;&#xA;&#x9;}&#xA;} &#xA;output_row.Year = tmpYear;&#xA;&#xA;&#xA;// process UNIVERSITY ===========================================&#xA;&#xA;String tmpStr = rawAff;&#xA;String strToken = &quot;&quot;;&#xA;String university = &quot;&quot;;&#xA;int lenStr = StringHandling.LEN(tmpStr);&#xA;int firstComa = 0;&#xA;int semiColon = 0;&#xA;&#xA;while (lenStr > 0) {&#xA;&#x9;firstComa = tmpStr.indexOf(&quot;,&quot;);&#xA;&#x9;semiColon = tmpStr.indexOf(&quot;;&quot;);&#xA;&#x9;if (firstComa &lt; 0 ) {&#xA;&#x9;&#x9;strToken = tmpStr;&#xA;&#x9;&#x9;tmpStr = &quot;&quot;;&#x9;&#xA;&#x9;} else {&#xA;&#x9;&#x9;strToken = StringHandling.LEFT(tmpStr, firstComa);&#xA;&#x9;&#x9;tmpStr = StringHandling.RIGHT(tmpStr, lenStr-(firstComa+1));&#xA;&#x9;}&#x9;&#x9;  &#x9;&#xA;&#x9;if (strToken.indexOf(&quot;niversity&quot;) > 0 || &#xA;&#x9;&#x9;strToken.indexOf(&quot;niversité&quot;) > 0 || &#xA;&#x9;&#x9;strToken.indexOf(&quot;niversite&quot;) > 0 ||&#xA;&#x9;&#x9;strToken.indexOf(&quot;niversidad&quot;) > 0||&#xA;&#x9;&#x9;strToken.indexOf(&quot;Univ.&quot;) > 0) {&#xA;&#x9;&#x9;university = StringHandling.TRIM(strToken);&#xA;&#x9;&#x9;tmpStr = &quot;&quot;;&#xA;&#x9;}&#xA;&#x9;lenStr = StringHandling.LEN(tmpStr);&#xA;}&#xA;if (university.indexOf(&quot;]&quot;) > 0) {&#xA;&#x9;university = StringHandling.RIGHT(university, StringHandling.LEN(university)-(university.indexOf(&quot;]&quot;)+1));&#xA;}&#xA;if (university.indexOf(&quot;and&quot;) == 1 ) {&#xA;&#x9;university = StringHandling.RIGHT(university, StringHandling.LEN(university)-(university.indexOf(&quot;and&quot;) + 3));&#xA;}&#xA;if (university.indexOf(&quot; &quot;) > 0  &amp;&amp; university.indexOf(&quot; &quot;) &lt; 3) {&#xA;&#x9;university = StringHandling.RIGHT(university, StringHandling.LEN(university)-2);&#xA;} &#xA;output_row.University = StringHandling.TRIM(university);&#xA;&#xA;&#xA;// process DEPARTMENT ===========================================&#xA;&#xA;tmpStr = rawAff;&#xA;strToken = &quot;&quot;;&#xA;String department = &quot;&quot;;&#xA;lenStr = StringHandling.LEN(tmpStr);&#xA;firstComa = 0;&#xA;&#xA;while (lenStr > 0) {&#xA;&#x9;firstComa = tmpStr.indexOf(&quot;,&quot;);&#xA;&#x9;semiColon = tmpStr.indexOf(&quot;;&quot;);&#xA;&#x9;if (firstComa &lt; 0 ) {&#xA;&#x9;&#x9;strToken = tmpStr;&#xA;&#x9;&#x9;tmpStr = &quot;&quot;;&#x9;&#xA;&#x9;} else {&#xA;&#x9;&#x9;strToken = StringHandling.LEFT(tmpStr, firstComa);&#xA;&#x9;&#x9;tmpStr = StringHandling.RIGHT(tmpStr, lenStr-(firstComa+1));&#xA;&#x9;}&#x9;&#x9;  &#x9;&#xA;&#x9;if (strToken.indexOf(&quot;epartment&quot;) > 0 || &#xA;&#x9;&#x9;strToken.indexOf(&quot;épartement&quot;) > 0 || &#xA;&#x9;&#x9;strToken.indexOf(&quot;epartament&quot;) > 0 || &#xA;&#x9;&#x9;strToken.indexOf(&quot;Dpt.&quot;) > 0 || &#xA;&#x9;&#x9;strToken.indexOf(&quot;Division&quot;) > 0 ||&#xA;&#x9;&#x9;strToken.indexOf(&quot;Unit&quot;) > 0 ) {&#xA;&#x9;&#x9;department = StringHandling.TRIM(strToken);&#xA;&#x9;&#x9;tmpStr = &quot;&quot;;&#xA;&#x9;}&#xA;&#x9;lenStr = StringHandling.LEN(tmpStr);&#xA;}&#xA;if (department.indexOf(&quot;;&quot;) > 0) {&#xA;&#x9;department = StringHandling.RIGHT(department, StringHandling.LEN(department)-(department.indexOf(&quot;;&quot;)+1));&#xA;}&#xA;if (department.indexOf(&quot;and&quot;) == 1 ) {&#xA;&#x9;department = StringHandling.RIGHT(department, StringHandling.LEN(department)-(department.indexOf(&quot;and&quot;) + 3));&#xA;}&#xA;if (department.indexOf(&quot; &quot;) > 0  &amp;&amp; department.indexOf(&quot; &quot;) &lt; 3) {&#xA;&#x9;department = StringHandling.RIGHT(department, StringHandling.LEN(department)-2);&#xA;} &#xA;output_row.Department = StringHandling.TRIM(department);&#xA;&#xA;&#xA;&#xA;// process RESEARCH CENTER / INSTITUTE / LAB===========================================&#xA;&#xA;tmpStr = rawAff;&#xA;strToken = &quot;&quot;;&#xA;String resCenter = &quot;&quot;;&#xA;lenStr = StringHandling.LEN(tmpStr);&#xA;firstComa = 0;&#xA;&#xA;while (lenStr > 0) {&#xA;&#x9;firstComa = tmpStr.indexOf(&quot;,&quot;);&#xA;&#x9;semiColon = tmpStr.indexOf(&quot;;&quot;);&#xA;&#x9;if (firstComa &lt; 0 ) {&#xA;&#x9;&#x9;strToken = tmpStr;&#xA;&#x9;&#x9;tmpStr = &quot;&quot;;&#x9;&#xA;&#x9;} else {&#xA;&#x9;&#x9;strToken = StringHandling.LEFT(tmpStr, firstComa);&#xA;&#x9;&#x9;tmpStr = StringHandling.RIGHT(tmpStr, lenStr-(firstComa+1));&#xA;&#x9;}&#x9;&#x9;  &#x9;&#xA;&#x9;if (strToken.indexOf(&quot;nstitute&quot;) > 0 || &#xA;&#x9;&#x9;strToken.indexOf(&quot;nstitut&quot;) > 0 || &#xA;&#x9;&#x9;strToken.indexOf(&quot;Instit.&quot;) > 0 ||&#xA;&#x9;&#x9;strToken.indexOf(&quot;Center&quot;) > 0 || &#xA;&#x9;&#x9;strToken.indexOf(&quot;center&quot;) > 0 || &#xA;&#x9;&#x9;strToken.indexOf(&quot;Ctr.&quot;) > 0 || &#xA;&#x9;&#x9;strToken.indexOf(&quot;Lab&quot;) > 0 ) {&#xA;&#x9;&#x9;resCenter = StringHandling.TRIM(strToken);&#xA;&#x9;&#x9;tmpStr = &quot;&quot;;&#xA;&#x9;}&#xA;&#x9;lenStr = StringHandling.LEN(tmpStr);&#xA;}&#xA;if (resCenter.indexOf(&quot;;&quot;) > 0) {&#xA;&#x9;resCenter = StringHandling.RIGHT(resCenter, StringHandling.LEN(resCenter)-(resCenter.indexOf(&quot;;&quot;)+1));&#xA;}&#xA;if (resCenter.indexOf(&quot;and&quot;) == 1 ) {&#xA;&#x9;resCenter = StringHandling.RIGHT(resCenter, StringHandling.LEN(resCenter)-(resCenter.indexOf(&quot;and&quot;) + 3));&#xA;}&#xA;if (resCenter.indexOf(&quot; &quot;) > 0  &amp;&amp; resCenter.indexOf(&quot; &quot;) &lt; 3) {&#xA;&#x9;resCenter = StringHandling.RIGHT(resCenter, StringHandling.LEN(resCenter)-2);&#xA;} &#xA;output_row.ResearchCenter = StringHandling.TRIM(resCenter);&#xA;&#xA;&#xA;// process HOSPITAL/CLINIC ===========================================&#xA;&#xA;tmpStr = rawAff;&#xA;String hospital = &quot;&quot;;&#xA;lenStr = StringHandling.LEN(tmpStr);&#xA;firstComa = 0;&#xA;&#xA;while (lenStr > 0) {&#xA;&#x9;firstComa = tmpStr.indexOf(&quot;,&quot;);&#xA;&#x9;semiColon = tmpStr.indexOf(&quot;;&quot;);&#xA;&#x9;if (firstComa &lt; 0 ) {&#xA;&#x9;&#x9;strToken = tmpStr;&#xA;&#x9;&#x9;tmpStr = &quot;&quot;;&#x9;&#xA;&#x9;} else {&#xA;&#x9;&#x9;strToken = StringHandling.LEFT(tmpStr, firstComa);&#xA;&#x9;&#x9;tmpStr = StringHandling.RIGHT(tmpStr, lenStr-(firstComa+1));&#xA;&#x9;}&#x9;&#x9;  &#x9;&#xA;&#x9;if (strToken.indexOf(&quot;ospital&quot;) > 0 || &#xA;&#x9;&#x9;strToken.indexOf(&quot;opital&quot;) > 0 || &#xA;&#x9;&#x9;strToken.indexOf(&quot;ôpital&quot;) > 0 ||&#xA;&#x9;&#x9;strToken.indexOf(&quot;linic&quot;) > 0) {&#xA;&#x9;&#x9;hospital = StringHandling.TRIM(strToken);&#xA;&#x9;&#x9;tmpStr = &quot;&quot;;&#xA;&#x9;}&#xA;&#x9;lenStr = StringHandling.LEN(tmpStr);&#xA;}&#xA;output_row.Hospital = StringHandling.TRIM(hospital);&#xA;&#xA;&#xA;&#xA;&#xA;// process AFFILIATION =====================================&#xA;&#xA;String organization = &quot;&quot;;&#xA;String address = &quot;&quot;;&#xA;String province = &quot;&quot;;&#xA;String country = &quot;&quot;;&#xA;tmpStr = rawAff;&#xA;&#xA;// CLEANUP AFFILIATION =============&#xA;if (tmpStr.indexOf(&quot;@&quot;) != -1) {&#xA;&#x9;tmpStr = StringHandling.TRIM(StringHandling.LEFT(tmpStr, tmpStr.lastIndexOf(&quot; &quot;)));&#xA;}&#x9;&#xA;if (tmpStr.indexOf(&quot;;&quot;) != -1) {&#xA;&#x9;tmpStr = StringHandling.TRIM(StringHandling.LEFT(tmpStr, tmpStr.indexOf(&quot;;&quot;)));&#xA;}&#xA;//if ( tmpStr.matches(&quot;/[A-Za-z]\d[A-Za-z] ?\d[A-Za-z]\d/&quot;) ) {&#xA;//&#x9;&#x9;remove the postal code&#xA;//}&#xA;&#xA;&#xA;int lastDot = tmpStr.lastIndexOf(&quot;.&quot;);&#xA;lenStr = StringHandling.LEN(tmpStr);&#xA;&#xA;// get COUNTRY&#xA;int lastComa = tmpStr.lastIndexOf(&quot;,&quot;);&#x9;&#x9;  &#x9;&#xA;if (lastComa > 0 &amp;&amp; lenStr > 0) {&#xA;&#x9;country = StringHandling.RIGHT(tmpStr, lenStr - (lastComa + 1));&#xA;&#x9;lastDot = country.indexOf(&quot;.&quot;);&#xA;&#x9;if (lastDot > 0) {&#xA;&#x9;&#x9;country = StringHandling.LEFT(country, lastDot);&#xA;&#x9;}&#xA;&#x9;country = StringHandling.TRIM(country);&#xA;&#x9;output_row.Country = country;&#xA;&#x9;tmpStr = StringHandling.LEFT(tmpStr, lastComa);&#xA;&#xA;&#x9;// get PROVINCE&#xA;&#x9;lenStr = StringHandling.LEN(tmpStr);&#xA;&#x9;lastComa = tmpStr.lastIndexOf(&quot;,&quot;);&#xA;&#x9;if (lastComa > 0  &amp;&amp; lenStr > 0 ) {&#xA;&#x9;&#x9;province = StringHandling.RIGHT(tmpStr, lenStr - (lastComa+1));&#xA;&#x9;&#x9;province = StringHandling.TRIM(province);&#xA;&#x9;&#x9;tmpStr = StringHandling.LEFT(tmpStr, lastComa);&#xA;&#x9;&#x9;if (!StringHandling.IS_ALPHA(province)){&#xA;&#x9;&#x9;&#x9;lenStr = StringHandling.LEN(tmpStr);&#xA;&#x9;&#x9;&#x9;lastComa = tmpStr.lastIndexOf(&quot;,&quot;);&#xA;&#x9;&#x9;&#x9;province = StringHandling.RIGHT(tmpStr, lenStr - (lastComa+1));&#xA;&#x9;&#x9;&#x9;province = StringHandling.TRIM(province);&#xA;&#x9;&#x9;}&#xA;&#x9;&#x9;output_row.Province = StringHandling.TRIM(province);&#xA;&#x9;&#x9;&#xA;&#x9;&#x9;&#xA;&#x9;&#x9;// get ORGANIZATION&#xA;&#x9;&#x9;//lenStr = StringHandling.LEN(tmpStr);&#xA;&#x9;&#x9;//firstComa = tmpStr.indexOf(&quot;,&quot;);&#xA;&#x9;&#x9;//if (firstComa > 0  &amp;&amp; lenStr > 0) {&#xA;&#x9;&#x9;//&#x9;organization = StringHandling.LEFT(tmpStr, firstComa);&#xA;&#x9;&#x9;//&#x9;output_row.Organization = StringHandling.TRIM(organization);&#xA;&#x9;&#x9;//&#x9;tmpStr = StringHandling.RIGHT(tmpStr, lenStr - (firstComa+1));&#xA;&#x9;&#x9;&#x9;  &#x9;&#x9;&#xA;&#xA;&#x9;&#x9;//&#x9;// get ADDRESS&#xA;&#x9;&#x9;//&#x9;lenStr = StringHandling.LEN(tmpStr);&#xA;&#x9;&#x9;//&#x9;if (lenStr > 0  &amp;&amp; lenStr > 0) {&#xA;&#x9;&#x9;//&#x9;&#x9;output_row.Address = StringHandling.TRIM(tmpStr);&#x9;  &#x9;&#x9;&#x9;&#x9;&#xA;&#x9;&#x9;//&#x9;}// if ADDRESS&#x9;&#xA;&#x9;&#x9;&#x9;&#xA;&#x9;&#x9;//}// if ORGANISATION&#x9;&#xA;&#x9;&#x9;&#xA;&#x9;}// if PROVINCE&#xA;&#x9;&#xA;}// if COUNTRY&#xA;&#xA;&#xA;&#xA;// put as organization either UNIVERSITY, either HOSPITAL/CLINIC, either RESEARCH CENTER&#xA;if (StringHandling.LEN(university) > 0) {&#xA;&#x9;output_row.Organization = StringHandling.TRIM(university);&#xA;} else if (StringHandling.LEN(hospital) > 0) {&#xA;&#x9;output_row.Organization = StringHandling.TRIM(hospital);&#xA;} else if (StringHandling.LEN(resCenter) > 0) {&#xA;&#x9;output_row.Organization = StringHandling.TRIM(resCenter);&#xA;} else if (StringHandling.LEN(department) > 0) {&#xA;&#x9;output_row.Organization = StringHandling.TRIM(department);&#xA;} else {&#xA;&#x9;output_row.Organization = &quot;&quot;;&#xA;}&#xA;&#xA;"/>
     <elementParameter field="MEMO_IMPORT" name="IMPORT" value="//import java.util.List;"/>
     <elementParameter field="TEXT" name="LABEL" value="getOrganization"/>
@@ -3363,8 +3152,9 @@
       <column comment="" key="false" length="-1" name="Country" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
     </metadata>
   </node>
-  <node componentName="tSQLiteOutput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="960" posY="544">
+  <node componentName="tSQLiteOutput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="448" posY="608">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tSQLiteOutput_1" show="false"/>
+    <elementParameter field="CHECK" name="ACTIVATE" value="false"/>
     <elementParameter field="TECHNICAL" name="PROPERTY:PROPERTY_TYPE" value="REPOSITORY" show="false"/>
     <elementParameter field="TECHNICAL" name="PROPERTY:REPOSITORY_PROPERTY_TYPE" value="_hXKSMKIVEeaE1Ir5tjYmaw" show="false"/>
     <elementParameter field="CHECK" name="USE_EXISTING_CONNECTION" value="true"/>
@@ -3506,6 +3296,250 @@
     <elementParameter field="COMPONENT_LIST" name="CONNECTION" value="tSQLiteConnection_1"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
   </node>
+  <node componentName="tFileInputExcel" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="-256" posY="608">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tFileInputExcel_7" show="false"/>
+    <elementParameter field="CHECK" name="ACTIVATE" value="false"/>
+    <elementParameter field="CHECK" name="VERSION_2007" value="true"/>
+    <elementParameter field="FILE" name="FILENAME" value="context.DataFolder + &quot;output/KPI_Mesh.xlsx&quot;"/>
+    <elementParameter field="CHECK" name="ALL_SHEETS" value="false"/>
+    <elementParameter field="TABLE" name="SHEETLIST">
+      <elementValue elementRef="SHEETNAME" value="&quot;MeshHeadings&quot;"/>
+      <elementValue elementRef="USE_REGEX" value="false"/>
+    </elementParameter>
+    <elementParameter field="TEXT" name="HEADER" value="1"/>
+    <elementParameter field="TEXT" name="FOOTER" value="0"/>
+    <elementParameter field="TEXT" name="LIMIT" value=""/>
+    <elementParameter field="CHECK" name="AFFECT_EACH_SHEET" value="false"/>
+    <elementParameter field="TEXT" name="FIRST_COLUMN" value="1"/>
+    <elementParameter field="TEXT" name="LAST_COLUMN" value=""/>
+    <elementParameter field="CHECK" name="DIE_ON_ERROR" value="false"/>
+    <elementParameter field="TECHNICAL" name="SCHEMA_REJECT:SCHEMA_TYPE" value="REPOSITORY" show="false"/>
+    <elementParameter field="TECHNICAL" name="SCHEMA_REJECT:REPOSITORY_SCHEMA_TYPE" value="_gr9agB26EeasBsBuIyXjOQ - metadata" show="false"/>
+    <elementParameter field="CHECK" name="ADVANCED_SEPARATOR" value="false"/>
+    <elementParameter field="TEXT" name="THOUSANDS_SEPARATOR" value="&quot;,&quot;" show="false"/>
+    <elementParameter field="TEXT" name="DECIMAL_SEPARATOR" value="&quot;.&quot;" show="false"/>
+    <elementParameter field="CHECK" name="TRIMALL" value="false"/>
+    <elementParameter field="TABLE" name="TRIMSELECT">
+      <elementValue elementRef="SCHEMA_COLUMN" value="PMID"/>
+      <elementValue elementRef="TRIM" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="DOI"/>
+      <elementValue elementRef="TRIM" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="Journal"/>
+      <elementValue elementRef="TRIM" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="Year"/>
+      <elementValue elementRef="TRIM" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="Year_EColl_"/>
+      <elementValue elementRef="TRIM" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="ArticleTitle"/>
+      <elementValue elementRef="TRIM" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="Keywords"/>
+      <elementValue elementRef="TRIM" value="false"/>
+    </elementParameter>
+    <elementParameter field="CHECK" name="CONVERTDATETOSTRING" value="false"/>
+    <elementParameter field="TABLE" name="DATESELECT" show="false">
+      <elementValue elementRef="SCHEMA_COLUMN" value="PMID"/>
+      <elementValue elementRef="CONVERTDATE" value="false"/>
+      <elementValue elementRef="PATTERN" value="&quot;MM-dd-yyyy&quot;"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="DOI"/>
+      <elementValue elementRef="CONVERTDATE" value="false"/>
+      <elementValue elementRef="PATTERN" value="&quot;MM-dd-yyyy&quot;"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="Journal"/>
+      <elementValue elementRef="CONVERTDATE" value="false"/>
+      <elementValue elementRef="PATTERN" value="&quot;MM-dd-yyyy&quot;"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="Year"/>
+      <elementValue elementRef="CONVERTDATE" value="false"/>
+      <elementValue elementRef="PATTERN" value="&quot;MM-dd-yyyy&quot;"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="Year_EColl_"/>
+      <elementValue elementRef="CONVERTDATE" value="false"/>
+      <elementValue elementRef="PATTERN" value="&quot;MM-dd-yyyy&quot;"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="ArticleTitle"/>
+      <elementValue elementRef="CONVERTDATE" value="false"/>
+      <elementValue elementRef="PATTERN" value="&quot;MM-dd-yyyy&quot;"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="Keywords"/>
+      <elementValue elementRef="CONVERTDATE" value="false"/>
+      <elementValue elementRef="PATTERN" value="&quot;MM-dd-yyyy&quot;"/>
+    </elementParameter>
+    <elementParameter field="ENCODING_TYPE" name="ENCODING" value="&quot;UTF-8&quot;"/>
+    <elementParameter field="TECHNICAL" name="ENCODING:ENCODING_TYPE" value="UTF-8"/>
+    <elementParameter field="CHECK" name="READ_REAL_VALUE" value="false" show="false"/>
+    <elementParameter field="CHECK" name="STOPREAD_ON_EMPTYROW" value="false"/>
+    <elementParameter field="CHECK" name="NOVALIDATE_ON_CELL" value="false" show="false"/>
+    <elementParameter field="CHECK" name="SUPPRESS_WARN" value="false" show="false"/>
+    <elementParameter field="CLOSED_LIST" name="GENERATION_MODE" value="USER_MODE"/>
+    <elementParameter field="TEXT" name="LABEL" value="excelMesh"/>
+    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
+    <metadata connector="FLOW" label="metadata" name="tFileInputExcel_7">
+      <column comment="" key="false" length="8" name="PMID" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_Integer" usefulColumn="true"/>
+      <column comment="" key="false" length="30" name="DOI" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="38" name="Journal" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="4" name="Year" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_Integer" usefulColumn="true"/>
+      <column comment="" key="false" length="0" name="Year_EColl_" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="127" name="ArticleTitle" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="50" usefulColumn="true"/>
+      <column comment="" key="false" length="33" name="Keywords" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
+    </metadata>
+    <metadata connector="REJECT" label="metadata" name="REJECT">
+      <column comment="" key="false" length="8" name="PMID" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_Integer" usefulColumn="true"/>
+      <column comment="" key="false" length="30" name="DOI" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="38" name="Journal" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="4" name="Year" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_Integer" usefulColumn="true"/>
+      <column comment="" key="false" length="0" name="Year_EColl_" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="127" name="ArticleTitle" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="50" usefulColumn="true"/>
+      <column comment="" key="false" length="33" name="Keywords" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="255" name="errorCode" nullable="true" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="255" name="errorMessage" nullable="true" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
+    </metadata>
+  </node>
+  <node componentName="tFileInputExcel" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="-96" posY="672">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tFileInputExcel_8" show="false"/>
+    <elementParameter field="CHECK" name="ACTIVATE" value="false"/>
+    <elementParameter field="CHECK" name="VERSION_2007" value="true"/>
+    <elementParameter field="FILE" name="FILENAME" value="context.DataFolder + &quot;output/KPI_TitleKW.xlsx&quot;"/>
+    <elementParameter field="CHECK" name="ALL_SHEETS" value="false"/>
+    <elementParameter field="TABLE" name="SHEETLIST">
+      <elementValue elementRef="SHEETNAME" value="&quot;TitleKWs&quot;"/>
+      <elementValue elementRef="USE_REGEX" value="false"/>
+    </elementParameter>
+    <elementParameter field="TEXT" name="HEADER" value="1"/>
+    <elementParameter field="TEXT" name="FOOTER" value="0"/>
+    <elementParameter field="TEXT" name="LIMIT" value=""/>
+    <elementParameter field="CHECK" name="AFFECT_EACH_SHEET" value="false"/>
+    <elementParameter field="TEXT" name="FIRST_COLUMN" value="1"/>
+    <elementParameter field="TEXT" name="LAST_COLUMN" value=""/>
+    <elementParameter field="CHECK" name="DIE_ON_ERROR" value="false"/>
+    <elementParameter field="TECHNICAL" name="SCHEMA_REJECT:SCHEMA_TYPE" value="REPOSITORY" show="false"/>
+    <elementParameter field="TECHNICAL" name="SCHEMA_REJECT:REPOSITORY_SCHEMA_TYPE" value="_gr9agB26EeasBsBuIyXjOQ - metadata" show="false"/>
+    <elementParameter field="CHECK" name="ADVANCED_SEPARATOR" value="false"/>
+    <elementParameter field="TEXT" name="THOUSANDS_SEPARATOR" value="&quot;,&quot;" show="false"/>
+    <elementParameter field="TEXT" name="DECIMAL_SEPARATOR" value="&quot;.&quot;" show="false"/>
+    <elementParameter field="CHECK" name="TRIMALL" value="false"/>
+    <elementParameter field="TABLE" name="TRIMSELECT">
+      <elementValue elementRef="SCHEMA_COLUMN" value="PMID"/>
+      <elementValue elementRef="TRIM" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="DOI"/>
+      <elementValue elementRef="TRIM" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="Journal"/>
+      <elementValue elementRef="TRIM" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="Year"/>
+      <elementValue elementRef="TRIM" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="Year_EColl_"/>
+      <elementValue elementRef="TRIM" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="ArticleTitle"/>
+      <elementValue elementRef="TRIM" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="Keywords"/>
+      <elementValue elementRef="TRIM" value="false"/>
+    </elementParameter>
+    <elementParameter field="CHECK" name="CONVERTDATETOSTRING" value="false"/>
+    <elementParameter field="TABLE" name="DATESELECT" show="false">
+      <elementValue elementRef="SCHEMA_COLUMN" value="PMID"/>
+      <elementValue elementRef="CONVERTDATE" value="false"/>
+      <elementValue elementRef="PATTERN" value="&quot;MM-dd-yyyy&quot;"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="DOI"/>
+      <elementValue elementRef="CONVERTDATE" value="false"/>
+      <elementValue elementRef="PATTERN" value="&quot;MM-dd-yyyy&quot;"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="Journal"/>
+      <elementValue elementRef="CONVERTDATE" value="false"/>
+      <elementValue elementRef="PATTERN" value="&quot;MM-dd-yyyy&quot;"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="Year"/>
+      <elementValue elementRef="CONVERTDATE" value="false"/>
+      <elementValue elementRef="PATTERN" value="&quot;MM-dd-yyyy&quot;"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="Year_EColl_"/>
+      <elementValue elementRef="CONVERTDATE" value="false"/>
+      <elementValue elementRef="PATTERN" value="&quot;MM-dd-yyyy&quot;"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="ArticleTitle"/>
+      <elementValue elementRef="CONVERTDATE" value="false"/>
+      <elementValue elementRef="PATTERN" value="&quot;MM-dd-yyyy&quot;"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="Keywords"/>
+      <elementValue elementRef="CONVERTDATE" value="false"/>
+      <elementValue elementRef="PATTERN" value="&quot;MM-dd-yyyy&quot;"/>
+    </elementParameter>
+    <elementParameter field="ENCODING_TYPE" name="ENCODING" value="&quot;UTF-8&quot;"/>
+    <elementParameter field="TECHNICAL" name="ENCODING:ENCODING_TYPE" value="UTF-8"/>
+    <elementParameter field="CHECK" name="READ_REAL_VALUE" value="false" show="false"/>
+    <elementParameter field="CHECK" name="STOPREAD_ON_EMPTYROW" value="false"/>
+    <elementParameter field="CHECK" name="NOVALIDATE_ON_CELL" value="false" show="false"/>
+    <elementParameter field="CHECK" name="SUPPRESS_WARN" value="false" show="false"/>
+    <elementParameter field="CLOSED_LIST" name="GENERATION_MODE" value="USER_MODE"/>
+    <elementParameter field="TEXT" name="LABEL" value="excelTitleKW"/>
+    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
+    <metadata connector="FLOW" label="metadata" name="tFileInputExcel_8">
+      <column comment="" key="false" length="8" name="PMID" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_Integer" usefulColumn="true"/>
+      <column comment="" key="false" length="30" name="DOI" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="38" name="Journal" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="4" name="Year" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_Integer" usefulColumn="true"/>
+      <column comment="" key="false" length="0" name="Year_EColl_" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="127" name="ArticleTitle" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="50" usefulColumn="true"/>
+      <column comment="" key="false" length="33" name="Keywords" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
+    </metadata>
+    <metadata connector="REJECT" label="metadata" name="REJECT">
+      <column comment="" key="false" length="8" name="PMID" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_Integer" usefulColumn="true"/>
+      <column comment="" key="false" length="30" name="DOI" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="38" name="Journal" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="4" name="Year" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_Integer" usefulColumn="true"/>
+      <column comment="" key="false" length="0" name="Year_EColl_" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="127" name="ArticleTitle" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="50" usefulColumn="true"/>
+      <column comment="" key="false" length="33" name="Keywords" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="255" name="errorCode" nullable="true" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="255" name="errorMessage" nullable="true" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
+    </metadata>
+  </node>
+  <node componentName="tFileInputExcel" componentVersion="0.102" offsetLabelX="1" offsetLabelY="0" posX="-128" posY="1248">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tFileInputExcel_11" show="false"/>
+    <elementParameter field="CHECK" name="ACTIVATE" value="false"/>
+    <elementParameter field="CHECK" name="VERSION_2007" value="true"/>
+    <elementParameter field="FILE" name="FILENAME" value="context.DataFolder +context.InputExcelFile"/>
+    <elementParameter field="CHECK" name="ALL_SHEETS" value="false"/>
+    <elementParameter field="TABLE" name="SHEETLIST">
+      <elementValue elementRef="SHEETNAME" value="&quot;KeyAuthors&quot;"/>
+      <elementValue elementRef="USE_REGEX" value=""/>
+    </elementParameter>
+    <elementParameter field="TEXT" name="HEADER" value="1"/>
+    <elementParameter field="TEXT" name="FOOTER" value="0"/>
+    <elementParameter field="TEXT" name="LIMIT" value=""/>
+    <elementParameter field="CHECK" name="AFFECT_EACH_SHEET" value="false"/>
+    <elementParameter field="TEXT" name="FIRST_COLUMN" value="1"/>
+    <elementParameter field="TEXT" name="LAST_COLUMN" value=""/>
+    <elementParameter field="CHECK" name="DIE_ON_ERROR" value="false"/>
+    <elementParameter field="TECHNICAL" name="SCHEMA_REJECT:SCHEMA_TYPE" value="REPOSITORY" show="false"/>
+    <elementParameter field="TECHNICAL" name="SCHEMA_REJECT:REPOSITORY_SCHEMA_TYPE" value="_qbwZ4AT-Eeamu_ixvu2j-Q - metadata" show="false"/>
+    <elementParameter field="CHECK" name="ADVANCED_SEPARATOR" value="false"/>
+    <elementParameter field="TEXT" name="THOUSANDS_SEPARATOR" value="&quot;,&quot;" show="false"/>
+    <elementParameter field="TEXT" name="DECIMAL_SEPARATOR" value="&quot;.&quot;" show="false"/>
+    <elementParameter field="CHECK" name="TRIMALL" value="true"/>
+    <elementParameter field="TABLE" name="TRIMSELECT" show="false">
+      <elementValue elementRef="SCHEMA_COLUMN" value="Author"/>
+      <elementValue elementRef="TRIM" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="Affiliation"/>
+      <elementValue elementRef="TRIM" value="false"/>
+    </elementParameter>
+    <elementParameter field="CHECK" name="CONVERTDATETOSTRING" value="false"/>
+    <elementParameter field="TABLE" name="DATESELECT" show="false">
+      <elementValue elementRef="SCHEMA_COLUMN" value="Author"/>
+      <elementValue elementRef="CONVERTDATE" value="false"/>
+      <elementValue elementRef="PATTERN" value="&quot;MM-dd-yyyy&quot;"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="Affiliation"/>
+      <elementValue elementRef="CONVERTDATE" value="false"/>
+      <elementValue elementRef="PATTERN" value="&quot;MM-dd-yyyy&quot;"/>
+    </elementParameter>
+    <elementParameter field="ENCODING_TYPE" name="ENCODING" value="&quot;UTF-8&quot;"/>
+    <elementParameter field="TECHNICAL" name="ENCODING:ENCODING_TYPE" value="UTF-8"/>
+    <elementParameter field="CHECK" name="READ_REAL_VALUE" value="false" show="false"/>
+    <elementParameter field="CHECK" name="STOPREAD_ON_EMPTYROW" value="true"/>
+    <elementParameter field="CHECK" name="NOVALIDATE_ON_CELL" value="false" show="false"/>
+    <elementParameter field="CHECK" name="SUPPRESS_WARN" value="false" show="false"/>
+    <elementParameter field="CLOSED_LIST" name="GENERATION_MODE" value="USER_MODE"/>
+    <elementParameter field="TEXT" name="LABEL" value="KeyAuthors"/>
+    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
+    <metadata connector="FLOW" label="metadata" name="tFileInputExcel_11">
+      <column comment="" key="true" length="30" name="Author" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="500" name="Affiliation" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
+    </metadata>
+    <metadata connector="REJECT" label="metadata" name="REJECT">
+      <column comment="" key="true" length="30" name="Author" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="500" name="Affiliation" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="errorCode" nullable="true" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="errorMessage" nullable="true" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
+    </metadata>
+  </node>
   <connection connectorName="FLOW" label="row12" lineStyle="0" metaname="tFileInputExcel_2" offsetLabelX="-50" offsetLabelY="9" source="tFileInputExcel_2" target="tJoin_5">
     <elementParameter field="TABLE" name="TRACES_CONNECTION_FILTER" show="false">
       <elementValue elementRef="TRACE_COLUMN" value="FullName"/>
@@ -3519,25 +3553,31 @@
       <elementValue elementRef="TRACE_COLUMN_CONDITION" value=""/>
     </elementParameter>
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
+    <elementParameter field="CHECK" name="ACTIVATE" value="false" show="false"/>
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="row12" show="false"/>
   </connection>
   <connection connectorName="SUBJOB_OK" label="OnSubjobOk" lineStyle="1" metaname="tFileInputExcel_2" offsetLabelX="0" offsetLabelY="0" source="tFileInputExcel_2" target="tFileInputExcel_5">
+    <elementParameter field="CHECK" name="ACTIVATE" value="false" show="false"/>
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="OnSubjobOk3" show="false"/>
   </connection>
   <connection connectorName="FLOW" label="row37" lineStyle="0" metaname="tJoin_5" offsetLabelX="0" offsetLabelY="0" source="tJoin_5" target="tJoin_1">
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
+    <elementParameter field="CHECK" name="ACTIVATE" value="false" show="false"/>
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="row37" show="false"/>
   </connection>
   <connection connectorName="FLOW" label="row36" lineStyle="8" metaname="tFileInputExcel_10" offsetLabelX="0" offsetLabelY="0" source="tFileInputExcel_10" target="tJoin_5">
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
+    <elementParameter field="CHECK" name="ACTIVATE" value="false" show="false"/>
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="row36" show="false"/>
   </connection>
   <connection connectorName="FLOW" label="row14" lineStyle="0" metaname="tJoin_1" offsetLabelX="0" offsetLabelY="0" source="tJoin_1" target="tMap_7">
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
+    <elementParameter field="CHECK" name="ACTIVATE" value="false" show="false"/>
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="row14" show="false"/>
   </connection>
   <connection connectorName="FLOW" label="row13" lineStyle="8" metaname="tFileInputExcel_3" offsetLabelX="0" offsetLabelY="0" source="tFileInputExcel_3" target="tJoin_1">
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
+    <elementParameter field="CHECK" name="ACTIVATE" value="false" show="false"/>
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="row13" show="false"/>
   </connection>
   <connection connectorName="FLOW" label="FulAuthors" lineStyle="0" metaname="FulAuthors" offsetLabelX="0" offsetLabelY="0" source="tMap_7" target="tJoin_6">
@@ -3565,10 +3605,12 @@
       <elementValue elementRef="TRACE_COLUMN_CONDITION" value=""/>
     </elementParameter>
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
+    <elementParameter field="CHECK" name="ACTIVATE" value="false" show="false"/>
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="FulAuthors" show="false"/>
   </connection>
   <connection connectorName="FLOW" label="row38" lineStyle="0" metaname="tJoin_6" offsetLabelX="0" offsetLabelY="0" source="tJoin_6" target="tJavaRow_5">
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
+    <elementParameter field="CHECK" name="ACTIVATE" value="false" show="false"/>
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="row38" show="false"/>
   </connection>
   <connection connectorName="FLOW" label="row40" lineStyle="0" metaname="tJavaRow_5" offsetLabelX="0" offsetLabelY="0" source="tJavaRow_5" target="tFileOutputExcel_5">
@@ -3587,15 +3629,13 @@
       <elementValue elementRef="TRACE_COLUMN_CONDITION" value=""/>
     </elementParameter>
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
+    <elementParameter field="CHECK" name="ACTIVATE" value="false" show="false"/>
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="row40" show="false"/>
   </connection>
   <connection connectorName="FLOW" label="AuthorsNoAccents" lineStyle="8" metaname="AuthorsNoAccents" offsetLabelX="0" offsetLabelY="0" source="tMap_8" target="tJoin_6">
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
+    <elementParameter field="CHECK" name="ACTIVATE" value="false" show="false"/>
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="AuthorsNoAccents" show="false"/>
-  </connection>
-  <connection connectorName="FLOW" label="row39" lineStyle="0" metaname="tFileInputExcel_11" offsetLabelX="0" offsetLabelY="0" source="tFileInputExcel_11" target="tMap_8">
-    <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
-    <elementParameter field="TEXT" name="UNIQUE_NAME" value="row39" show="false"/>
   </connection>
   <connection connectorName="FLOW" label="row15" lineStyle="0" metaname="tFileInputExcel_5" offsetLabelX="0" offsetLabelY="0" source="tFileInputExcel_5" target="tJoin_2">
     <elementParameter field="TABLE" name="TRACES_CONNECTION_FILTER" show="false">
@@ -3604,14 +3644,17 @@
       <elementValue elementRef="TRACE_COLUMN_CONDITION" value=""/>
     </elementParameter>
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
+    <elementParameter field="CHECK" name="ACTIVATE" value="false" show="false"/>
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="row15" show="false"/>
   </connection>
   <connection connectorName="FLOW" label="row17" lineStyle="0" metaname="tJoin_2" offsetLabelX="0" offsetLabelY="0" source="tJoin_2" target="tFileOutputExcel_4">
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
+    <elementParameter field="CHECK" name="ACTIVATE" value="false" show="false"/>
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="row17" show="false"/>
   </connection>
   <connection connectorName="FLOW" label="row16" lineStyle="8" metaname="tFileInputExcel_4" offsetLabelX="0" offsetLabelY="0" source="tFileInputExcel_4" target="tJoin_2">
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
+    <elementParameter field="CHECK" name="ACTIVATE" value="false" show="false"/>
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="row16" show="false"/>
   </connection>
   <connection connectorName="FLOW" label="row2" lineStyle="0" metaname="tFileInputExcel_1" offsetLabelX="0" offsetLabelY="0" source="tFileInputExcel_1" target="tMap_1">
@@ -3626,6 +3669,7 @@
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="OnComponentError1" show="false"/>
   </connection>
   <connection connectorName="SUBJOB_OK" label="OnSubjobOk" lineStyle="1" metaname="tFileInputExcel_1" offsetLabelX="50" offsetLabelY="-50" outputId="2" source="tFileInputExcel_1" target="tFileInputExcel_6">
+    <elementParameter field="CHECK" name="ACTIVATE" value="false" show="false"/>
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="OnSubjobOk1" show="false"/>
   </connection>
   <connection connectorName="FLOW" label="Researcher" lineStyle="0" metaname="Researcher" offsetLabelX="5" offsetLabelY="2" source="tMap_1" target="tJavaRow_1">
@@ -3740,77 +3784,84 @@
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="row18" show="false"/>
   </connection>
-  <connection connectorName="SUBJOB_OK" label="OnSubjobOk" lineStyle="1" metaname="tFileInputExcel_6" offsetLabelX="0" offsetLabelY="0" source="tFileInputExcel_6" target="tFileInputExcel_2">
-    <elementParameter field="TEXT" name="UNIQUE_NAME" value="OnSubjobOk2" show="false"/>
-  </connection>
   <connection connectorName="FLOW" label="row9" lineStyle="10" mergeOrder="1" metaname="tFileInputExcel_6" offsetLabelX="0" offsetLabelY="0" source="tFileInputExcel_6" target="tUnite_1">
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
+    <elementParameter field="CHECK" name="ACTIVATE" value="false" show="false"/>
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="row9" show="false"/>
+  </connection>
+  <connection connectorName="SUBJOB_OK" label="OnSubjobOk" lineStyle="1" metaname="tFileInputExcel_6" offsetLabelX="0" offsetLabelY="0" source="tFileInputExcel_6" target="tFileInputExcel_2">
+    <elementParameter field="CHECK" name="ACTIVATE" value="false" show="false"/>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="OnSubjobOk2" show="false"/>
   </connection>
   <connection connectorName="FLOW" label="row20" lineStyle="10" mergeOrder="1" metaname="tUnite_1" offsetLabelX="0" offsetLabelY="0" source="tUnite_1" target="tUnite_2">
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
+    <elementParameter field="CHECK" name="ACTIVATE" value="false" show="false"/>
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="row20" show="false"/>
   </connection>
   <connection connectorName="FLOW" label="row22" lineStyle="0" metaname="tUnite_2" offsetLabelX="0" offsetLabelY="0" source="tUnite_2" target="tJavaRow_3">
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
+    <elementParameter field="CHECK" name="ACTIVATE" value="false" show="false"/>
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="row22" show="false"/>
   </connection>
   <connection connectorName="FLOW" label="row27" lineStyle="0" metaname="tJavaRow_3" offsetLabelX="0" offsetLabelY="0" source="tJavaRow_3" target="tMap_5">
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
+    <elementParameter field="CHECK" name="ACTIVATE" value="false" show="false"/>
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="row27" show="false"/>
   </connection>
-  <connection connectorName="FLOW" label="AllKeywords2" lineStyle="0" metaname="AllKeywords2" offsetLabelX="0" offsetLabelY="0" outputId="1" source="tMap_5" target="tUniqRow_2">
-    <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
-    <elementParameter field="TEXT" name="UNIQUE_NAME" value="AllKeywords2" show="false"/>
-  </connection>
-  <connection connectorName="FLOW" label="PMIDkeywords" lineStyle="0" metaname="PMIDkeywords" offsetLabelX="0" offsetLabelY="0" outputId="2" source="tMap_5" target="tUniqRow_1">
+  <connection connectorName="FLOW" label="PMIDkeywords" lineStyle="0" metaname="PMIDkeywords" offsetLabelX="0" offsetLabelY="0" outputId="1" source="tMap_5" target="tUniqRow_1">
     <elementParameter field="TABLE" name="TRACES_CONNECTION_FILTER" show="false">
       <elementValue elementRef="TRACE_COLUMN" value="Year_EColl"/>
       <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true"/>
       <elementValue elementRef="TRACE_COLUMN_CONDITION" value=""/>
     </elementParameter>
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
+    <elementParameter field="CHECK" name="ACTIVATE" value="false" show="false"/>
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="PMIDkeywords" show="false"/>
+  </connection>
+  <connection connectorName="FLOW" label="AllKeywords2" lineStyle="0" metaname="AllKeywords2" offsetLabelX="0" offsetLabelY="0" outputId="2" source="tMap_5" target="tUniqRow_2">
+    <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
+    <elementParameter field="CHECK" name="ACTIVATE" value="false" show="false"/>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="AllKeywords2" show="false"/>
   </connection>
   <connection connectorName="UNIQUE" label="row28" lineStyle="0" metaname="tUniqRow_1" offsetLabelX="0" offsetLabelY="0" source="tUniqRow_1" target="tSortRow_1">
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
+    <elementParameter field="CHECK" name="ACTIVATE" value="false" show="false"/>
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="row28" show="false"/>
   </connection>
   <connection connectorName="FLOW" label="row25" lineStyle="0" metaname="tSortRow_1" offsetLabelX="0" offsetLabelY="0" source="tSortRow_1" target="tJoin_4">
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
+    <elementParameter field="CHECK" name="ACTIVATE" value="false" show="false"/>
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="row25" show="false"/>
   </connection>
   <connection connectorName="UNIQUE" label="row29" lineStyle="0" metaname="tUniqRow_2" offsetLabelX="0" offsetLabelY="0" source="tUniqRow_2" target="tSortRow_2">
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
+    <elementParameter field="CHECK" name="ACTIVATE" value="false" show="false"/>
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="row29" show="false"/>
   </connection>
   <connection connectorName="FLOW" label="row30" lineStyle="0" metaname="tSortRow_2" offsetLabelX="0" offsetLabelY="0" source="tSortRow_2" target="tJoin_3">
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
+    <elementParameter field="CHECK" name="ACTIVATE" value="false" show="false"/>
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="row30" show="false"/>
   </connection>
   <connection connectorName="REJECT" label="row43" lineStyle="0" metaname="tJoin_3" offsetLabelX="0" offsetLabelY="0" source="tJoin_3" target="tFileOutputExcel_12">
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
+    <elementParameter field="CHECK" name="ACTIVATE" value="false" show="false"/>
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="row43" show="false"/>
   </connection>
   <connection connectorName="FLOW" label="row41" lineStyle="8" metaname="tFileInputExcel_12" offsetLabelX="0" offsetLabelY="0" source="tFileInputExcel_12" target="tJoin_3">
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
+    <elementParameter field="CHECK" name="ACTIVATE" value="false" show="false"/>
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="row41" show="false"/>
   </connection>
   <connection connectorName="REJECT" label="row26" lineStyle="0" metaname="tJoin_4" offsetLabelX="0" offsetLabelY="0" source="tJoin_4" target="tFileOutputExcel_8">
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
+    <elementParameter field="CHECK" name="ACTIVATE" value="false" show="false"/>
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="row26" show="false"/>
   </connection>
   <connection connectorName="FLOW" label="row32" lineStyle="8" metaname="tFileInputExcel_9" offsetLabelX="0" offsetLabelY="0" source="tFileInputExcel_9" target="tJoin_4">
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
+    <elementParameter field="CHECK" name="ACTIVATE" value="false" show="false"/>
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="row32" show="false"/>
-  </connection>
-  <connection connectorName="FLOW" label="row19" lineStyle="10" mergeOrder="2" metaname="tFileInputExcel_7" offsetLabelX="0" offsetLabelY="0" source="tFileInputExcel_7" target="tUnite_1">
-    <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
-    <elementParameter field="TEXT" name="UNIQUE_NAME" value="row19" show="false"/>
-  </connection>
-  <connection connectorName="FLOW" label="row21" lineStyle="10" mergeOrder="2" metaname="tFileInputExcel_8" offsetLabelX="0" offsetLabelY="0" source="tFileInputExcel_8" target="tUnite_2">
-    <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
-    <elementParameter field="TEXT" name="UNIQUE_NAME" value="row21" show="false"/>
   </connection>
   <connection connectorName="COMPONENT_OK" label="OnComponentOk" lineStyle="3" metaname="tSQLiteConnection_1" offsetLabelX="0" offsetLabelY="0" source="tSQLiteConnection_1" target="tFileInputExcel_1">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="OnComponentOk1" show="false"/>
@@ -3820,14 +3871,32 @@
   </connection>
   <connection connectorName="FLOW" label="row6" lineStyle="0" metaname="tJavaRow_2" offsetLabelX="0" offsetLabelY="0" source="tJavaRow_2" target="tSQLiteOutput_1">
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
+    <elementParameter field="CHECK" name="ACTIVATE" value="false" show="false"/>
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="row6" show="false"/>
   </connection>
+  <connection connectorName="FLOW" label="row19" lineStyle="10" mergeOrder="2" metaname="tFileInputExcel_7" offsetLabelX="0" offsetLabelY="0" source="tFileInputExcel_7" target="tUnite_1">
+    <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
+    <elementParameter field="CHECK" name="ACTIVATE" value="false" show="false"/>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="row19" show="false"/>
+  </connection>
+  <connection connectorName="FLOW" label="row21" lineStyle="10" mergeOrder="2" metaname="tFileInputExcel_8" offsetLabelX="50" offsetLabelY="50" source="tFileInputExcel_8" target="tUnite_2">
+    <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
+    <elementParameter field="CHECK" name="ACTIVATE" value="false" show="false"/>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="row21" show="false"/>
+  </connection>
+  <connection connectorName="FLOW" label="row39" lineStyle="0" metaname="tFileInputExcel_11" offsetLabelX="0" offsetLabelY="0" source="tFileInputExcel_11" target="tMap_8">
+    <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
+    <elementParameter field="CHECK" name="ACTIVATE" value="false" show="false"/>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="row39" show="false"/>
+  </connection>
   <subjob>
+    <elementParameter field="CHECK" name="COLLAPSED" value="true" show="false"/>
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tFileInputExcel_2" show="false"/>
     <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" value="92;131;150" show="false"/>
     <elementParameter field="COLOR" name="SUBJOB_COLOR" value="207;226;236"/>
   </subjob>
   <subjob>
+    <elementParameter field="CHECK" name="COLLAPSED" value="true" show="false"/>
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tFileInputExcel_5" show="false"/>
     <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" value="92;131;150" show="false"/>
     <elementParameter field="COLOR" name="SUBJOB_COLOR" value="207;226;236"/>
@@ -3838,6 +3907,7 @@
     <elementParameter field="COLOR" name="SUBJOB_COLOR" value="207;226;236"/>
   </subjob>
   <subjob>
+    <elementParameter field="CHECK" name="COLLAPSED" value="true" show="false"/>
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tFileInputExcel_6" show="false"/>
     <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" value="92;131;150" show="false"/>
     <elementParameter field="COLOR" name="SUBJOB_COLOR" value="207;226;236"/>
@@ -3864,6 +3934,21 @@
   </subjob>
   <subjob>
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tSQLiteClose_1" show="false"/>
+    <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" value="92;131;150" show="false"/>
+    <elementParameter field="COLOR" name="SUBJOB_COLOR" value="207;226;236"/>
+  </subjob>
+  <subjob>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tFileInputExcel_7" show="false"/>
+    <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" value="92;131;150" show="false"/>
+    <elementParameter field="COLOR" name="SUBJOB_COLOR" value="207;226;236"/>
+  </subjob>
+  <subjob>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tFileInputExcel_8" show="false"/>
+    <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" value="92;131;150" show="false"/>
+    <elementParameter field="COLOR" name="SUBJOB_COLOR" value="207;226;236"/>
+  </subjob>
+  <subjob>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tFileInputExcel_11" show="false"/>
     <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" value="92;131;150" show="false"/>
     <elementParameter field="COLOR" name="SUBJOB_COLOR" value="207;226;236"/>
   </subjob>

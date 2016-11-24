@@ -224,6 +224,27 @@
       <relatedItems xmi:id="_zSxTmrG1Eea8GedMwNZT7g" id="TalendDate" version="Latest" type="routine"/>
       <relatedItems xmi:id="_zSxTm7G1Eea8GedMwNZT7g" id="Mathematical" version="Latest" type="routine"/>
     </ItemsRelations>
+    <ItemsRelations xmi:id="_NhpiYLJSEeaKuNaBKgbSBQ">
+      <baseItem xmi:id="_NhpiYbJSEeaKuNaBKgbSBQ" id="_Ngu8YLJSEeaKuNaBKgbSBQ" version="0.1" type="job"/>
+      <relatedItems xmi:id="_NhpiYrJSEeaKuNaBKgbSBQ" id="_hXKSMKIVEeaE1Ir5tjYmaw" version="Latest" type="property"/>
+      <relatedItems xmi:id="_NhpiY7JSEeaKuNaBKgbSBQ" id="Numeric" version="Latest" type="routine"/>
+      <relatedItems xmi:id="_NhpiZLJSEeaKuNaBKgbSBQ" id="TalendString" version="Latest" type="routine"/>
+      <relatedItems xmi:id="_NhpiZbJSEeaKuNaBKgbSBQ" id="DuplTools" version="Latest" type="routine"/>
+      <relatedItems xmi:id="_NhpiZrJSEeaKuNaBKgbSBQ" id="DataOperation" version="Latest" type="routine"/>
+      <relatedItems xmi:id="_NhpiZ7JSEeaKuNaBKgbSBQ" id="StringHandling" version="Latest" type="routine"/>
+      <relatedItems xmi:id="_NhpiaLJSEeaKuNaBKgbSBQ" id="TalendDataGenerator" version="Latest" type="routine"/>
+      <relatedItems xmi:id="_NhpiabJSEeaKuNaBKgbSBQ" id="TalendDate" version="Latest" type="routine"/>
+      <relatedItems xmi:id="_NhpiarJSEeaKuNaBKgbSBQ" id="Mathematical" version="Latest" type="routine"/>
+      <relatedItems xmi:id="_Nhpia7JSEeaKuNaBKgbSBQ" id="PubMedNormal" version="Latest" type="routine"/>
+      <relatedItems xmi:id="_NhpibLJSEeaKuNaBKgbSBQ" id="Relational" version="Latest" type="routine"/>
+      <relatedItems xmi:id="_NhpibbJSEeaKuNaBKgbSBQ" id="_p_dXsFLXEea5s9uNz8ha8Q - metadata" version="Latest" type="schema"/>
+      <relatedItems xmi:id="_NhpibrJSEeaKuNaBKgbSBQ" id="_qbwZ4AT-Eeamu_ixvu2j-Q - metadata" version="Latest" type="schema"/>
+      <relatedItems xmi:id="_Nhpib7JSEeaKuNaBKgbSBQ" id="_fRP50CIJEeak1tUgN1_aPg - metadata" version="Latest" type="schema"/>
+      <relatedItems xmi:id="_NhpicLJSEeaKuNaBKgbSBQ" id="_WwaRwBvVEeatse1YQ3haIA - metadata" version="Latest" type="schema"/>
+      <relatedItems xmi:id="_NhpicbJSEeaKuNaBKgbSBQ" id="_17Dh8DGkEeaUAZErHEBRYQ - metadata" version="Latest" type="schema"/>
+      <relatedItems xmi:id="_NhpicrJSEeaKuNaBKgbSBQ" id="_gr9agB26EeasBsBuIyXjOQ - metadata" version="Latest" type="schema"/>
+      <relatedItems xmi:id="_jfjSMLJUEeaKuNaBKgbSBQ" id="_3qyR4LJTEeaKuNaBKgbSBQ" version="Latest" type="property"/>
+    </ItemsRelations>
     <migrationTask xmi:id="_sLbQYIcWEea8XeDPvcgWYg" id="org.talend.designer.core.ui.preferences.migration.ChangeMysqlVersionForProjectSetting" breaks="5.2.0" version="5.1.3" status="ok"/>
     <migrationTask xmi:id="_sLbQYYcWEea8XeDPvcgWYg" id="org.talend.designer.core.ui.preferences.migration.ChangeOracleVersionForProjectSetting" breaks="5.2.0" version="5.2.1" status="ok"/>
     <migrationTask xmi:id="_sLbQYocWEea8XeDPvcgWYg" id="org.talend.designer.maven.ui.ConfigMavenRepositoryRemove" breaks="6.0.1" version="6.0.2" status="ok"/>
