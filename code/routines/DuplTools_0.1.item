@@ -230,4 +230,33 @@ public class DuplTools {
 		return new String[] { code1.trim(), sPatt.trim() };
 	}
 	
+	
+    /**
+     * 
+     * getHashCode: return hash code ( lcase without accents and spaces)   
+     * 
+     * {talendTypes} String
+     * 
+     * {Category} User Defined
+     * 
+     * {Code1} string input: codes for hashing  
+     * 
+     * {example} getHashCode( 'Goméz-T Dario', '')  # gomeztdario
+     */
+    public static String getHashCode(String code1 ) {
+
+        if ( code1 == null ) { code1 = ""; }
+
+        code1 = cleanAff2(code1);
+        code1 = cleanAff9(code1);
+        
+        if ( code1.length() > 15) {
+        	Integer hash1 = code1.hashCode();
+        	code1 = code1.substring(0, 15) + hash1.toString();
+        }
+
+        return code1; 
+
+    }
+	
 }

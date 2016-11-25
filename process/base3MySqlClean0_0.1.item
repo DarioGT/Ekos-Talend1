@@ -156,134 +156,7 @@
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
     <metadata connector="FLOW" name="tMysqlRollback_1"/>
   </node>
-  <node componentName="tMap" componentVersion="2.1" offsetLabelX="0" offsetLabelY="0" posX="896" posY="288">
-    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tMap_3" show="false"/>
-    <elementParameter field="CHECK" name="ACTIVATE" value="false"/>
-    <elementParameter field="EXTERNAL" name="MAP" value=""/>
-    <elementParameter field="CLOSED_LIST" name="LINK_STYLE" value="AUTO"/>
-    <elementParameter field="DIRECTORY" name="TEMPORARY_DATA_DIRECTORY" value=""/>
-    <elementParameter field="IMAGE" name="PREVIEW" value="_0Vo00LJwEeaKuNaBKgbSBQ-tMap_3-PREVIEW.bmp"/>
-    <elementParameter field="CHECK" name="DIE_ON_ERROR" value="true" show="false"/>
-    <elementParameter field="CHECK" name="LKUP_PARALLELIZE" value="false" show="false"/>
-    <elementParameter field="TEXT" name="ROWS_BUFFER_SIZE" value="2000000"/>
-    <elementParameter field="CHECK" name="CHANGE_HASH_AND_EQUALS_FOR_BIGDECIMAL" value="false"/>
-    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
-    <metadata connector="FLOW" label="CleanAffiliations" name="CleanAffiliations">
-      <column comment="" key="false" length="-1" name="AffCode" nullable="false" originalDbColumnName="affCode" pattern="" precision="-1" sourceType="" type="id_String" originalLength="-1" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="CleanAffiliation" nullable="false" originalDbColumnName="affiliation" pattern="" precision="-1" sourceType="" type="id_String" originalLength="-1" usefulColumn="true"/>
-    </metadata>
-    <metadata connector="FLOW" name="Authors">
-      <column comment="" key="false" length="-1" name="AuthorCode" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="-1" usefulColumn="true"/>
-      <column comment="" key="false" length="9" name="LastName" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="11" name="ForeName" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="2" name="Initials" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="FullName" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="-1" usefulColumn="true"/>
-    </metadata>
-    <metadata connector="FLOW" name="AuthorAff">
-      <column comment="" key="false" length="-1" name="AuthorCode" nullable="false" pattern="" precision="-1" sourceType="" type="id_String" originalLength="-1" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="AffCode" nullable="false" pattern="" precision="-1" sourceType="" type="id_String" originalLength="-1" usefulColumn="true"/>
-    </metadata>
-    <metadata connector="FLOW" name="AuthorPMID">
-      <column comment="" key="false" length="8" name="PMID" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_Integer" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="AuthorCode" nullable="false" pattern="" precision="-1" sourceType="" type="id_String" originalLength="-1" usefulColumn="true"/>
-    </metadata>
-    <metadata connector="FLOW" name="Affiliations">
-      <column comment="" key="false" length="-1" name="AffCode" nullable="false" originalDbColumnName="affCode" pattern="" precision="-1" sourceType="" type="id_String" originalLength="-1" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="Affiliation" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="-1" usefulColumn="true"/>
-    </metadata>
-    <nodeData xsi:type="MapperData">
-      <uiProperties/>
-      <varTables sizeState="INTERMEDIATE" name="Var">
-        <mapperTableEntries name="AuthorCode" expression="PubMedNormal.normCode(row23.LastName,row23.ForeName,row23.Initials) " type="id_String"/>
-        <mapperTableEntries name="AffCode" expression="PubMedNormal.normAff(row23.Affiliations) " type="id_String"/>
-        <mapperTableEntries name="CleanAffiliation" expression="PubMedNormal.cleanAff(row23.Affiliations ) " type="id_String"/>
-      </varTables>
-      <outputTables sizeState="INTERMEDIATE" name="CleanAffiliations">
-        <mapperTableEntries name="AffCode" expression="Var.AffCode  " type="id_String"/>
-        <mapperTableEntries name="CleanAffiliation" expression="Var.CleanAffiliation " type="id_String"/>
-      </outputTables>
-      <outputTables sizeState="INTERMEDIATE" name="Authors">
-        <mapperTableEntries name="AuthorCode" expression="Var.AuthorCode " type="id_String" nullable="true"/>
-        <mapperTableEntries name="LastName" expression="row23.LastName " type="id_String" nullable="true"/>
-        <mapperTableEntries name="ForeName" expression="row23.ForeName " type="id_String" nullable="true"/>
-        <mapperTableEntries name="Initials" expression="row23.Initials " type="id_String" nullable="true"/>
-        <mapperTableEntries name="FullName" expression="PubMedNormal.fullName(row23.LastName,row23.ForeName,row23.Initials) " type="id_String" nullable="true"/>
-      </outputTables>
-      <outputTables sizeState="INTERMEDIATE" name="AuthorAff">
-        <mapperTableEntries name="AuthorCode" expression="Var.AuthorCode " type="id_String"/>
-        <mapperTableEntries name="AffCode" expression="Var.AffCode " type="id_String"/>
-      </outputTables>
-      <outputTables sizeState="INTERMEDIATE" name="AuthorPMID">
-        <mapperTableEntries name="PMID" expression="row23.PMID " type="id_Integer" nullable="true"/>
-        <mapperTableEntries name="AuthorCode" expression="Var.AuthorCode " type="id_String"/>
-      </outputTables>
-      <outputTables sizeState="INTERMEDIATE" name="Affiliations">
-        <mapperTableEntries name="AffCode" expression="Var.AffCode " type="id_String"/>
-        <mapperTableEntries name="Affiliation" expression="PubMedNormal.fullAff(row23.Affiliations) " type="id_String" nullable="true"/>
-      </outputTables>
-    </nodeData>
-  </node>
-  <node componentName="tUniqRow" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="960" posY="224">
-    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tUniqRow_1" show="false"/>
-    <elementParameter field="CHECK" name="ACTIVATE" value="false"/>
-    <elementParameter field="TABLE" name="UNIQUE_KEY">
-      <elementValue elementRef="SCHEMA_COLUMN" value="PMID"/>
-      <elementValue elementRef="KEY_ATTRIBUTE" value="true"/>
-      <elementValue elementRef="CASE_SENSITIVE" value="false"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="AuthorCode"/>
-      <elementValue elementRef="KEY_ATTRIBUTE" value="true"/>
-      <elementValue elementRef="CASE_SENSITIVE" value="false"/>
-    </elementParameter>
-    <elementParameter field="CHECK" name="ONLY_ONCE_EACH_DUPLICATED_KEY" value="false"/>
-    <elementParameter field="CHECK" name="IS_VIRTUAL_COMPONENT" value="false"/>
-    <elementParameter field="OPENED_LIST" name="BUFFER_SIZE" value="M" show="false"/>
-    <elementParameter field="DIRECTORY" name="TEMP_DIRECTORY" value="" show="false"/>
-    <elementParameter field="CHECK" name="CHANGE_HASH_AND_EQUALS_FOR_BIGDECIMAL" value="false"/>
-    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
-    <metadata connector="FLOW" name="tUniqRow_1">
-      <column comment="" key="false" length="8" name="PMID" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_Integer" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="AuthorCode" nullable="false" pattern="" precision="-1" sourceType="" type="id_String" originalLength="-1" usefulColumn="true"/>
-    </metadata>
-    <metadata connector="UNIQUE" name="UNIQUE">
-      <column comment="" key="false" length="8" name="PMID" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_Integer" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="AuthorCode" nullable="false" originalDbColumnName="authorCode" pattern="" precision="-1" sourceType="" type="id_String" originalLength="-1" usefulColumn="true"/>
-    </metadata>
-    <metadata connector="DUPLICATE" name="DUPLICATE">
-      <column comment="" key="false" length="8" name="PMID" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_Integer" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="AuthorCode" nullable="false" pattern="" precision="-1" sourceType="" type="id_String" originalLength="-1" usefulColumn="true"/>
-    </metadata>
-  </node>
-  <node componentName="tUniqRow" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="960" posY="352">
-    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tUniqRow_2" show="false"/>
-    <elementParameter field="CHECK" name="ACTIVATE" value="false"/>
-    <elementParameter field="TABLE" name="UNIQUE_KEY">
-      <elementValue elementRef="SCHEMA_COLUMN" value="AuthorCode"/>
-      <elementValue elementRef="KEY_ATTRIBUTE" value="true"/>
-      <elementValue elementRef="CASE_SENSITIVE" value="false"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="AffCode"/>
-      <elementValue elementRef="KEY_ATTRIBUTE" value="true"/>
-      <elementValue elementRef="CASE_SENSITIVE" value="false"/>
-    </elementParameter>
-    <elementParameter field="CHECK" name="ONLY_ONCE_EACH_DUPLICATED_KEY" value="false"/>
-    <elementParameter field="CHECK" name="IS_VIRTUAL_COMPONENT" value="false"/>
-    <elementParameter field="OPENED_LIST" name="BUFFER_SIZE" value="M" show="false"/>
-    <elementParameter field="DIRECTORY" name="TEMP_DIRECTORY" value="" show="false"/>
-    <elementParameter field="CHECK" name="CHANGE_HASH_AND_EQUALS_FOR_BIGDECIMAL" value="false"/>
-    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
-    <metadata connector="FLOW" name="tUniqRow_2">
-      <column comment="" key="false" length="-1" name="AuthorCode" nullable="false" pattern="" precision="-1" sourceType="" type="id_String" originalLength="-1" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="AffCode" nullable="false" pattern="" precision="-1" sourceType="" type="id_String" originalLength="-1" usefulColumn="true"/>
-    </metadata>
-    <metadata connector="UNIQUE" name="UNIQUE">
-      <column comment="" key="false" length="-1" name="AuthorCode" nullable="false" originalDbColumnName="authorCode" pattern="" precision="-1" sourceType="" type="id_String" originalLength="-1" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="AffCode" nullable="false" originalDbColumnName="affCode" pattern="" precision="-1" sourceType="" type="id_String" originalLength="-1" usefulColumn="true"/>
-    </metadata>
-    <metadata connector="DUPLICATE" name="DUPLICATE">
-      <column comment="" key="false" length="-1" name="AuthorCode" nullable="false" pattern="" precision="-1" sourceType="" type="id_String" originalLength="-1" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="AffCode" nullable="false" pattern="" precision="-1" sourceType="" type="id_String" originalLength="-1" usefulColumn="true"/>
-    </metadata>
-  </node>
-  <node componentName="tMysqlInput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="-224" posY="128">
+  <node componentName="tMysqlInput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="-192" posY="96">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tMysqlInput_1" show="false"/>
     <elementParameter field="CLOSED_LIST" name="DB_VERSION" value="MYSQL_5" show="false"/>
     <elementParameter field="CHECK" name="USE_EXISTING_CONNECTION" value="true"/>
@@ -318,7 +191,7 @@
       <column comment="" key="false" length="400" name="Affiliations" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
     </metadata>
   </node>
-  <node componentName="tMap" componentVersion="2.1" offsetLabelX="0" offsetLabelY="0" posX="-64" posY="128">
+  <node componentName="tMap" componentVersion="2.1" offsetLabelX="0" offsetLabelY="0" posX="-64" posY="96">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tMap_1" show="false"/>
     <elementParameter field="EXTERNAL" name="MAP" value=""/>
     <elementParameter field="CLOSED_LIST" name="LINK_STYLE" value="AUTO"/>
@@ -330,16 +203,19 @@
     <elementParameter field="CHECK" name="CHANGE_HASH_AND_EQUALS_FOR_BIGDECIMAL" value="false"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
     <metadata connector="FLOW" name="aff3">
-      <column comment="" key="true" length="-1" name="Affiliation" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="800" usefulColumn="true"/>
+      <column comment="" key="true" length="-1" name="affCode" nullable="false" pattern="" precision="-1" sourceType="" type="id_String" originalLength="200" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="affiliationRaw" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="800" usefulColumn="true"/>
       <column comment="" key="false" length="-1" name="aff3" nullable="false" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="600" usefulColumn="true"/>
     </metadata>
     <nodeData xsi:type="MapperData">
-      <uiProperties/>
+      <uiProperties shellMaximized="true"/>
       <varTables sizeState="INTERMEDIATE" name="Var">
         <mapperTableEntries name="aff3" expression="DuplTools.cleanAff2(row1.Affiliations) " type="id_String"/>
+        <mapperTableEntries name="affCode" expression="DuplTools.getHashCode(row1.Affiliations) " type="id_String"/>
       </varTables>
       <outputTables sizeState="INTERMEDIATE" name="aff3">
-        <mapperTableEntries name="Affiliation" expression="row1.Affiliations" type="id_String" nullable="true"/>
+        <mapperTableEntries name="affCode" expression="Var.affCode " type="id_String"/>
+        <mapperTableEntries name="affiliationRaw" expression="row1.Affiliations" type="id_String" nullable="true"/>
         <mapperTableEntries name="aff3" expression="Var.aff3 " type="id_String"/>
       </outputTables>
       <inputTables sizeState="INTERMEDIATE" name="row1" matchingMode="UNIQUE_MATCH" lookupMode="LOAD_ONCE">
@@ -349,20 +225,86 @@
   </node>
   <node componentName="tJavaRow" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="96" posY="96">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tJavaRow_1" show="false"/>
-    <elementParameter field="MEMO_JAVA" name="CODE" value="//Code generated according to input schema and output schema&#xA;&#xA;output_row.Affiliation = input_row.Affiliation;&#xA;output_row.aff3 = input_row.aff3;&#xA;&#xA;output_row.aff4 = &quot;&quot;;&#xA;output_row.dept = &quot;&quot;;&#xA;output_row.university = &quot;&quot;;&#xA;output_row.center = &quot;&quot;;&#xA;output_row.hospital = &quot;&quot;;&#xA;&#xA;String code1 = input_row.aff3;&#xA;String strToken = &quot;&quot;; &#xA;String myVar = &quot;&quot;;&#xA;&#xA;String[] resp = {&quot;&quot;,&quot;&quot;}; &#xA;&#xA;// university ===========================================&#xA;&#xA;    strToken = &quot;[,]?([a-z0-9 ]*universi[,a-z0-9 ]*)&quot;; &#xA;    resp = DuplTools.getPart( code1, strToken );&#xA;    if ( resp[1].length() > 0  ) {&#xA;        code1 = resp[0]; &#xA;        output_row.university = resp[1].trim();&#xA;    } &#xA;&#xA;// dept ===========================================&#xA;&#xA;    strToken = &quot;[,]?([a-z0-9 ]*(dpto|depart|dpt|dept|division|unit|fac)[ a-z0-9]*)&quot;; &#xA;    resp = DuplTools.getPart( code1, strToken );&#xA;    if ( resp[1].length() > 0  ) {&#xA;        code1 = resp[0]; &#xA;        output_row.dept = resp[1].trim();&#xA;    } else {&#xA;&#xA;        resp = DuplTools.getPart( output_row.university, strToken );&#xA;        if ( resp[1].length() > 0  ) {&#xA;            output_row.dept = resp[1].trim();&#xA;        }&#xA;    }&#xA;&#xA;// center   ===========================================&#xA;&#xA;    strToken = &quot;[,]?([a-z0-9 ]*(instit|centre|center|ctr|lab|unida|unit|school|ecole|group)[, a-z0-9]*)&quot;; &#xA;    resp = DuplTools.getPart( code1, strToken );&#xA;    if ( resp[1].length() > 0  ) {&#xA;        code1 = resp[0]; &#xA;        output_row.center = resp[1];&#xA;    } else {&#xA;    &#xA;&#x9;    strToken = &quot;[,]?([a-z0-9 ]*(instit|centre|center|ctr|lab|unida|unit)[ a-z0-9]*)&quot;; &#xA;        resp = DuplTools.getPart( output_row.university, strToken );&#xA;        if ( resp[1].length() > 0  ) {&#xA;            output_row.center = resp[1].trim();&#xA;        }&#xA;    }&#xA;&#xA;// hospital  ===========================================&#xA;&#xA;    strToken = &quot;[,]?([a-z0-9 ]*(hospital|hopital|linic)[, a-z0-9]*)&quot;; &#xA;    resp = DuplTools.getPart( code1, strToken );&#xA;    if ( resp[1].length() > 0  ) {&#xA;        code1 = resp[0]; &#xA;        output_row.hospital = resp[1].trim();&#xA;    } else {&#xA;&#xA;        resp = DuplTools.getPart( output_row.university, strToken );&#xA;        if ( resp[1].length() > 0  ) {&#xA;            output_row.hospital = resp[1].trim();&#xA;        }&#xA;    }&#xA;&#xA;// rest of name &#xA;output_row.aff4 = DuplTools.cleanAff9( code1 ); "/>
+    <elementParameter field="MEMO_JAVA" name="CODE" value="//Code generated according to input schema and output schema&#xA;&#xA;output_row.affCode = input_row.affCode;&#xA;output_row.affiliationRaw = input_row.affiliationRaw;&#xA;output_row.aff3 = input_row.aff3;&#xA;&#xA;output_row.aff4 = &quot;&quot;;&#xA;output_row.dept = &quot;&quot;;&#xA;output_row.university = &quot;&quot;;&#xA;output_row.center = &quot;&quot;;&#xA;output_row.hospital = &quot;&quot;;&#xA;&#xA;String code1 = input_row.aff3;&#xA;String strToken = &quot;&quot;; &#xA;String myVar = &quot;&quot;;&#xA;&#xA;String[] resp = {&quot;&quot;,&quot;&quot;}; &#xA;&#xA;// university ===========================================&#xA;&#xA;    strToken = &quot;[,]?([a-z0-9 ]*universi[,a-z0-9 ]*)&quot;; &#xA;    resp = DuplTools.getPart( code1, strToken );&#xA;    if ( resp[1].length() > 0  ) {&#xA;        code1 = resp[0]; &#xA;        output_row.university = resp[1].trim();&#xA;    } &#xA;&#xA;// dept ===========================================&#xA;&#xA;    strToken = &quot;[,]?([a-z0-9 ]*(dpto|depart|dpt|dept|division|unit|fac)[ a-z0-9]*)&quot;; &#xA;    resp = DuplTools.getPart( code1, strToken );&#xA;    if ( resp[1].length() > 0  ) {&#xA;        code1 = resp[0]; &#xA;        output_row.dept = resp[1].trim();&#xA;    } else {&#xA;&#xA;        resp = DuplTools.getPart( output_row.university, strToken );&#xA;        if ( resp[1].length() > 0  ) {&#xA;            output_row.dept = resp[1].trim();&#xA;        }&#xA;    }&#xA;&#xA;// center   ===========================================&#xA;&#xA;    strToken = &quot;[,]?([a-z0-9 ]*(instit|centre|center|ctr|lab|unida|unit|school|ecole|group)[, a-z0-9]*)&quot;; &#xA;    resp = DuplTools.getPart( code1, strToken );&#xA;    if ( resp[1].length() > 0  ) {&#xA;        code1 = resp[0]; &#xA;        output_row.center = resp[1];&#xA;    } else {&#xA;    &#xA;        strToken = &quot;[,]?([a-z0-9 ]*(instit|centre|center|ctr|lab|unida|unit)[ a-z0-9]*)&quot;; &#xA;        resp = DuplTools.getPart( output_row.university, strToken );&#xA;        if ( resp[1].length() > 0  ) {&#xA;            output_row.center = resp[1].trim();&#xA;        }&#xA;    }&#xA;&#xA;// hospital  ===========================================&#xA;&#xA;    strToken = &quot;[,]?([a-z0-9 ]*(hospital|hopital|linic)[, a-z0-9]*)&quot;; &#xA;    resp = DuplTools.getPart( code1, strToken );&#xA;    if ( resp[1].length() > 0  ) {&#xA;        code1 = resp[0]; &#xA;        output_row.hospital = resp[1].trim();&#xA;    } else {&#xA;&#xA;        resp = DuplTools.getPart( output_row.university, strToken );&#xA;        if ( resp[1].length() > 0  ) {&#xA;            output_row.hospital = resp[1].trim();&#xA;        }&#xA;    }&#xA;&#xA;// rest of name &#xA;output_row.aff4 = DuplTools.cleanAff9( code1 ); "/>
     <elementParameter field="MEMO_IMPORT" name="IMPORT" value="//import java.util.List;"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
     <metadata connector="FLOW" name="tJavaRow_1">
-      <column comment="" key="true" length="600" name="Affiliation" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="800" usefulColumn="true"/>
+      <column comment="" key="true" length="100" name="affCode" nullable="false" pattern="" precision="-1" sourceType="" type="id_String" originalLength="200" usefulColumn="true"/>
+      <column comment="" key="false" length="600" name="affiliationRaw" nullable="false" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="800" usefulColumn="true"/>
       <column comment="" key="false" length="600" name="aff3" nullable="false" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="600" usefulColumn="true"/>
       <column comment="" key="false" length="200" name="aff4" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="200" usefulColumn="true"/>
       <column comment="" key="false" length="200" name="dept" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="200" usefulColumn="true"/>
-      <column comment="" key="false" length="200" name="university" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="200" usefulColumn="true"/>
+      <column comment="" key="false" length="400" name="university" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="200" usefulColumn="true"/>
       <column comment="" key="false" length="200" name="center" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="200" usefulColumn="true"/>
-      <column comment="" key="false" length="200" name="hospital" nullable="false" pattern="" precision="-1" sourceType="" type="id_String" originalLength="200" usefulColumn="true"/>
+      <column comment="" key="false" length="200" name="hospital" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="200" usefulColumn="true"/>
     </metadata>
   </node>
-  <node componentName="tMysqlOutput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="320" posY="128">
+  <node componentName="tUniqRow" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="288" posY="128">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tUniqRow_1" show="false"/>
+    <elementParameter field="TABLE" name="UNIQUE_KEY">
+      <elementValue elementRef="SCHEMA_COLUMN" value="affCode"/>
+      <elementValue elementRef="KEY_ATTRIBUTE" value="true"/>
+      <elementValue elementRef="CASE_SENSITIVE" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="affiliationRaw"/>
+      <elementValue elementRef="KEY_ATTRIBUTE" value="false"/>
+      <elementValue elementRef="CASE_SENSITIVE" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="aff3"/>
+      <elementValue elementRef="KEY_ATTRIBUTE" value="false"/>
+      <elementValue elementRef="CASE_SENSITIVE" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="aff4"/>
+      <elementValue elementRef="KEY_ATTRIBUTE" value="false"/>
+      <elementValue elementRef="CASE_SENSITIVE" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="dept"/>
+      <elementValue elementRef="KEY_ATTRIBUTE" value="false"/>
+      <elementValue elementRef="CASE_SENSITIVE" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="university"/>
+      <elementValue elementRef="KEY_ATTRIBUTE" value="false"/>
+      <elementValue elementRef="CASE_SENSITIVE" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="center"/>
+      <elementValue elementRef="KEY_ATTRIBUTE" value="false"/>
+      <elementValue elementRef="CASE_SENSITIVE" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="hospital"/>
+      <elementValue elementRef="KEY_ATTRIBUTE" value="false"/>
+      <elementValue elementRef="CASE_SENSITIVE" value="false"/>
+    </elementParameter>
+    <elementParameter field="CHECK" name="ONLY_ONCE_EACH_DUPLICATED_KEY" value="true"/>
+    <elementParameter field="CHECK" name="IS_VIRTUAL_COMPONENT" value="false"/>
+    <elementParameter field="OPENED_LIST" name="BUFFER_SIZE" value="M" show="false"/>
+    <elementParameter field="DIRECTORY" name="TEMP_DIRECTORY" value="" show="false"/>
+    <elementParameter field="CHECK" name="CHANGE_HASH_AND_EQUALS_FOR_BIGDECIMAL" value="false"/>
+    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
+    <metadata connector="FLOW" name="tUniqRow_1">
+      <column comment="" key="true" length="100" name="affCode" nullable="false" pattern="" precision="-1" sourceType="" type="id_String" originalLength="200" usefulColumn="true"/>
+      <column comment="" key="false" length="600" name="affiliationRaw" nullable="false" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="800" usefulColumn="true"/>
+      <column comment="" key="false" length="600" name="aff3" nullable="false" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="600" usefulColumn="true"/>
+      <column comment="" key="false" length="200" name="aff4" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="200" usefulColumn="true"/>
+      <column comment="" key="false" length="200" name="dept" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="200" usefulColumn="true"/>
+      <column comment="" key="false" length="400" name="university" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="200" usefulColumn="true"/>
+      <column comment="" key="false" length="200" name="center" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="200" usefulColumn="true"/>
+      <column comment="" key="false" length="200" name="hospital" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="200" usefulColumn="true"/>
+    </metadata>
+    <metadata connector="UNIQUE" name="UNIQUE">
+      <column comment="" key="true" length="100" name="affCode" nullable="false" pattern="" precision="-1" sourceType="" type="id_String" originalLength="200" usefulColumn="true"/>
+      <column comment="" key="false" length="600" name="affiliationRaw" nullable="false" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="800" usefulColumn="true"/>
+      <column comment="" key="false" length="600" name="aff3" nullable="false" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="600" usefulColumn="true"/>
+      <column comment="" key="false" length="200" name="aff4" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="200" usefulColumn="true"/>
+      <column comment="" key="false" length="200" name="dept" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="200" usefulColumn="true"/>
+      <column comment="" key="false" length="400" name="university" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="200" usefulColumn="true"/>
+      <column comment="" key="false" length="200" name="center" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="200" usefulColumn="true"/>
+      <column comment="" key="false" length="200" name="hospital" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="200" usefulColumn="true"/>
+    </metadata>
+    <metadata connector="DUPLICATE" name="DUPLICATE">
+      <column comment="" key="true" length="100" name="affCode" nullable="false" pattern="" precision="-1" sourceType="" type="id_String" originalLength="200" usefulColumn="true"/>
+      <column comment="" key="false" length="600" name="affiliationRaw" nullable="false" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="800" usefulColumn="true"/>
+      <column comment="" key="false" length="600" name="aff3" nullable="false" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="600" usefulColumn="true"/>
+      <column comment="" key="false" length="200" name="aff4" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="200" usefulColumn="true"/>
+      <column comment="" key="false" length="200" name="dept" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="200" usefulColumn="true"/>
+      <column comment="" key="false" length="400" name="university" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="200" usefulColumn="true"/>
+      <column comment="" key="false" length="200" name="center" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="200" usefulColumn="true"/>
+      <column comment="" key="false" length="200" name="hospital" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="200" usefulColumn="true"/>
+    </metadata>
+  </node>
+  <node componentName="tMysqlOutput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="448" posY="96">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tMysqlOutput_1" show="false"/>
     <elementParameter field="CLOSED_LIST" name="DB_VERSION" value="MYSQL_5" show="false"/>
     <elementParameter field="CHECK" name="USE_EXISTING_CONNECTION" value="true"/>
@@ -393,7 +335,12 @@
     <elementParameter field="TABLE" name="ADD_COLS"/>
     <elementParameter field="CHECK" name="USE_FIELD_OPTIONS" value="false"/>
     <elementParameter field="TABLE" name="FIELD_OPTIONS" show="false">
-      <elementValue elementRef="SCHEMA_COLUMN" value="Affiliation"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="affCode"/>
+      <elementValue elementRef="UPDATE_KEY" value="false"/>
+      <elementValue elementRef="DELETE_KEY" value="false"/>
+      <elementValue elementRef="UPDATABLE" value="true"/>
+      <elementValue elementRef="INSERTABLE" value="true"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="affiliationRaw"/>
       <elementValue elementRef="UPDATE_KEY" value="false"/>
       <elementValue elementRef="DELETE_KEY" value="false"/>
       <elementValue elementRef="UPDATABLE" value="true"/>
@@ -438,29 +385,30 @@
     <elementParameter field="TEXT" name="LABEL" value="src_affiliation"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
     <metadata connector="FLOW" name="tMysqlOutput_1">
-      <column comment="" key="true" length="600" name="Affiliation" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="800" usefulColumn="true"/>
+      <column comment="" key="true" length="100" name="affCode" nullable="false" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="200" usefulColumn="true"/>
+      <column comment="" key="false" length="600" name="affiliationRaw" nullable="false" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="800" usefulColumn="true"/>
       <column comment="" key="false" length="600" name="aff3" nullable="false" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="600" usefulColumn="true"/>
       <column comment="" key="false" length="200" name="aff4" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="200" usefulColumn="true"/>
       <column comment="" key="false" length="200" name="dept" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="200" usefulColumn="true"/>
-      <column comment="" key="false" length="200" name="university" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="200" usefulColumn="true"/>
+      <column comment="" key="false" length="400" name="university" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="200" usefulColumn="true"/>
       <column comment="" key="false" length="200" name="center" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="200" usefulColumn="true"/>
-      <column comment="" key="false" length="200" name="hospital" nullable="false" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="200" usefulColumn="true"/>
+      <column comment="" key="false" length="200" name="hospital" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="200" usefulColumn="true"/>
     </metadata>
     <metadata connector="REJECT" name="REJECT">
-      <column comment="" key="true" length="600" name="Affiliation" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="800" usefulColumn="true"/>
+      <column comment="" key="true" length="100" name="affCode" nullable="false" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="200" usefulColumn="true"/>
+      <column comment="" key="false" length="600" name="affiliationRaw" nullable="false" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="800" usefulColumn="true"/>
       <column comment="" key="false" length="600" name="aff3" nullable="false" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="600" usefulColumn="true"/>
       <column comment="" key="false" length="200" name="aff4" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="200" usefulColumn="true"/>
       <column comment="" key="false" length="200" name="dept" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="200" usefulColumn="true"/>
-      <column comment="" key="false" length="200" name="university" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="200" usefulColumn="true"/>
+      <column comment="" key="false" length="400" name="university" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="200" usefulColumn="true"/>
       <column comment="" key="false" length="200" name="center" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="200" usefulColumn="true"/>
-      <column comment="" key="false" length="200" name="hospital" nullable="false" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="200" usefulColumn="true"/>
+      <column comment="" key="false" length="200" name="hospital" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="200" usefulColumn="true"/>
       <column defaultValue="" key="false" length="255" name="errorCode" nullable="true" precision="0" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
       <column defaultValue="" key="false" length="255" name="errorMessage" nullable="true" precision="0" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
     </metadata>
   </node>
-  <node componentName="tMysqlInput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="-160" posY="352">
+  <node componentName="tMysqlInput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="-96" posY="320">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tMysqlInput_3" show="false"/>
-    <elementParameter field="CHECK" name="ACTIVATE" value="false"/>
     <elementParameter field="CLOSED_LIST" name="DB_VERSION" value="MYSQL_5" show="false"/>
     <elementParameter field="CHECK" name="USE_EXISTING_CONNECTION" value="true"/>
     <elementParameter field="COMPONENT_LIST" name="CONNECTION" value="tMysqlConnection_1"/>
@@ -505,7 +453,7 @@
     </elementParameter>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
     <metadata connector="FLOW" name="tMysqlInput_3">
-      <column comment="" defaultValue="" key="false" length="8" name="PMID" nullable="true" pattern="" precision="0" sourceType="INT" type="id_Integer" originalLength="-1" usefulColumn="true"/>
+      <column comment="" defaultValue="" key="false" length="20" name="PMID" nullable="true" pattern="" precision="0" sourceType="INT" type="id_Integer" originalLength="20" usefulColumn="true"/>
       <column comment="" key="false" length="200" name="IdType" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
       <column comment="" defaultValue="" key="false" length="11" name="Year" nullable="true" pattern="" precision="0" sourceType="INT" type="id_Integer" originalLength="-1" usefulColumn="true"/>
       <column comment="" defaultValue="" key="false" length="4" name="Year_EColl_" nullable="true" pattern="" precision="0" sourceType="INT" type="id_Integer" originalLength="-1" usefulColumn="true"/>
@@ -515,9 +463,8 @@
       <column comment="" key="false" length="800" name="Affiliations" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
     </metadata>
   </node>
-  <node componentName="tMap" componentVersion="2.1" offsetLabelX="0" offsetLabelY="0" posX="32" posY="384">
+  <node componentName="tMap" componentVersion="2.1" offsetLabelX="0" offsetLabelY="0" posX="64" posY="320">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tMap_2" show="false"/>
-    <elementParameter field="CHECK" name="ACTIVATE" value="false"/>
     <elementParameter field="EXTERNAL" name="MAP" value=""/>
     <elementParameter field="CLOSED_LIST" name="LINK_STYLE" value="AUTO"/>
     <elementParameter field="DIRECTORY" name="TEMPORARY_DATA_DIRECTORY" value=""/>
@@ -527,58 +474,52 @@
     <elementParameter field="TEXT" name="ROWS_BUFFER_SIZE" value="2000000"/>
     <elementParameter field="CHECK" name="CHANGE_HASH_AND_EQUALS_FOR_BIGDECIMAL" value="false"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
-    <metadata connector="FLOW" label="CleanAffiliations" name="copyOfCleanAffiliations">
-      <column comment="" key="false" length="-1" name="AffCode" nullable="false" originalDbColumnName="affCode" pattern="" precision="-1" sourceType="" type="id_String" originalLength="-1" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="CleanAffiliation" nullable="false" originalDbColumnName="affiliation" pattern="" precision="-1" sourceType="" type="id_String" originalLength="-1" usefulColumn="true"/>
+    <metadata connector="FLOW" name="authors">
+      <column comment="" key="false" length="50" name="authorCode" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="50" usefulColumn="true"/>
+      <column comment="" key="false" length="50" name="lastName" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="50" name="foreName" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="5" name="initials" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="200" name="fullName" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="200" usefulColumn="true"/>
     </metadata>
-    <metadata connector="FLOW" name="copyOfAuthors">
-      <column comment="" key="false" length="-1" name="AuthorCode" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="-1" usefulColumn="true"/>
-      <column comment="" key="false" length="9" name="LastName" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="11" name="ForeName" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="2" name="Initials" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="FullName" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="-1" usefulColumn="true"/>
+    <metadata connector="FLOW" name="authorAff">
+      <column comment="" key="true" length="100" name="authorCode" nullable="false" pattern="" precision="-1" sourceType="" type="id_String" originalLength="100" usefulColumn="true"/>
+      <column comment="" key="true" length="100" name="affCode" nullable="false" pattern="" precision="-1" sourceType="" type="id_String" originalLength="100" usefulColumn="true"/>
     </metadata>
-    <metadata connector="FLOW" name="copyOfAuthorAff">
-      <column comment="" key="false" length="-1" name="AuthorCode" nullable="false" pattern="" precision="-1" sourceType="" type="id_String" originalLength="-1" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="AffCode" nullable="false" pattern="" precision="-1" sourceType="" type="id_String" originalLength="-1" usefulColumn="true"/>
+    <metadata connector="FLOW" name="authorPMID">
+      <column comment="" key="false" length="20" name="pmid" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_Integer" usefulColumn="true"/>
+      <column comment="" key="false" length="100" name="authorCode" nullable="false" pattern="" precision="-1" sourceType="" type="id_String" originalLength="100" usefulColumn="true"/>
     </metadata>
-    <metadata connector="FLOW" name="copyOfAuthorPMID">
-      <column comment="" key="false" length="8" name="PMID" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_Integer" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="AuthorCode" nullable="false" pattern="" precision="-1" sourceType="" type="id_String" originalLength="-1" usefulColumn="true"/>
-    </metadata>
-    <metadata connector="FLOW" name="copyOfAffiliations">
-      <column comment="" key="false" length="-1" name="AffCode" nullable="false" originalDbColumnName="affCode" pattern="" precision="-1" sourceType="" type="id_String" originalLength="-1" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="Affiliation" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="-1" usefulColumn="true"/>
+    <metadata connector="FLOW" name="affiliations">
+      <column comment="" key="true" length="50" name="affCode" nullable="false" pattern="" precision="-1" sourceType="" type="id_String" originalLength="50" usefulColumn="true"/>
+      <column comment="" key="false" length="600" name="affiliationRaw" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="600" usefulColumn="true"/>
+      <column comment="" key="false" length="600" name="aff3" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="600" usefulColumn="true"/>
     </metadata>
     <nodeData xsi:type="MapperData">
       <uiProperties shellMaximized="true"/>
       <varTables sizeState="INTERMEDIATE" name="Var">
-        <mapperTableEntries name="AuthorCode" expression="PubMedNormal.normCode(row23.LastName,row23.ForeName,row23.Initials) " type="id_String"/>
-        <mapperTableEntries name="AffCode" expression="PubMedNormal.normAff(row23.Affiliations) " type="id_String"/>
-        <mapperTableEntries name="CleanAffiliation" expression="PubMedNormal.cleanAff(row23.Affiliations ) " type="id_String"/>
+        <mapperTableEntries name="authorCode" expression="PubMedNormal.normCode(row23.LastName,row23.ForeName,row23.Initials) " type="id_String"/>
+        <mapperTableEntries name="affCode" expression="DuplTools.getHashCode(row23.Affiliations) " type="id_String"/>
+        <mapperTableEntries name="aff3" expression="DuplTools.cleanAff2(row23.Affiliations) " type="id_String"/>
       </varTables>
-      <outputTables sizeState="INTERMEDIATE" name="copyOfCleanAffiliations">
-        <mapperTableEntries name="AffCode" expression="Var.AffCode  " type="id_String"/>
-        <mapperTableEntries name="CleanAffiliation" expression="Var.CleanAffiliation " type="id_String"/>
+      <outputTables sizeState="INTERMEDIATE" name="authors">
+        <mapperTableEntries name="authorCode" expression="Var.authorCode " type="id_String" nullable="true"/>
+        <mapperTableEntries name="lastName" expression="row23.LastName " type="id_String" nullable="true"/>
+        <mapperTableEntries name="foreName" expression="row23.ForeName " type="id_String" nullable="true"/>
+        <mapperTableEntries name="initials" expression="row23.Initials " type="id_String" nullable="true"/>
+        <mapperTableEntries name="fullName" expression="PubMedNormal.fullName(row23.LastName,row23.ForeName,row23.Initials) " type="id_String" nullable="true"/>
       </outputTables>
-      <outputTables sizeState="INTERMEDIATE" name="copyOfAuthors">
-        <mapperTableEntries name="AuthorCode" expression="Var.AuthorCode " type="id_String" nullable="true"/>
-        <mapperTableEntries name="LastName" expression="row23.LastName " type="id_String" nullable="true"/>
-        <mapperTableEntries name="ForeName" expression="row23.ForeName " type="id_String" nullable="true"/>
-        <mapperTableEntries name="Initials" expression="row23.Initials " type="id_String" nullable="true"/>
-        <mapperTableEntries name="FullName" expression="PubMedNormal.fullName(row23.LastName,row23.ForeName,row23.Initials) " type="id_String" nullable="true"/>
+      <outputTables sizeState="INTERMEDIATE" name="authorAff">
+        <mapperTableEntries name="authorCode" expression="Var.authorCode " type="id_String"/>
+        <mapperTableEntries name="affCode" expression="Var.affCode " type="id_String"/>
       </outputTables>
-      <outputTables sizeState="INTERMEDIATE" name="copyOfAuthorAff">
-        <mapperTableEntries name="AuthorCode" expression="Var.AuthorCode " type="id_String"/>
-        <mapperTableEntries name="AffCode" expression="Var.AffCode " type="id_String"/>
+      <outputTables sizeState="INTERMEDIATE" name="authorPMID">
+        <mapperTableEntries name="pmid" expression="row23.PMID " type="id_Integer" nullable="true"/>
+        <mapperTableEntries name="authorCode" expression="Var.authorCode " type="id_String"/>
       </outputTables>
-      <outputTables sizeState="INTERMEDIATE" name="copyOfAuthorPMID">
-        <mapperTableEntries name="PMID" expression="row23.PMID " type="id_Integer" nullable="true"/>
-        <mapperTableEntries name="AuthorCode" expression="Var.AuthorCode " type="id_String"/>
-      </outputTables>
-      <outputTables sizeState="INTERMEDIATE" name="copyOfAffiliations">
-        <mapperTableEntries name="AffCode" expression="Var.AffCode " type="id_String"/>
-        <mapperTableEntries name="Affiliation" expression="PubMedNormal.fullAff(row23.Affiliations) " type="id_String" nullable="true"/>
+      <outputTables sizeState="INTERMEDIATE" name="affiliations">
+        <mapperTableEntries name="affCode" expression="Var.affCode " type="id_String"/>
+        <mapperTableEntries name="affiliationRaw" expression="PubMedNormal.fullAff(row23.Affiliations) " type="id_String" nullable="true"/>
+        <mapperTableEntries name="aff3" expression="Var.aff3 " type="id_String" nullable="true"/>
       </outputTables>
       <inputTables sizeState="INTERMEDIATE" name="row23" matchingMode="UNIQUE_MATCH" lookupMode="LOAD_ONCE">
         <mapperTableEntries name="PMID" type="id_Integer" nullable="true"/>
@@ -592,14 +533,13 @@
       </inputTables>
     </nodeData>
   </node>
-  <node componentName="tUniqRow" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="224" posY="256">
+  <node componentName="tUniqRow" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="288" posY="224">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tUniqRow_3" show="false"/>
-    <elementParameter field="CHECK" name="ACTIVATE" value="false"/>
     <elementParameter field="TABLE" name="UNIQUE_KEY">
-      <elementValue elementRef="SCHEMA_COLUMN" value="PMID"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="pmid"/>
       <elementValue elementRef="KEY_ATTRIBUTE" value="true"/>
       <elementValue elementRef="CASE_SENSITIVE" value="false"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="AuthorCode"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="authorCode"/>
       <elementValue elementRef="KEY_ATTRIBUTE" value="true"/>
       <elementValue elementRef="CASE_SENSITIVE" value="false"/>
     </elementParameter>
@@ -610,26 +550,25 @@
     <elementParameter field="CHECK" name="CHANGE_HASH_AND_EQUALS_FOR_BIGDECIMAL" value="false"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
     <metadata connector="FLOW" name="tUniqRow_3">
-      <column comment="" key="false" length="8" name="PMID" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_Integer" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="AuthorCode" nullable="false" pattern="" precision="-1" sourceType="" type="id_String" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="20" name="pmid" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_Integer" usefulColumn="true"/>
+      <column comment="" key="false" length="100" name="authorCode" nullable="false" pattern="" precision="-1" sourceType="" type="id_String" originalLength="100" usefulColumn="true"/>
     </metadata>
     <metadata connector="UNIQUE" name="UNIQUE">
-      <column comment="" key="false" length="8" name="PMID" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_Integer" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="AuthorCode" nullable="false" originalDbColumnName="authorCode" pattern="" precision="-1" sourceType="" type="id_String" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="20" name="pmid" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_Integer" usefulColumn="true"/>
+      <column comment="" key="false" length="100" name="authorCode" nullable="false" pattern="" precision="-1" sourceType="" type="id_String" originalLength="100" usefulColumn="true"/>
     </metadata>
     <metadata connector="DUPLICATE" name="DUPLICATE">
-      <column comment="" key="false" length="8" name="PMID" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_Integer" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="AuthorCode" nullable="false" pattern="" precision="-1" sourceType="" type="id_String" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="20" name="pmid" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_Integer" usefulColumn="true"/>
+      <column comment="" key="false" length="100" name="authorCode" nullable="false" pattern="" precision="-1" sourceType="" type="id_String" originalLength="100" usefulColumn="true"/>
     </metadata>
   </node>
-  <node componentName="tUniqRow" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="224" posY="512">
+  <node componentName="tUniqRow" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="288" posY="480">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tUniqRow_4" show="false"/>
-    <elementParameter field="CHECK" name="ACTIVATE" value="false"/>
     <elementParameter field="TABLE" name="UNIQUE_KEY">
-      <elementValue elementRef="SCHEMA_COLUMN" value="AuthorCode"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="authorCode"/>
       <elementValue elementRef="KEY_ATTRIBUTE" value="true"/>
       <elementValue elementRef="CASE_SENSITIVE" value="false"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="AffCode"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="affCode"/>
       <elementValue elementRef="KEY_ATTRIBUTE" value="true"/>
       <elementValue elementRef="CASE_SENSITIVE" value="false"/>
     </elementParameter>
@@ -640,275 +579,368 @@
     <elementParameter field="CHECK" name="CHANGE_HASH_AND_EQUALS_FOR_BIGDECIMAL" value="false"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
     <metadata connector="FLOW" name="tUniqRow_4">
-      <column comment="" key="false" length="-1" name="AuthorCode" nullable="false" pattern="" precision="-1" sourceType="" type="id_String" originalLength="-1" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="AffCode" nullable="false" pattern="" precision="-1" sourceType="" type="id_String" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="true" length="100" name="authorCode" nullable="false" pattern="" precision="-1" sourceType="" type="id_String" originalLength="100" usefulColumn="true"/>
+      <column comment="" key="true" length="100" name="affCode" nullable="false" pattern="" precision="-1" sourceType="" type="id_String" originalLength="100" usefulColumn="true"/>
     </metadata>
     <metadata connector="UNIQUE" name="UNIQUE">
-      <column comment="" key="false" length="-1" name="AuthorCode" nullable="false" originalDbColumnName="authorCode" pattern="" precision="-1" sourceType="" type="id_String" originalLength="-1" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="AffCode" nullable="false" originalDbColumnName="affCode" pattern="" precision="-1" sourceType="" type="id_String" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="true" length="100" name="authorCode" nullable="false" pattern="" precision="-1" sourceType="" type="id_String" originalLength="100" usefulColumn="true"/>
+      <column comment="" key="true" length="100" name="affCode" nullable="false" pattern="" precision="-1" sourceType="" type="id_String" originalLength="100" usefulColumn="true"/>
     </metadata>
     <metadata connector="DUPLICATE" name="DUPLICATE">
-      <column comment="" key="false" length="-1" name="AuthorCode" nullable="false" pattern="" precision="-1" sourceType="" type="id_String" originalLength="-1" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="AffCode" nullable="false" pattern="" precision="-1" sourceType="" type="id_String" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="true" length="100" name="authorCode" nullable="false" pattern="" precision="-1" sourceType="" type="id_String" originalLength="100" usefulColumn="true"/>
+      <column comment="" key="true" length="100" name="affCode" nullable="false" pattern="" precision="-1" sourceType="" type="id_String" originalLength="100" usefulColumn="true"/>
     </metadata>
   </node>
-  <node componentName="tSQLiteOutput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="448" posY="256">
-    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tSQLiteOutput_1" show="false"/>
-    <elementParameter field="CHECK" name="ACTIVATE" value="false"/>
-    <elementParameter field="TECHNICAL" name="PROPERTY:PROPERTY_TYPE" value="REPOSITORY" show="false"/>
-    <elementParameter field="TECHNICAL" name="PROPERTY:REPOSITORY_PROPERTY_TYPE" value="_hXKSMKIVEeaE1Ir5tjYmaw" show="false"/>
+  <node componentName="tMysqlOutput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="480" posY="224">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tMysqlOutput_2" show="false"/>
+    <elementParameter field="CLOSED_LIST" name="DB_VERSION" value="MYSQL_5" show="false"/>
     <elementParameter field="CHECK" name="USE_EXISTING_CONNECTION" value="true"/>
-    <elementParameter field="COMPONENT_LIST" name="CONNECTION" value="tSQLiteConnection_1"/>
-    <elementParameter field="FILE" name="DBNAME" value="&quot;/home/dario/Talend/EKOS_WS/EKOS_PUBMED/data/RQRD/dgdb.sqlite&quot;" show="false"/>
-    <elementParameter field="TEXT" name="TYPE" value="SQLITE" show="false"/>
-    <elementParameter field="DBTABLE" name="TABLE" value="&quot;authorPmid&quot;"/>
+    <elementParameter field="COMPONENT_LIST" name="CONNECTION" value="tMysqlConnection_1"/>
+    <elementParameter field="TEXT" name="TYPE" value="MySQL" show="false"/>
+    <elementParameter field="TEXT" name="HOST" value="&quot;&quot;" show="false"/>
+    <elementParameter field="TEXT" name="PORT" value="&quot;3306&quot;" show="false"/>
+    <elementParameter field="TEXT" name="DBNAME" value="&quot;&quot;" show="false"/>
+    <elementParameter field="TEXT" name="USER" value="&quot;&quot;" show="false"/>
+    <elementParameter field="PASSWORD" name="PASS" value="0RMsyjmybrE=" show="false"/>
+    <elementParameter field="DBTABLE" name="TABLE" value="&quot;src_author_pmid&quot;"/>
     <elementParameter field="CLOSED_LIST" name="TABLE_ACTION" value="DROP_IF_EXISTS_AND_CREATE"/>
     <elementParameter field="CLOSED_LIST" name="DATA_ACTION" value="INSERT"/>
+    <elementParameter field="LABEL" name="NOTE" value="This option only applies when deploying and running in the Talend Runtime" show="false"/>
+    <elementParameter field="CHECK" name="SPECIFY_DATASOURCE_ALIAS" value="false" show="false"/>
+    <elementParameter field="TEXT" name="DATASOURCE_ALIAS" value="&quot;&quot;" show="false"/>
     <elementParameter field="CHECK" name="DIE_ON_ERROR" value="false"/>
-    <elementParameter field="MAPPING_TYPE" name="MAPPING" value="sqlite_id" show="false"/>
+    <elementParameter field="MAPPING_TYPE" name="MAPPING" value="mysql_id" show="false"/>
+    <elementParameter field="TEXT" name="PROPERTIES" value="&quot;noDatetimeStringSync=true&quot;" show="false"/>
+    <elementParameter field="CHECK" name="EXTENDINSERT" value="true"/>
+    <elementParameter field="LABEL" name="NOTE" value="(Not compatible with reject links)"/>
+    <elementParameter field="TEXT" name="NB_ROWS_PER_INSERT" value="100"/>
+    <elementParameter field="CHECK" name="USE_BATCH_SIZE" value="true" show="false"/>
+    <elementParameter field="TEXT" name="BATCH_SIZE" value="10000" show="false"/>
     <elementParameter field="ENCODING_TYPE" name="ENCODING" value="&quot;ISO-8859-15&quot;" show="false"/>
     <elementParameter field="TECHNICAL" name="ENCODING:ENCODING_TYPE" value="ISO-8859-15"/>
     <elementParameter field="TEXT" name="COMMIT_EVERY" value="10000" show="false"/>
     <elementParameter field="TABLE" name="ADD_COLS"/>
     <elementParameter field="CHECK" name="USE_FIELD_OPTIONS" value="false"/>
     <elementParameter field="TABLE" name="FIELD_OPTIONS" show="false">
-      <elementValue elementRef="SCHEMA_COLUMN" value="PMID"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="pmid"/>
       <elementValue elementRef="UPDATE_KEY" value="false"/>
       <elementValue elementRef="DELETE_KEY" value="false"/>
       <elementValue elementRef="UPDATABLE" value="true"/>
       <elementValue elementRef="INSERTABLE" value="true"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="AuthorCode"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="authorCode"/>
       <elementValue elementRef="UPDATE_KEY" value="false"/>
       <elementValue elementRef="DELETE_KEY" value="false"/>
       <elementValue elementRef="UPDATABLE" value="true"/>
       <elementValue elementRef="INSERTABLE" value="true"/>
     </elementParameter>
+    <elementParameter field="CHECK" name="USE_HINT_OPTIONS" value="false"/>
+    <elementParameter field="TABLE" name="HINT_OPTIONS" show="false"/>
     <elementParameter field="CHECK" name="ENABLE_DEBUG_MODE" value="false"/>
-    <elementParameter field="CHECK" name="SUPPORT_NULL_WHERE" value="false"/>
-    <elementParameter field="CHECK" name="USE_BATCH" value="true"/>
-    <elementParameter field="TEXT" name="BATCH_SIZE" value="10000"/>
-    <elementParameter field="TEXT" name="LABEL" value="copyOfAuthorPMID"/>
+    <elementParameter field="CHECK" name="ON_DUPLICATE_KEY_UPDATE" value="false"/>
+    <elementParameter field="TABLE" name="DUPLICATED_KEYS" show="false"/>
+    <elementParameter field="CHECK" name="SUPPORT_NULL_WHERE" value="false" show="false"/>
+    <elementParameter field="TEXT" name="LABEL" value="src_author_pmid"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
-    <metadata connector="FLOW" name="tSQLiteOutput_1">
-      <column comment="" key="false" length="8" name="PMID" nullable="false" pattern="&quot;dd-MM-yyyy&quot;" precision="0" sourceType="INT" type="id_Integer" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="AuthorCode" nullable="false" originalDbColumnName="authorCode" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
+    <metadata connector="FLOW" name="tMysqlOutput_2">
+      <column comment="" key="true" length="20" name="pmid" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" sourceType="INT" type="id_Integer" usefulColumn="true"/>
+      <column comment="" key="true" length="100" name="authorCode" nullable="false" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="100" usefulColumn="true"/>
     </metadata>
     <metadata connector="REJECT" name="REJECT">
-      <column comment="" key="false" length="8" name="PMID" nullable="false" pattern="&quot;dd-MM-yyyy&quot;" precision="0" sourceType="INT" type="id_Integer" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="AuthorCode" nullable="false" originalDbColumnName="authorCode" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="true" length="20" name="pmid" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" sourceType="INT" type="id_Integer" usefulColumn="true"/>
+      <column comment="" key="true" length="100" name="authorCode" nullable="false" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="100" usefulColumn="true"/>
       <column defaultValue="" key="false" length="255" name="errorCode" nullable="true" precision="0" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
       <column defaultValue="" key="false" length="255" name="errorMessage" nullable="true" precision="0" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
     </metadata>
   </node>
-  <node componentName="tSQLiteOutput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="448" posY="320">
-    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tSQLiteOutput_2" show="false"/>
-    <elementParameter field="CHECK" name="ACTIVATE" value="false"/>
-    <elementParameter field="TECHNICAL" name="PROPERTY:PROPERTY_TYPE" value="REPOSITORY" show="false"/>
-    <elementParameter field="TECHNICAL" name="PROPERTY:REPOSITORY_PROPERTY_TYPE" value="_hXKSMKIVEeaE1Ir5tjYmaw" show="false"/>
+  <node componentName="tMysqlOutput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="480" posY="480">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tMysqlOutput_6" show="false"/>
+    <elementParameter field="CLOSED_LIST" name="DB_VERSION" value="MYSQL_5" show="false"/>
     <elementParameter field="CHECK" name="USE_EXISTING_CONNECTION" value="true"/>
-    <elementParameter field="COMPONENT_LIST" name="CONNECTION" value="tSQLiteConnection_1"/>
-    <elementParameter field="FILE" name="DBNAME" value="&quot;/home/dario/Talend/EKOS_WS/EKOS_PUBMED/data/RQRD/dgdb.sqlite&quot;" show="false"/>
-    <elementParameter field="TEXT" name="TYPE" value="SQLITE" show="false"/>
-    <elementParameter field="DBTABLE" name="TABLE" value="&quot;authors&quot;"/>
-    <elementParameter field="CLOSED_LIST" name="TABLE_ACTION" value="DROP_IF_EXISTS_AND_CREATE"/>
-    <elementParameter field="CLOSED_LIST" name="DATA_ACTION" value="INSERT_OR_UPDATE"/>
-    <elementParameter field="CHECK" name="DIE_ON_ERROR" value="false"/>
-    <elementParameter field="MAPPING_TYPE" name="MAPPING" value="sqlite_id" show="false"/>
-    <elementParameter field="ENCODING_TYPE" name="ENCODING" value="&quot;ISO-8859-15&quot;" show="false"/>
-    <elementParameter field="TECHNICAL" name="ENCODING:ENCODING_TYPE" value="ISO-8859-15"/>
-    <elementParameter field="TEXT" name="COMMIT_EVERY" value="10000" show="false"/>
-    <elementParameter field="TABLE" name="ADD_COLS"/>
-    <elementParameter field="CHECK" name="USE_FIELD_OPTIONS" value="false"/>
-    <elementParameter field="TABLE" name="FIELD_OPTIONS" show="false">
-      <elementValue elementRef="SCHEMA_COLUMN" value="AuthorCode"/>
-      <elementValue elementRef="UPDATE_KEY" value="false"/>
-      <elementValue elementRef="DELETE_KEY" value="false"/>
-      <elementValue elementRef="UPDATABLE" value="true"/>
-      <elementValue elementRef="INSERTABLE" value="true"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="LastName"/>
-      <elementValue elementRef="UPDATE_KEY" value="false"/>
-      <elementValue elementRef="DELETE_KEY" value="false"/>
-      <elementValue elementRef="UPDATABLE" value="true"/>
-      <elementValue elementRef="INSERTABLE" value="true"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="ForeName"/>
-      <elementValue elementRef="UPDATE_KEY" value="false"/>
-      <elementValue elementRef="DELETE_KEY" value="false"/>
-      <elementValue elementRef="UPDATABLE" value="true"/>
-      <elementValue elementRef="INSERTABLE" value="true"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="Initials"/>
-      <elementValue elementRef="UPDATE_KEY" value="false"/>
-      <elementValue elementRef="DELETE_KEY" value="false"/>
-      <elementValue elementRef="UPDATABLE" value="true"/>
-      <elementValue elementRef="INSERTABLE" value="true"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="FullName"/>
-      <elementValue elementRef="UPDATE_KEY" value="false"/>
-      <elementValue elementRef="DELETE_KEY" value="false"/>
-      <elementValue elementRef="UPDATABLE" value="true"/>
-      <elementValue elementRef="INSERTABLE" value="true"/>
-    </elementParameter>
-    <elementParameter field="CHECK" name="ENABLE_DEBUG_MODE" value="false"/>
-    <elementParameter field="CHECK" name="SUPPORT_NULL_WHERE" value="false"/>
-    <elementParameter field="CHECK" name="USE_BATCH" value="true" show="false"/>
-    <elementParameter field="TEXT" name="BATCH_SIZE" value="10000"/>
-    <elementParameter field="TEXT" name="LABEL" value="copyOfAuthors"/>
-    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
-    <metadata connector="FLOW" name="tSQLiteOutput_2">
-      <column comment="" key="true" length="-1" name="AuthorCode" nullable="false" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
-      <column comment="" key="false" length="9" name="LastName" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="11" name="ForeName" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="2" name="Initials" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="FullName" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
-    </metadata>
-    <metadata connector="REJECT" name="REJECT">
-      <column comment="" key="true" length="-1" name="AuthorCode" nullable="false" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
-      <column comment="" key="false" length="9" name="LastName" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="11" name="ForeName" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="2" name="Initials" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="FullName" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
-      <column defaultValue="" key="false" length="255" name="errorCode" nullable="true" precision="0" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
-      <column defaultValue="" key="false" length="255" name="errorMessage" nullable="true" precision="0" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
-    </metadata>
-  </node>
-  <node componentName="tSQLiteOutput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="448" posY="384">
-    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tSQLiteOutput_3" show="false"/>
-    <elementParameter field="CHECK" name="ACTIVATE" value="false"/>
-    <elementParameter field="TECHNICAL" name="PROPERTY:PROPERTY_TYPE" value="REPOSITORY" show="false"/>
-    <elementParameter field="TECHNICAL" name="PROPERTY:REPOSITORY_PROPERTY_TYPE" value="_hXKSMKIVEeaE1Ir5tjYmaw" show="false"/>
-    <elementParameter field="CHECK" name="USE_EXISTING_CONNECTION" value="true"/>
-    <elementParameter field="COMPONENT_LIST" name="CONNECTION" value="tSQLiteConnection_1"/>
-    <elementParameter field="FILE" name="DBNAME" value="&quot;/home/dario/Talend/EKOS_WS/EKOS_PUBMED/data/RQRD/dgdb.sqlite&quot;" show="false"/>
-    <elementParameter field="TEXT" name="TYPE" value="SQLITE" show="false"/>
-    <elementParameter field="DBTABLE" name="TABLE" value="&quot;affiliatclean&quot;"/>
-    <elementParameter field="CLOSED_LIST" name="TABLE_ACTION" value="DROP_IF_EXISTS_AND_CREATE"/>
-    <elementParameter field="CLOSED_LIST" name="DATA_ACTION" value="INSERT_OR_UPDATE"/>
-    <elementParameter field="CHECK" name="DIE_ON_ERROR" value="false"/>
-    <elementParameter field="MAPPING_TYPE" name="MAPPING" value="sqlite_id" show="false"/>
-    <elementParameter field="ENCODING_TYPE" name="ENCODING" value="&quot;ISO-8859-15&quot;" show="false"/>
-    <elementParameter field="TECHNICAL" name="ENCODING:ENCODING_TYPE" value="ISO-8859-15"/>
-    <elementParameter field="TEXT" name="COMMIT_EVERY" value="10000" show="false"/>
-    <elementParameter field="TABLE" name="ADD_COLS"/>
-    <elementParameter field="CHECK" name="USE_FIELD_OPTIONS" value="false"/>
-    <elementParameter field="TABLE" name="FIELD_OPTIONS" show="false">
-      <elementValue elementRef="SCHEMA_COLUMN" value="AffCode"/>
-      <elementValue elementRef="UPDATE_KEY" value="false"/>
-      <elementValue elementRef="DELETE_KEY" value="false"/>
-      <elementValue elementRef="UPDATABLE" value="true"/>
-      <elementValue elementRef="INSERTABLE" value="true"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="CleanAffiliation"/>
-      <elementValue elementRef="UPDATE_KEY" value="false"/>
-      <elementValue elementRef="DELETE_KEY" value="false"/>
-      <elementValue elementRef="UPDATABLE" value="true"/>
-      <elementValue elementRef="INSERTABLE" value="true"/>
-    </elementParameter>
-    <elementParameter field="CHECK" name="ENABLE_DEBUG_MODE" value="false"/>
-    <elementParameter field="CHECK" name="SUPPORT_NULL_WHERE" value="false"/>
-    <elementParameter field="CHECK" name="USE_BATCH" value="true" show="false"/>
-    <elementParameter field="TEXT" name="BATCH_SIZE" value="10000"/>
-    <elementParameter field="TEXT" name="LABEL" value="Affiliations2"/>
-    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
-    <metadata connector="FLOW" label="CleanAffiliations" name="tSQLiteOutput_3">
-      <column comment="" key="true" length="-1" name="AffCode" nullable="false" originalDbColumnName="affCode" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="CleanAffiliation" nullable="false" originalDbColumnName="affiliation" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
-    </metadata>
-    <metadata connector="REJECT" label="CleanAffiliations" name="REJECT">
-      <column comment="" key="true" length="-1" name="AffCode" nullable="false" originalDbColumnName="affCode" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="CleanAffiliation" nullable="false" originalDbColumnName="affiliation" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
-      <column defaultValue="" key="false" length="255" name="errorCode" nullable="true" precision="0" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
-      <column defaultValue="" key="false" length="255" name="errorMessage" nullable="true" precision="0" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
-    </metadata>
-  </node>
-  <node componentName="tSQLiteOutput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="448" posY="448">
-    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tSQLiteOutput_4" show="false"/>
-    <elementParameter field="CHECK" name="ACTIVATE" value="false"/>
-    <elementParameter field="TECHNICAL" name="PROPERTY:PROPERTY_TYPE" value="REPOSITORY" show="false"/>
-    <elementParameter field="TECHNICAL" name="PROPERTY:REPOSITORY_PROPERTY_TYPE" value="_hXKSMKIVEeaE1Ir5tjYmaw" show="false"/>
-    <elementParameter field="CHECK" name="USE_EXISTING_CONNECTION" value="true"/>
-    <elementParameter field="COMPONENT_LIST" name="CONNECTION" value="tSQLiteConnection_1"/>
-    <elementParameter field="FILE" name="DBNAME" value="&quot;/home/dario/Talend/EKOS_WS/EKOS_PUBMED/data/RQRD/dgdb.sqlite&quot;" show="false"/>
-    <elementParameter field="TEXT" name="TYPE" value="SQLITE" show="false"/>
-    <elementParameter field="DBTABLE" name="TABLE" value="&quot;affiliations&quot;"/>
-    <elementParameter field="CLOSED_LIST" name="TABLE_ACTION" value="DROP_IF_EXISTS_AND_CREATE"/>
-    <elementParameter field="CLOSED_LIST" name="DATA_ACTION" value="INSERT_OR_UPDATE"/>
-    <elementParameter field="CHECK" name="DIE_ON_ERROR" value="false"/>
-    <elementParameter field="MAPPING_TYPE" name="MAPPING" value="sqlite_id" show="false"/>
-    <elementParameter field="ENCODING_TYPE" name="ENCODING" value="&quot;ISO-8859-15&quot;" show="false"/>
-    <elementParameter field="TECHNICAL" name="ENCODING:ENCODING_TYPE" value="ISO-8859-15"/>
-    <elementParameter field="TEXT" name="COMMIT_EVERY" value="10000" show="false"/>
-    <elementParameter field="TABLE" name="ADD_COLS"/>
-    <elementParameter field="CHECK" name="USE_FIELD_OPTIONS" value="false"/>
-    <elementParameter field="TABLE" name="FIELD_OPTIONS" show="false">
-      <elementValue elementRef="SCHEMA_COLUMN" value="AffCode"/>
-      <elementValue elementRef="UPDATE_KEY" value="false"/>
-      <elementValue elementRef="DELETE_KEY" value="false"/>
-      <elementValue elementRef="UPDATABLE" value="true"/>
-      <elementValue elementRef="INSERTABLE" value="true"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="Affiliation"/>
-      <elementValue elementRef="UPDATE_KEY" value="false"/>
-      <elementValue elementRef="DELETE_KEY" value="false"/>
-      <elementValue elementRef="UPDATABLE" value="true"/>
-      <elementValue elementRef="INSERTABLE" value="true"/>
-    </elementParameter>
-    <elementParameter field="CHECK" name="ENABLE_DEBUG_MODE" value="false"/>
-    <elementParameter field="CHECK" name="SUPPORT_NULL_WHERE" value="false"/>
-    <elementParameter field="CHECK" name="USE_BATCH" value="true" show="false"/>
-    <elementParameter field="TEXT" name="BATCH_SIZE" value="10000"/>
-    <elementParameter field="TEXT" name="LABEL" value="copyOfAffiliations"/>
-    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
-    <metadata connector="FLOW" name="tSQLiteOutput_4">
-      <column comment="" key="true" length="-1" name="AffCode" nullable="false" originalDbColumnName="affCode" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="Affiliation" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
-    </metadata>
-    <metadata connector="REJECT" name="REJECT">
-      <column comment="" key="true" length="-1" name="AffCode" nullable="false" originalDbColumnName="affCode" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="Affiliation" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
-      <column defaultValue="" key="false" length="255" name="errorCode" nullable="true" precision="0" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
-      <column defaultValue="" key="false" length="255" name="errorMessage" nullable="true" precision="0" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
-    </metadata>
-  </node>
-  <node componentName="tSQLiteOutput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="448" posY="512">
-    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tSQLiteOutput_5" show="false"/>
-    <elementParameter field="CHECK" name="ACTIVATE" value="false"/>
-    <elementParameter field="TECHNICAL" name="PROPERTY:PROPERTY_TYPE" value="REPOSITORY" show="false"/>
-    <elementParameter field="TECHNICAL" name="PROPERTY:REPOSITORY_PROPERTY_TYPE" value="_hXKSMKIVEeaE1Ir5tjYmaw" show="false"/>
-    <elementParameter field="CHECK" name="USE_EXISTING_CONNECTION" value="true"/>
-    <elementParameter field="COMPONENT_LIST" name="CONNECTION" value="tSQLiteConnection_1"/>
-    <elementParameter field="FILE" name="DBNAME" value="&quot;/home/dario/Talend/EKOS_WS/EKOS_PUBMED/data/RQRD/dgdb.sqlite&quot;" show="false"/>
-    <elementParameter field="TEXT" name="TYPE" value="SQLITE" show="false"/>
-    <elementParameter field="DBTABLE" name="TABLE" value="&quot;authorAff&quot;"/>
+    <elementParameter field="COMPONENT_LIST" name="CONNECTION" value="tMysqlConnection_1"/>
+    <elementParameter field="TEXT" name="TYPE" value="MySQL" show="false"/>
+    <elementParameter field="TEXT" name="HOST" value="&quot;&quot;" show="false"/>
+    <elementParameter field="TEXT" name="PORT" value="&quot;3306&quot;" show="false"/>
+    <elementParameter field="TEXT" name="DBNAME" value="&quot;&quot;" show="false"/>
+    <elementParameter field="TEXT" name="USER" value="&quot;&quot;" show="false"/>
+    <elementParameter field="PASSWORD" name="PASS" value="0RMsyjmybrE=" show="false"/>
+    <elementParameter field="DBTABLE" name="TABLE" value="&quot;src_author_affiliation&quot;"/>
     <elementParameter field="CLOSED_LIST" name="TABLE_ACTION" value="DROP_IF_EXISTS_AND_CREATE"/>
     <elementParameter field="CLOSED_LIST" name="DATA_ACTION" value="INSERT"/>
+    <elementParameter field="LABEL" name="NOTE" value="This option only applies when deploying and running in the Talend Runtime" show="false"/>
+    <elementParameter field="CHECK" name="SPECIFY_DATASOURCE_ALIAS" value="false" show="false"/>
+    <elementParameter field="TEXT" name="DATASOURCE_ALIAS" value="&quot;&quot;" show="false"/>
     <elementParameter field="CHECK" name="DIE_ON_ERROR" value="false"/>
-    <elementParameter field="MAPPING_TYPE" name="MAPPING" value="sqlite_id" show="false"/>
+    <elementParameter field="MAPPING_TYPE" name="MAPPING" value="mysql_id" show="false"/>
+    <elementParameter field="TEXT" name="PROPERTIES" value="&quot;noDatetimeStringSync=true&quot;" show="false"/>
+    <elementParameter field="CHECK" name="EXTENDINSERT" value="true"/>
+    <elementParameter field="LABEL" name="NOTE" value="(Not compatible with reject links)"/>
+    <elementParameter field="TEXT" name="NB_ROWS_PER_INSERT" value="100"/>
+    <elementParameter field="CHECK" name="USE_BATCH_SIZE" value="true" show="false"/>
+    <elementParameter field="TEXT" name="BATCH_SIZE" value="10000" show="false"/>
     <elementParameter field="ENCODING_TYPE" name="ENCODING" value="&quot;ISO-8859-15&quot;" show="false"/>
     <elementParameter field="TECHNICAL" name="ENCODING:ENCODING_TYPE" value="ISO-8859-15"/>
     <elementParameter field="TEXT" name="COMMIT_EVERY" value="10000" show="false"/>
     <elementParameter field="TABLE" name="ADD_COLS"/>
     <elementParameter field="CHECK" name="USE_FIELD_OPTIONS" value="false"/>
     <elementParameter field="TABLE" name="FIELD_OPTIONS" show="false">
-      <elementValue elementRef="SCHEMA_COLUMN" value="AuthorCode"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="authorCode"/>
       <elementValue elementRef="UPDATE_KEY" value="false"/>
       <elementValue elementRef="DELETE_KEY" value="false"/>
       <elementValue elementRef="UPDATABLE" value="true"/>
       <elementValue elementRef="INSERTABLE" value="true"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="AffCode"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="affCode"/>
       <elementValue elementRef="UPDATE_KEY" value="false"/>
       <elementValue elementRef="DELETE_KEY" value="false"/>
       <elementValue elementRef="UPDATABLE" value="true"/>
       <elementValue elementRef="INSERTABLE" value="true"/>
     </elementParameter>
+    <elementParameter field="CHECK" name="USE_HINT_OPTIONS" value="false"/>
+    <elementParameter field="TABLE" name="HINT_OPTIONS" show="false"/>
     <elementParameter field="CHECK" name="ENABLE_DEBUG_MODE" value="false"/>
-    <elementParameter field="CHECK" name="SUPPORT_NULL_WHERE" value="false"/>
-    <elementParameter field="CHECK" name="USE_BATCH" value="true"/>
-    <elementParameter field="TEXT" name="BATCH_SIZE" value="10000"/>
-    <elementParameter field="TEXT" name="LABEL" value="copyOfAuthorAff"/>
+    <elementParameter field="CHECK" name="ON_DUPLICATE_KEY_UPDATE" value="false"/>
+    <elementParameter field="TABLE" name="DUPLICATED_KEYS" show="false"/>
+    <elementParameter field="CHECK" name="SUPPORT_NULL_WHERE" value="false" show="false"/>
+    <elementParameter field="TEXT" name="LABEL" value="src_author_affiliation"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
-    <metadata connector="FLOW" name="tSQLiteOutput_5">
-      <column comment="" key="false" length="-1" name="AuthorCode" nullable="false" originalDbColumnName="authorCode" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="AffCode" nullable="false" originalDbColumnName="affCode" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
+    <metadata connector="FLOW" name="tMysqlOutput_6">
+      <column comment="" key="true" length="100" name="authorCode" nullable="false" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="100" usefulColumn="true"/>
+      <column comment="" key="true" length="100" name="affCode" nullable="false" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="100" usefulColumn="true"/>
     </metadata>
     <metadata connector="REJECT" name="REJECT">
-      <column comment="" key="false" length="-1" name="AuthorCode" nullable="false" originalDbColumnName="authorCode" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="AffCode" nullable="false" originalDbColumnName="affCode" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="true" length="100" name="authorCode" nullable="false" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="100" usefulColumn="true"/>
+      <column comment="" key="true" length="100" name="affCode" nullable="false" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="100" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="255" name="errorCode" nullable="true" precision="0" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="255" name="errorMessage" nullable="true" precision="0" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
+    </metadata>
+  </node>
+  <node componentName="tUniqRow" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="352" posY="288">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tUniqRow_2" show="false"/>
+    <elementParameter field="TABLE" name="UNIQUE_KEY">
+      <elementValue elementRef="SCHEMA_COLUMN" value="authorCode"/>
+      <elementValue elementRef="KEY_ATTRIBUTE" value="true"/>
+      <elementValue elementRef="CASE_SENSITIVE" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="lastName"/>
+      <elementValue elementRef="KEY_ATTRIBUTE" value="false"/>
+      <elementValue elementRef="CASE_SENSITIVE" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="foreName"/>
+      <elementValue elementRef="KEY_ATTRIBUTE" value="false"/>
+      <elementValue elementRef="CASE_SENSITIVE" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="initials"/>
+      <elementValue elementRef="KEY_ATTRIBUTE" value="false"/>
+      <elementValue elementRef="CASE_SENSITIVE" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="fullName"/>
+      <elementValue elementRef="KEY_ATTRIBUTE" value="false"/>
+      <elementValue elementRef="CASE_SENSITIVE" value="false"/>
+    </elementParameter>
+    <elementParameter field="CHECK" name="ONLY_ONCE_EACH_DUPLICATED_KEY" value="true"/>
+    <elementParameter field="CHECK" name="IS_VIRTUAL_COMPONENT" value="false"/>
+    <elementParameter field="OPENED_LIST" name="BUFFER_SIZE" value="M" show="false"/>
+    <elementParameter field="DIRECTORY" name="TEMP_DIRECTORY" value="" show="false"/>
+    <elementParameter field="CHECK" name="CHANGE_HASH_AND_EQUALS_FOR_BIGDECIMAL" value="false"/>
+    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
+    <metadata connector="FLOW" name="tUniqRow_2">
+      <column comment="" key="false" length="50" name="authorCode" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="50" usefulColumn="true"/>
+      <column comment="" key="false" length="50" name="lastName" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="50" name="foreName" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="5" name="initials" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="200" name="fullName" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="200" usefulColumn="true"/>
+    </metadata>
+    <metadata connector="UNIQUE" name="UNIQUE">
+      <column comment="" key="false" length="50" name="authorCode" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="50" usefulColumn="true"/>
+      <column comment="" key="false" length="50" name="lastName" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="50" name="foreName" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="5" name="initials" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="200" name="fullName" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="200" usefulColumn="true"/>
+    </metadata>
+    <metadata connector="DUPLICATE" name="DUPLICATE">
+      <column comment="" key="false" length="50" name="authorCode" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="50" usefulColumn="true"/>
+      <column comment="" key="false" length="50" name="lastName" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="50" name="foreName" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="5" name="initials" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="200" name="fullName" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="200" usefulColumn="true"/>
+    </metadata>
+  </node>
+  <node componentName="tMysqlOutput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="480" posY="288">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tMysqlOutput_3" show="false"/>
+    <elementParameter field="CLOSED_LIST" name="DB_VERSION" value="MYSQL_5" show="false"/>
+    <elementParameter field="CHECK" name="USE_EXISTING_CONNECTION" value="true"/>
+    <elementParameter field="COMPONENT_LIST" name="CONNECTION" value="tMysqlConnection_1"/>
+    <elementParameter field="TEXT" name="TYPE" value="MySQL" show="false"/>
+    <elementParameter field="TEXT" name="HOST" value="&quot;&quot;" show="false"/>
+    <elementParameter field="TEXT" name="PORT" value="&quot;3306&quot;" show="false"/>
+    <elementParameter field="TEXT" name="DBNAME" value="&quot;&quot;" show="false"/>
+    <elementParameter field="TEXT" name="USER" value="&quot;&quot;" show="false"/>
+    <elementParameter field="PASSWORD" name="PASS" value="0RMsyjmybrE=" show="false"/>
+    <elementParameter field="DBTABLE" name="TABLE" value="&quot;src_authors&quot;"/>
+    <elementParameter field="CLOSED_LIST" name="TABLE_ACTION" value="DROP_IF_EXISTS_AND_CREATE"/>
+    <elementParameter field="CLOSED_LIST" name="DATA_ACTION" value="INSERT"/>
+    <elementParameter field="LABEL" name="NOTE" value="This option only applies when deploying and running in the Talend Runtime" show="false"/>
+    <elementParameter field="CHECK" name="SPECIFY_DATASOURCE_ALIAS" value="false" show="false"/>
+    <elementParameter field="TEXT" name="DATASOURCE_ALIAS" value="&quot;&quot;" show="false"/>
+    <elementParameter field="CHECK" name="DIE_ON_ERROR" value="false"/>
+    <elementParameter field="MAPPING_TYPE" name="MAPPING" value="mysql_id" show="false"/>
+    <elementParameter field="TEXT" name="PROPERTIES" value="&quot;noDatetimeStringSync=true&quot;" show="false"/>
+    <elementParameter field="CHECK" name="EXTENDINSERT" value="true"/>
+    <elementParameter field="LABEL" name="NOTE" value="(Not compatible with reject links)"/>
+    <elementParameter field="TEXT" name="NB_ROWS_PER_INSERT" value="100"/>
+    <elementParameter field="CHECK" name="USE_BATCH_SIZE" value="true" show="false"/>
+    <elementParameter field="TEXT" name="BATCH_SIZE" value="10000" show="false"/>
+    <elementParameter field="ENCODING_TYPE" name="ENCODING" value="&quot;ISO-8859-15&quot;" show="false"/>
+    <elementParameter field="TECHNICAL" name="ENCODING:ENCODING_TYPE" value="ISO-8859-15"/>
+    <elementParameter field="TEXT" name="COMMIT_EVERY" value="10000" show="false"/>
+    <elementParameter field="TABLE" name="ADD_COLS"/>
+    <elementParameter field="CHECK" name="USE_FIELD_OPTIONS" value="false"/>
+    <elementParameter field="TABLE" name="FIELD_OPTIONS" show="false">
+      <elementValue elementRef="SCHEMA_COLUMN" value="authorCode"/>
+      <elementValue elementRef="UPDATE_KEY" value="false"/>
+      <elementValue elementRef="DELETE_KEY" value="false"/>
+      <elementValue elementRef="UPDATABLE" value="true"/>
+      <elementValue elementRef="INSERTABLE" value="true"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="lastName"/>
+      <elementValue elementRef="UPDATE_KEY" value="false"/>
+      <elementValue elementRef="DELETE_KEY" value="false"/>
+      <elementValue elementRef="UPDATABLE" value="true"/>
+      <elementValue elementRef="INSERTABLE" value="true"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="foreName"/>
+      <elementValue elementRef="UPDATE_KEY" value="false"/>
+      <elementValue elementRef="DELETE_KEY" value="false"/>
+      <elementValue elementRef="UPDATABLE" value="true"/>
+      <elementValue elementRef="INSERTABLE" value="true"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="initials"/>
+      <elementValue elementRef="UPDATE_KEY" value="false"/>
+      <elementValue elementRef="DELETE_KEY" value="false"/>
+      <elementValue elementRef="UPDATABLE" value="true"/>
+      <elementValue elementRef="INSERTABLE" value="true"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="fullName"/>
+      <elementValue elementRef="UPDATE_KEY" value="false"/>
+      <elementValue elementRef="DELETE_KEY" value="false"/>
+      <elementValue elementRef="UPDATABLE" value="true"/>
+      <elementValue elementRef="INSERTABLE" value="true"/>
+    </elementParameter>
+    <elementParameter field="CHECK" name="USE_HINT_OPTIONS" value="false"/>
+    <elementParameter field="TABLE" name="HINT_OPTIONS" show="false"/>
+    <elementParameter field="CHECK" name="ENABLE_DEBUG_MODE" value="false"/>
+    <elementParameter field="CHECK" name="ON_DUPLICATE_KEY_UPDATE" value="false"/>
+    <elementParameter field="TABLE" name="DUPLICATED_KEYS" show="false"/>
+    <elementParameter field="CHECK" name="SUPPORT_NULL_WHERE" value="false" show="false"/>
+    <elementParameter field="TEXT" name="LABEL" value="src_authors"/>
+    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
+    <metadata connector="FLOW" name="tMysqlOutput_3">
+      <column comment="" key="false" length="50" name="authorCode" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="50" usefulColumn="true"/>
+      <column comment="" key="false" length="50" name="lastName" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="50" name="foreName" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="5" name="initials" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="200" name="fullName" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="200" usefulColumn="true"/>
+    </metadata>
+    <metadata connector="REJECT" name="REJECT">
+      <column comment="" key="false" length="50" name="authorCode" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="50" usefulColumn="true"/>
+      <column comment="" key="false" length="50" name="lastName" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="50" name="foreName" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="5" name="initials" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="200" name="fullName" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="200" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="255" name="errorCode" nullable="true" precision="0" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="255" name="errorMessage" nullable="true" precision="0" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
+    </metadata>
+  </node>
+  <node componentName="tUniqRow" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="320" posY="384">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tUniqRow_5" show="false"/>
+    <elementParameter field="TABLE" name="UNIQUE_KEY">
+      <elementValue elementRef="SCHEMA_COLUMN" value="affCode"/>
+      <elementValue elementRef="KEY_ATTRIBUTE" value="true"/>
+      <elementValue elementRef="CASE_SENSITIVE" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="affiliationRaw"/>
+      <elementValue elementRef="KEY_ATTRIBUTE" value="false"/>
+      <elementValue elementRef="CASE_SENSITIVE" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="aff3"/>
+      <elementValue elementRef="KEY_ATTRIBUTE" value="false"/>
+      <elementValue elementRef="CASE_SENSITIVE" value="false"/>
+    </elementParameter>
+    <elementParameter field="CHECK" name="ONLY_ONCE_EACH_DUPLICATED_KEY" value="true"/>
+    <elementParameter field="CHECK" name="IS_VIRTUAL_COMPONENT" value="false"/>
+    <elementParameter field="OPENED_LIST" name="BUFFER_SIZE" value="M" show="false"/>
+    <elementParameter field="DIRECTORY" name="TEMP_DIRECTORY" value="" show="false"/>
+    <elementParameter field="CHECK" name="CHANGE_HASH_AND_EQUALS_FOR_BIGDECIMAL" value="false"/>
+    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
+    <metadata connector="FLOW" name="tUniqRow_5">
+      <column comment="" key="true" length="50" name="affCode" nullable="false" pattern="" precision="-1" sourceType="" type="id_String" originalLength="50" usefulColumn="true"/>
+      <column comment="" key="false" length="600" name="affiliationRaw" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="600" usefulColumn="true"/>
+      <column comment="" key="false" length="600" name="aff3" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="600" usefulColumn="true"/>
+    </metadata>
+    <metadata connector="UNIQUE" name="UNIQUE">
+      <column comment="" key="true" length="50" name="affCode" nullable="false" pattern="" precision="-1" sourceType="" type="id_String" originalLength="50" usefulColumn="true"/>
+      <column comment="" key="false" length="600" name="affiliationRaw" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="600" usefulColumn="true"/>
+      <column comment="" key="false" length="600" name="aff3" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="600" usefulColumn="true"/>
+    </metadata>
+    <metadata connector="DUPLICATE" name="DUPLICATE">
+      <column comment="" key="true" length="50" name="affCode" nullable="false" pattern="" precision="-1" sourceType="" type="id_String" originalLength="50" usefulColumn="true"/>
+      <column comment="" key="false" length="600" name="affiliationRaw" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="600" usefulColumn="true"/>
+      <column comment="" key="false" length="600" name="aff3" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="600" usefulColumn="true"/>
+    </metadata>
+  </node>
+  <node componentName="tMysqlOutput" componentVersion="0.102" offsetLabelX="5" offsetLabelY="0" posX="480" posY="384">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tMysqlOutput_4" show="false"/>
+    <elementParameter field="CLOSED_LIST" name="DB_VERSION" value="MYSQL_5" show="false"/>
+    <elementParameter field="CHECK" name="USE_EXISTING_CONNECTION" value="true"/>
+    <elementParameter field="COMPONENT_LIST" name="CONNECTION" value="tMysqlConnection_1"/>
+    <elementParameter field="TEXT" name="TYPE" value="MySQL" show="false"/>
+    <elementParameter field="TEXT" name="HOST" value="&quot;&quot;" show="false"/>
+    <elementParameter field="TEXT" name="PORT" value="&quot;3306&quot;" show="false"/>
+    <elementParameter field="TEXT" name="DBNAME" value="&quot;&quot;" show="false"/>
+    <elementParameter field="TEXT" name="USER" value="&quot;&quot;" show="false"/>
+    <elementParameter field="PASSWORD" name="PASS" value="0RMsyjmybrE=" show="false"/>
+    <elementParameter field="DBTABLE" name="TABLE" value="&quot;src_affiliations_raw&quot;"/>
+    <elementParameter field="CLOSED_LIST" name="TABLE_ACTION" value="DROP_IF_EXISTS_AND_CREATE"/>
+    <elementParameter field="CLOSED_LIST" name="DATA_ACTION" value="INSERT"/>
+    <elementParameter field="LABEL" name="NOTE" value="This option only applies when deploying and running in the Talend Runtime" show="false"/>
+    <elementParameter field="CHECK" name="SPECIFY_DATASOURCE_ALIAS" value="false" show="false"/>
+    <elementParameter field="TEXT" name="DATASOURCE_ALIAS" value="&quot;&quot;" show="false"/>
+    <elementParameter field="CHECK" name="DIE_ON_ERROR" value="false"/>
+    <elementParameter field="MAPPING_TYPE" name="MAPPING" value="mysql_id" show="false"/>
+    <elementParameter field="TEXT" name="PROPERTIES" value="&quot;noDatetimeStringSync=true&quot;" show="false"/>
+    <elementParameter field="CHECK" name="EXTENDINSERT" value="true"/>
+    <elementParameter field="LABEL" name="NOTE" value="(Not compatible with reject links)"/>
+    <elementParameter field="TEXT" name="NB_ROWS_PER_INSERT" value="100"/>
+    <elementParameter field="CHECK" name="USE_BATCH_SIZE" value="true" show="false"/>
+    <elementParameter field="TEXT" name="BATCH_SIZE" value="10000" show="false"/>
+    <elementParameter field="ENCODING_TYPE" name="ENCODING" value="&quot;ISO-8859-15&quot;" show="false"/>
+    <elementParameter field="TECHNICAL" name="ENCODING:ENCODING_TYPE" value="ISO-8859-15"/>
+    <elementParameter field="TEXT" name="COMMIT_EVERY" value="10000" show="false"/>
+    <elementParameter field="TABLE" name="ADD_COLS"/>
+    <elementParameter field="CHECK" name="USE_FIELD_OPTIONS" value="false"/>
+    <elementParameter field="TABLE" name="FIELD_OPTIONS" show="false">
+      <elementValue elementRef="SCHEMA_COLUMN" value="affCode"/>
+      <elementValue elementRef="UPDATE_KEY" value="false"/>
+      <elementValue elementRef="DELETE_KEY" value="false"/>
+      <elementValue elementRef="UPDATABLE" value="true"/>
+      <elementValue elementRef="INSERTABLE" value="true"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="affiliationRaw"/>
+      <elementValue elementRef="UPDATE_KEY" value="false"/>
+      <elementValue elementRef="DELETE_KEY" value="false"/>
+      <elementValue elementRef="UPDATABLE" value="true"/>
+      <elementValue elementRef="INSERTABLE" value="true"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="aff3"/>
+      <elementValue elementRef="UPDATE_KEY" value="false"/>
+      <elementValue elementRef="DELETE_KEY" value="false"/>
+      <elementValue elementRef="UPDATABLE" value="true"/>
+      <elementValue elementRef="INSERTABLE" value="true"/>
+    </elementParameter>
+    <elementParameter field="CHECK" name="USE_HINT_OPTIONS" value="false"/>
+    <elementParameter field="TABLE" name="HINT_OPTIONS" show="false"/>
+    <elementParameter field="CHECK" name="ENABLE_DEBUG_MODE" value="false"/>
+    <elementParameter field="CHECK" name="ON_DUPLICATE_KEY_UPDATE" value="false"/>
+    <elementParameter field="TABLE" name="DUPLICATED_KEYS" show="false"/>
+    <elementParameter field="CHECK" name="SUPPORT_NULL_WHERE" value="false" show="false"/>
+    <elementParameter field="TEXT" name="LABEL" value="src_affiliations_raw"/>
+    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
+    <metadata connector="FLOW" name="tMysqlOutput_4">
+      <column comment="" key="true" length="50" name="affCode" nullable="false" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="50" usefulColumn="true"/>
+      <column comment="" key="false" length="600" name="affiliationRaw" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="600" usefulColumn="true"/>
+      <column comment="" key="false" length="600" name="aff3" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="600" usefulColumn="true"/>
+    </metadata>
+    <metadata connector="REJECT" name="REJECT">
+      <column comment="" key="true" length="50" name="affCode" nullable="false" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="50" usefulColumn="true"/>
+      <column comment="" key="false" length="600" name="affiliationRaw" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="600" usefulColumn="true"/>
+      <column comment="" key="false" length="600" name="aff3" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="600" usefulColumn="true"/>
       <column defaultValue="" key="false" length="255" name="errorCode" nullable="true" precision="0" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
       <column defaultValue="" key="false" length="255" name="errorMessage" nullable="true" precision="0" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
     </metadata>
@@ -930,16 +962,6 @@
   <connection connectorName="SUBJOB_OK" label="OnSubjobOk" lineStyle="1" metaname="tMysqlConnection_1" offsetLabelX="0" offsetLabelY="0" source="tMysqlConnection_1" target="tMysqlInput_1">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="OnSubjobOk2" show="false"/>
   </connection>
-  <connection connectorName="FLOW" label="AuthorAff" lineStyle="0" metaname="AuthorAff" offsetLabelX="0" offsetLabelY="0" outputId="1" source="tMap_3" target="tUniqRow_2">
-    <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
-    <elementParameter field="CHECK" name="ACTIVATE" value="false" show="false"/>
-    <elementParameter field="TEXT" name="UNIQUE_NAME" value="AuthorAff" show="false"/>
-  </connection>
-  <connection connectorName="FLOW" label="AuthorPMID" lineStyle="0" metaname="AuthorPMID" offsetLabelX="-4" offsetLabelY="-44" outputId="2" source="tMap_3" target="tUniqRow_1">
-    <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
-    <elementParameter field="CHECK" name="ACTIVATE" value="false" show="false"/>
-    <elementParameter field="TEXT" name="UNIQUE_NAME" value="AuthorPMID" show="false"/>
-  </connection>
   <connection connectorName="FLOW" label="row1" lineStyle="0" metaname="tMysqlInput_1" offsetLabelX="0" offsetLabelY="0" source="tMysqlInput_1" target="tMap_1">
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="row1" show="false"/>
@@ -951,7 +973,6 @@
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="OnSubjobError1" show="false"/>
   </connection>
   <connection connectorName="SUBJOB_OK" label="OnSubjobOk" lineStyle="1" metaname="tMysqlInput_1" offsetLabelX="0" offsetLabelY="0" outputId="2" source="tMysqlInput_1" target="tMysqlInput_3">
-    <elementParameter field="CHECK" name="ACTIVATE" value="false" show="false"/>
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="OnSubjobOk4" show="false"/>
   </connection>
   <connection connectorName="FLOW" label="aff3" lineStyle="0" metaname="aff3" offsetLabelX="0" offsetLabelY="0" source="tMap_1" target="tJavaRow_1">
@@ -959,61 +980,72 @@
       <elementValue elementRef="TRACE_COLUMN" value="dept"/>
       <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true"/>
       <elementValue elementRef="TRACE_COLUMN_CONDITION" value=""/>
+      <elementValue elementRef="TRACE_COLUMN" value="affCode"/>
+      <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true"/>
+      <elementValue elementRef="TRACE_COLUMN_CONDITION" value=""/>
     </elementParameter>
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="aff3" show="false"/>
   </connection>
-  <connection connectorName="FLOW" label="row2" lineStyle="0" metaname="tJavaRow_1" offsetLabelX="0" offsetLabelY="0" source="tJavaRow_1" target="tMysqlOutput_1">
+  <connection connectorName="FLOW" label="row2" lineStyle="0" metaname="tJavaRow_1" offsetLabelX="0" offsetLabelY="0" source="tJavaRow_1" target="tUniqRow_1">
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="row2" show="false"/>
   </connection>
-  <connection connectorName="FLOW" label="row23" lineStyle="0" metaname="tMysqlInput_3" offsetLabelX="0" offsetLabelY="0" source="tMysqlInput_3" target="tMap_2">
+  <connection connectorName="UNIQUE" label="row5" lineStyle="0" metaname="UNIQUE" offsetLabelX="0" offsetLabelY="0" source="tUniqRow_1" target="tMysqlOutput_1">
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
-    <elementParameter field="CHECK" name="ACTIVATE" value="false" show="false"/>
-    <elementParameter field="TEXT" name="UNIQUE_NAME" value="row23" show="false"/>
-  </connection>
-  <connection connectorName="SUBJOB_OK" label="OnSubjobOk" lineStyle="1" metaname="tMysqlInput_3" offsetLabelX="0" offsetLabelY="0" source="tMysqlInput_3" target="tMysqlCommit_2">
-    <elementParameter field="CHECK" name="ACTIVATE" value="false" show="false"/>
-    <elementParameter field="TEXT" name="UNIQUE_NAME" value="OnSubjobOk5" show="false"/>
-  </connection>
-  <connection connectorName="SUBJOB_ERROR" label="OnSubjobError" lineStyle="4" metaname="tMysqlInput_3" offsetLabelX="0" offsetLabelY="0" source="tMysqlInput_3" target="tMysqlRollback_2">
-    <elementParameter field="CHECK" name="ACTIVATE" value="false" show="false"/>
-    <elementParameter field="TEXT" name="UNIQUE_NAME" value="OnSubjobError2" show="false"/>
-  </connection>
-  <connection connectorName="FLOW" label="copyOfCleanAffiliations" lineStyle="0" metaname="copyOfCleanAffiliations" offsetLabelX="50" offsetLabelY="3" outputId="1" source="tMap_2" target="tSQLiteOutput_3">
-    <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
-    <elementParameter field="CHECK" name="ACTIVATE" value="false" show="false"/>
-    <elementParameter field="TEXT" name="UNIQUE_NAME" value="copyOfCleanAffiliations" show="false"/>
-  </connection>
-  <connection connectorName="FLOW" label="copyOfAuthors" lineStyle="0" metaname="copyOfAuthors" offsetLabelX="48" offsetLabelY="-50" outputId="2" source="tMap_2" target="tSQLiteOutput_2">
-    <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
-    <elementParameter field="CHECK" name="ACTIVATE" value="false" show="false"/>
-    <elementParameter field="TEXT" name="UNIQUE_NAME" value="copyOfAuthors" show="false"/>
-  </connection>
-  <connection connectorName="FLOW" label="copyOfAuthorAff" lineStyle="0" metaname="copyOfAuthorAff" offsetLabelX="0" offsetLabelY="0" outputId="3" source="tMap_2" target="tUniqRow_4">
-    <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
-    <elementParameter field="CHECK" name="ACTIVATE" value="false" show="false"/>
-    <elementParameter field="TEXT" name="UNIQUE_NAME" value="copyOfAuthorAff" show="false"/>
-  </connection>
-  <connection connectorName="FLOW" label="copyOfAuthorPMID" lineStyle="0" metaname="copyOfAuthorPMID" offsetLabelX="-17" offsetLabelY="-31" outputId="4" source="tMap_2" target="tUniqRow_3">
-    <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
-    <elementParameter field="CHECK" name="ACTIVATE" value="false" show="false"/>
-    <elementParameter field="TEXT" name="UNIQUE_NAME" value="copyOfAuthorPMID" show="false"/>
-  </connection>
-  <connection connectorName="FLOW" label="copyOfAffiliations" lineStyle="0" metaname="copyOfAffiliations" offsetLabelX="49" offsetLabelY="40" outputId="5" source="tMap_2" target="tSQLiteOutput_4">
-    <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
-    <elementParameter field="CHECK" name="ACTIVATE" value="false" show="false"/>
-    <elementParameter field="TEXT" name="UNIQUE_NAME" value="copyOfAffiliations" show="false"/>
-  </connection>
-  <connection connectorName="UNIQUE" label="row5" lineStyle="0" metaname="tUniqRow_3" offsetLabelX="0" offsetLabelY="0" source="tUniqRow_3" target="tSQLiteOutput_1">
-    <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
-    <elementParameter field="CHECK" name="ACTIVATE" value="false" show="false"/>
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="row5" show="false"/>
   </connection>
-  <connection connectorName="UNIQUE" label="row18" lineStyle="0" metaname="tUniqRow_4" offsetLabelX="0" offsetLabelY="0" source="tUniqRow_4" target="tSQLiteOutput_5">
+  <connection connectorName="FLOW" label="row23" lineStyle="0" metaname="tMysqlInput_3" offsetLabelX="0" offsetLabelY="0" source="tMysqlInput_3" target="tMap_2">
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
-    <elementParameter field="CHECK" name="ACTIVATE" value="false" show="false"/>
-    <elementParameter field="TEXT" name="UNIQUE_NAME" value="row18" show="false"/>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="row23" show="false"/>
+  </connection>
+  <connection connectorName="SUBJOB_ERROR" label="OnSubjobError" lineStyle="4" metaname="tMysqlInput_3" offsetLabelX="0" offsetLabelY="0" source="tMysqlInput_3" target="tMysqlRollback_2">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="OnSubjobError2" show="false"/>
+  </connection>
+  <connection connectorName="SUBJOB_OK" label="OnSubjobOk" lineStyle="1" metaname="tMysqlInput_3" offsetLabelX="0" offsetLabelY="0" source="tMysqlInput_3" target="tMysqlCommit_2">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="OnSubjobOk5" show="false"/>
+  </connection>
+  <connection connectorName="FLOW" label="authors" lineStyle="0" metaname="authors" offsetLabelX="0" offsetLabelY="0" outputId="1" source="tMap_2" target="tUniqRow_2">
+    <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="authors" show="false"/>
+  </connection>
+  <connection connectorName="FLOW" label="authorAff" lineStyle="0" metaname="authorAff" offsetLabelX="0" offsetLabelY="0" outputId="2" source="tMap_2" target="tUniqRow_4">
+    <elementParameter field="TABLE" name="TRACES_CONNECTION_FILTER" show="false">
+      <elementValue elementRef="TRACE_COLUMN" value="authorCode"/>
+      <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true"/>
+      <elementValue elementRef="TRACE_COLUMN_CONDITION" value=""/>
+    </elementParameter>
+    <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="authorAff" show="false"/>
+  </connection>
+  <connection connectorName="FLOW" label="authorPMID" lineStyle="0" metaname="authorPMID" offsetLabelX="-17" offsetLabelY="-31" outputId="3" source="tMap_2" target="tUniqRow_3">
+    <elementParameter field="TABLE" name="TRACES_CONNECTION_FILTER" show="false">
+      <elementValue elementRef="TRACE_COLUMN" value="authorCode"/>
+      <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true"/>
+      <elementValue elementRef="TRACE_COLUMN_CONDITION" value=""/>
+    </elementParameter>
+    <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="authorPMID" show="false"/>
+  </connection>
+  <connection connectorName="FLOW" label="affiliations" lineStyle="0" metaname="affiliations" offsetLabelX="0" offsetLabelY="0" outputId="4" source="tMap_2" target="tUniqRow_5">
+    <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="affiliations" show="false"/>
+  </connection>
+  <connection connectorName="UNIQUE" label="row3" lineStyle="0" metaname="UNIQUE" offsetLabelX="0" offsetLabelY="0" source="tUniqRow_3" target="tMysqlOutput_2">
+    <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="row3" show="false"/>
+  </connection>
+  <connection connectorName="UNIQUE" label="row4" lineStyle="0" metaname="UNIQUE" offsetLabelX="0" offsetLabelY="0" source="tUniqRow_4" target="tMysqlOutput_6">
+    <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="row4" show="false"/>
+  </connection>
+  <connection connectorName="UNIQUE" label="row6" lineStyle="0" metaname="UNIQUE" offsetLabelX="0" offsetLabelY="0" source="tUniqRow_2" target="tMysqlOutput_3">
+    <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="row6" show="false"/>
+  </connection>
+  <connection connectorName="UNIQUE" label="row7" lineStyle="0" metaname="UNIQUE" offsetLabelX="0" offsetLabelY="0" source="tUniqRow_5" target="tMysqlOutput_4">
+    <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="row7" show="false"/>
   </connection>
   <subjob>
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tMysqlConnection_1" show="false"/>
@@ -1027,11 +1059,6 @@
   </subjob>
   <subjob>
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tMysqlRollback_1" show="false"/>
-    <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" value="92;131;150" show="false"/>
-    <elementParameter field="COLOR" name="SUBJOB_COLOR" value="207;226;236"/>
-  </subjob>
-  <subjob>
-    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tMap_3" show="false"/>
     <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" value="92;131;150" show="false"/>
     <elementParameter field="COLOR" name="SUBJOB_COLOR" value="207;226;236"/>
   </subjob>
