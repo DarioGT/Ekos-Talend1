@@ -259,6 +259,7 @@
       <relatedItems xmi:id="_0WDEi7JwEeaKuNaBKgbSBQ" id="TalendDate" version="Latest" type="routine"/>
       <relatedItems xmi:id="_0WDEjLJwEeaKuNaBKgbSBQ" id="Mathematical" version="Latest" type="routine"/>
       <relatedItems xmi:id="_0WDEjbJwEeaKuNaBKgbSBQ" id="_qbwZ4AT-Eeamu_ixvu2j-Q - metadata" version="Latest" type="schema"/>
+      <relatedItems xmi:id="_raqJILK4EealZvNXYd0Mig" id="_hXKSMKIVEeaE1Ir5tjYmaw" version="Latest" type="property"/>
     </ItemsRelations>
     <migrationTask xmi:id="_sLbQYIcWEea8XeDPvcgWYg" id="org.talend.designer.core.ui.preferences.migration.ChangeMysqlVersionForProjectSetting" breaks="5.2.0" version="5.1.3" status="ok"/>
     <migrationTask xmi:id="_sLbQYYcWEea8XeDPvcgWYg" id="org.talend.designer.core.ui.preferences.migration.ChangeOracleVersionForProjectSetting" breaks="5.2.0" version="5.2.1" status="ok"/>
