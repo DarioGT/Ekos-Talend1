@@ -1,0 +1,9 @@
+<?xml version="1.1" encoding="UTF-8"?>
+<expression:EMFExpression xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:expression="http:///expression.ecore" id="tMap_3=>" expression="PubMedNormal.normYear(row8.Year, row8.Year_EColl)">
+  <variables name="row8.PMID" value="null" talendType="id_Integer" nullable="true"/>
+  <variables name="row8.ArticleId" value="null" talendType="id_String" nullable="true"/>
+  <variables name="row8.Journal" value="null" talendType="id_String" nullable="true"/>
+  <variables name="row8.Year" value="null" talendType="id_Integer" nullable="true"/>
+  <variables name="row8.Year_EColl" value="null" talendType="id_Integer" nullable="true"/>
+  <variables name="row8.ArticleTitle" value="null" talendType="id_String" nullable="true"/>
+</expression:EMFExpression>

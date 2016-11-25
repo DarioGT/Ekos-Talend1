@@ -249,6 +249,8 @@ public class DuplTools {
 
         code1 = cleanAff2(code1);
         code1 = cleanAff9(code1);
+        code1 = code1.replaceAll("\\s+","");
+       
         
         if ( code1.length() > 15) {
         	Integer hash1 = code1.hashCode();
